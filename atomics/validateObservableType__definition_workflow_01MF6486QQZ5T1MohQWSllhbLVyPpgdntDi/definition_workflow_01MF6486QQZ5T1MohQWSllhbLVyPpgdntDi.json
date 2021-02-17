@@ -1,0 +1,316 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi",
+    "name": "SMXD - Validate Observable type",
+    "title": "SMXD - Validate Observable type",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Observable",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Type",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Secure MeterXD",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "Currently supported types : \n- ip\n- email",
+      "display_name": "SMXD - Validate Observable type",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01MF667AUMQ5C21CfwZhG3qldNb5mcMn6TS",
+        "name": "Condition Block",
+        "title": "Observable type",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Observable type",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01MF667LRW8O85Mh5XFRL4dNmSWO1giHWeh",
+            "name": "Condition Branch",
+            "title": "IP",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na$",
+                "operator": "eq",
+                "right_operand": "ip"
+              },
+              "continue_on_failure": false,
+              "display_name": "IP",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MF68RW8V6XJ6p4lyJroivBURSCMLLQItm",
+                "name": "Match Regex",
+                "title": "Validate IPv4",
+                "type": "core.matchregex",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Validate IPv4",
+                  "input_regex": "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$",
+                  "input_string": "$workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u$",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01MF69LUGD07L0vXECtfQ6TLVosZ5FFyH99",
+                "name": "Condition Block",
+                "title": "RESULT",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "RESULT",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01MF69M5FS8GX3pefaoIm7R1Jrv2YOksKrh",
+                    "name": "Condition Branch",
+                    "title": "Passed",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01MF68RW8V6XJ6p4lyJroivBURSCMLLQItm.output.has_match$",
+                        "operator": "eq",
+                        "right_operand": true
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Passed",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01MF6AC4F42D81C3xbEBtVr147ejZJGuBoq",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "succeeded",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01MF69M62R4WF4oVjcRtTMvnicjFIu6OoIb",
+                    "name": "Condition Branch",
+                    "title": "FAILED",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01MF68RW8V6XJ6p4lyJroivBURSCMLLQItm.output.has_match$",
+                        "operator": "eq",
+                        "right_operand": false
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "FAILED",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01MF6A328A30N2s0BoTYc9hO9tVwduxyX8q",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Observable not valid for type ip",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MF667MGVJJH77y8dwKZbUSKxRj4OBp11J",
+            "name": "Condition Branch",
+            "title": "Email",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na$",
+                "operator": "eq",
+                "right_operand": "email"
+              },
+              "continue_on_failure": false,
+              "display_name": "Email",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MF6ARSIXODD7YQechqFsOBf57ut90JnZv",
+                "name": "Match Regex",
+                "title": "Validate email",
+                "type": "core.matchregex",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Validate email",
+                  "input_regex": "(?:[a-z0-9!#$%\u0026'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%\u0026'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])",
+                  "input_string": "$workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u$",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01MF6AO7PRX2M0hBY4euoq09NFPvSQa0qUJ",
+                "name": "Condition Block",
+                "title": "RESULT",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "RESULT",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01MF6AOIX1TB25G2PGxaL64dPisQMuT45L4",
+                    "name": "Condition Branch",
+                    "title": "Passed",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01MF6ARSIXODD7YQechqFsOBf57ut90JnZv.output.has_match$",
+                        "operator": "eq",
+                        "right_operand": true
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Passed",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01MF6AOJNNX097Q4UkkYntpUmyDa43ZlNxH",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "succeeded",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01MF6AOUDWUDT5TN4cYtNfurgcn2eFPZY4j",
+                    "name": "Condition Branch",
+                    "title": "FAILED",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01MF6ARSIXODD7YQechqFsOBf57ut90JnZv.output.has_match$",
+                        "operator": "eq",
+                        "right_operand": false
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "FAILED",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01MF6AOV6A5SJ4Wi3BI6B4nqZ9twpcY5JaI",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Observable not valid for type email",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
