@@ -11,7 +11,7 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "Observable",
+          "name": "observable_value",
           "type": "datatype.string",
           "is_required": true,
           "is_invisible": false
