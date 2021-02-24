@@ -11,12 +11,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "Observable",
+          "name": "observable_type",
           "type": "datatype.string",
           "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u",
+        "unique_name": "variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na",
         "object_type": "variable_workflow"
       },
       {
@@ -24,12 +24,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "Type",
+          "name": "observable_value",
           "type": "datatype.string",
           "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na",
+        "unique_name": "variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u",
         "object_type": "variable_workflow"
       }
     ],
