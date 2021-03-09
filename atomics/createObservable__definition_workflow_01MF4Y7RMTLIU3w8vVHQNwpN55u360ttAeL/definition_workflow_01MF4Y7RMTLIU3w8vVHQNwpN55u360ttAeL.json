@@ -7,15 +7,16 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil",
+        "schema_id": "datatype.string",
         "properties": {
+          "value": "",
           "scope": "input",
-          "name": "SMXD Observable Table",
-          "type": "datatype.table",
-          "is_required": false,
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MVAYHSAS8GN2W6b0Ja8VX2dS2up1Aioj2",
+        "unique_name": "variable_workflow_01MF5FTADDIUG1I4KRgbOfXtQtcXqSbYtha",
         "object_type": "variable_workflow"
       },
       {
@@ -32,32 +33,6 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "observable_value",
-          "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MF5FTADDIUG1I4KRgbOfXtQtcXqSbYtha",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.integer",
-        "properties": {
-          "value": 1,
-          "scope": "input",
-          "name": "Risk Score",
-          "type": "datatype.integer",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MF5G8ME7WBJ3zSswA9OU3S3PP7S9uGEkU",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.date",
         "properties": {
           "value": "0001-01-01T00:00:00+00:00",
@@ -69,6 +44,19 @@
         },
         "unique_name": "variable_workflow_01MF5GPNRFJW819FW5LGh46KfY1Dou45VWj",
         "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 1,
+          "scope": "input",
+          "name": "Score",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MF5G8ME7WBJ3zSswA9OU3S3PP7S9uGEkU",
+        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -77,7 +65,6 @@
         "is_atomic": true
       },
       "delete_workflow_instance": false,
-      "description": "Create an observable in the SMXD global table.\n\nTarget: None\nAccount Key: None\n\nSteps:\n[] Search the table for an existing observable:\n[]\u003e If found, complete with failed result.\n[]\u003e If not found, compute current time and create the observable\n",
       "display_name": "SMXD - Create Observable",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -85,7 +72,10 @@
         "target_default": true
       },
       "target": {
-        "no_target": true
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
       }
     },
     "object_type": "definition_workflow",
@@ -235,18 +225,19 @@
                   "input_table": "$global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3.global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3$",
                   "row": [
                     {
-                      "key": "last_modified",
-                      "type": "date",
-                      "value": "$workflow.definition_workflow_01MF4Y7RMTLIU3w8vVHQNwpN55u360ttAeL.local.variable_workflow_01MF5GPNRFJW819FW5LGh46KfY1Dou45VWj$"
-                    },
-                    {
                       "key": "observable",
                       "type": "string",
                       "value": "$workflow.definition_workflow_01MF4Y7RMTLIU3w8vVHQNwpN55u360ttAeL.input.variable_workflow_01MF5FTADDIUG1I4KRgbOfXtQtcXqSbYtha$"
                     },
                     {
-                      "key": "related",
-                      "type": "string"
+                      "key": "type",
+                      "type": "string",
+                      "value": "$workflow.definition_workflow_01MF4Y7RMTLIU3w8vVHQNwpN55u360ttAeL.input.variable_workflow_01MF5FYAUEI0U4GMyG2GLEnaOEXQt03MyXF$"
+                    },
+                    {
+                      "key": "last_modified",
+                      "type": "date",
+                      "value": "$workflow.definition_workflow_01MF4Y7RMTLIU3w8vVHQNwpN55u360ttAeL.local.variable_workflow_01MF5GPNRFJW819FW5LGh46KfY1Dou45VWj$"
                     },
                     {
                       "key": "score",
@@ -254,9 +245,8 @@
                       "value": "$workflow.definition_workflow_01MF4Y7RMTLIU3w8vVHQNwpN55u360ttAeL.input.variable_workflow_01MF5G8ME7WBJ3zSswA9OU3S3PP7S9uGEkU$"
                     },
                     {
-                      "key": "type",
-                      "type": "string",
-                      "value": "$workflow.definition_workflow_01MF4Y7RMTLIU3w8vVHQNwpN55u360ttAeL.input.variable_workflow_01MF5FYAUEI0U4GMyG2GLEnaOEXQt03MyXF$"
+                      "key": "related",
+                      "type": "string"
                     }
                   ],
                   "skip_execution": false
@@ -266,22 +256,25 @@
             ]
           }
         ]
+      },
+      {
+        "unique_name": "definition_activity_01MF5O1F4OSKC4wDVzoGFcivVQkwLsHzmGw",
+        "name": "Completed",
+        "title": "Completed",
+        "type": "logic.completed",
+        "base_type": "activity",
+        "properties": {
+          "completion_type": "succeeded",
+          "continue_on_failure": false,
+          "display_name": "Completed",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
       }
     ],
     "categories": [
-      "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r"
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
     ]
-  },
-  "categories": {
-    "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r": {
-      "unique_name": "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r",
-      "name": "SecureX",
-      "title": "SecureX",
-      "type": "basic.category",
-      "base_type": "category",
-      "category_type": "custom",
-      "object_type": "category"
-    }
   },
   "variables": {
     "variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3": {
@@ -291,7 +284,7 @@
         "value": [
           {
             "column_data": {
-              "last_modified": "2021-03-04T17:00:10.74092158Z",
+              "last_modified": "2021-03-09T18:26:45.098156511Z",
               "observable": "10.0.0.1",
               "related": "",
               "score": 7,
@@ -300,17 +293,17 @@
           },
           {
             "column_data": {
-              "last_modified": "2021-03-08T19:01:14Z",
-              "observable": "172.16.46.18",
-              "score": 3,
+              "last_modified": "2021-03-09T06:00:08.614584805Z",
+              "observable": "172.16.47.36",
+              "score": 4,
               "type": "ip"
             }
           },
           {
             "column_data": {
-              "last_modified": "2021-03-09T06:00:08.614584805Z",
-              "observable": "172.16.47.36",
-              "score": 4,
+              "last_modified": "2021-03-09T20:09:10Z",
+              "observable": "172.16.46.18",
+              "score": 3,
               "type": "ip"
             }
           }
@@ -332,17 +325,6 @@
       "description": "Table used to contain observables tracked by Secure Meter XD",
       "columns": [
         {
-          "name": "last_modified",
-          "title": "last_modified",
-          "type": "date"
-        },
-        {
-          "is_required": true,
-          "name": "observable",
-          "title": "observable",
-          "type": "string"
-        },
-        {
           "name": "related",
           "title": "related",
           "type": "string"
@@ -359,6 +341,17 @@
           "is_required": true,
           "name": "type",
           "title": "type",
+          "type": "string"
+        },
+        {
+          "name": "last_modified",
+          "title": "last_modified",
+          "type": "date"
+        },
+        {
+          "is_required": true,
+          "name": "observable",
+          "title": "observable",
           "type": "string"
         }
       ],
