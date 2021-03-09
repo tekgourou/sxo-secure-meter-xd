@@ -305,6 +305,40 @@
                 ]
               }
             ]
+          },
+          {
+            "unique_name": "definition_activity_01MW0XB6VOFP85u6T9iBPNtgnM3ojLCx6g1",
+            "name": "Condition Branch",
+            "title": "User",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na$",
+                "operator": "eq",
+                "right_operand": "user"
+              },
+              "continue_on_failure": false,
+              "display_name": "User",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MW0XC75OV2J0VKcOhjn4aWbqrPsCtlLWu",
+                "name": "Completed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "succeeded",
+                  "continue_on_failure": false,
+                  "display_name": "Completed",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
           }
         ]
       }
