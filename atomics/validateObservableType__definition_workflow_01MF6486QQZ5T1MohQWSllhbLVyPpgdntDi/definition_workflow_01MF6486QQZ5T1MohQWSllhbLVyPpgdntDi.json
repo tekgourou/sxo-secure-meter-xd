@@ -11,12 +11,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "observable_type",
+          "name": "observable_value",
           "type": "datatype.string",
           "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na",
+        "unique_name": "variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u",
         "object_type": "variable_workflow"
       },
       {
@@ -24,12 +24,26 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "observable_value",
+          "name": "email_domain",
+          "type": "datatype.string",
+          "description": "Please enter your Email domain",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MW30PILPB7G1ylYd7uaVZCiLqSxxuqUwn",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
           "type": "datatype.string",
           "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u",
+        "unique_name": "variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na",
         "object_type": "variable_workflow"
       }
     ],
@@ -39,7 +53,7 @@
         "is_atomic": true
       },
       "delete_workflow_instance": false,
-      "description": "Currently supported types : \n- ip\n- email",
+      "description": "Currently supported types : \n- Private IP\n- email with domain provided in the input\n- user\n\n",
       "display_name": "SMXD - Validate Observable type",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -89,13 +103,13 @@
               {
                 "unique_name": "definition_activity_01MF68RW8V6XJ6p4lyJroivBURSCMLLQItm",
                 "name": "Match Regex",
-                "title": "Validate IPv4",
+                "title": "Validate Private IP",
                 "type": "core.matchregex",
                 "base_type": "activity",
                 "properties": {
                   "continue_on_failure": false,
-                  "display_name": "Validate IPv4",
-                  "input_regex": "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$",
+                  "display_name": "Validate Private IP",
+                  "input_regex": "\"(^10\\.)|(^172\\.1[6-9]\\.)|(^172\\.2[0-9]\\.)|(^172\\.3[0-1]\\.)|(^192\\.168\\.)|(^127\\.0\\.0\\.1)\"",
                   "input_string": "$workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u$",
                   "skip_execution": false
                 },
@@ -124,7 +138,7 @@
                       "condition": {
                         "left_operand": "$activity.definition_activity_01MF68RW8V6XJ6p4lyJroivBURSCMLLQItm.output.has_match$",
                         "operator": "eq",
-                        "right_operand": true
+                        "right_operand": false
                       },
                       "continue_on_failure": false,
                       "display_name": "Passed",
@@ -142,6 +156,7 @@
                           "completion_type": "succeeded",
                           "continue_on_failure": false,
                           "display_name": "Completed",
+                          "result_message": "Private IP detected",
                           "skip_execution": false
                         },
                         "object_type": "definition_activity"
@@ -158,7 +173,7 @@
                       "condition": {
                         "left_operand": "$activity.definition_activity_01MF68RW8V6XJ6p4lyJroivBURSCMLLQItm.output.has_match$",
                         "operator": "eq",
-                        "right_operand": false
+                        "right_operand": true
                       },
                       "continue_on_failure": false,
                       "display_name": "FAILED",
@@ -176,7 +191,7 @@
                           "completion_type": "failed-completed",
                           "continue_on_failure": false,
                           "display_name": "Completed",
-                          "result_message": "Observable not valid for type ip",
+                          "result_message": "Observable not valid for Private IP address",
                           "skip_execution": false
                         },
                         "object_type": "definition_activity"
@@ -208,13 +223,13 @@
               {
                 "unique_name": "definition_activity_01MF6ARSIXODD7YQechqFsOBf57ut90JnZv",
                 "name": "Match Regex",
-                "title": "Validate email",
+                "title": "Validate email format with email domain",
                 "type": "core.matchregex",
                 "base_type": "activity",
                 "properties": {
                   "continue_on_failure": false,
-                  "display_name": "Validate email",
-                  "input_regex": "(?:[a-z0-9!#$%\u0026'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%\u0026'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])",
+                  "display_name": "Validate email format with email domain",
+                  "input_regex": "(?:[a-z0-9!#$%\u0026'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%\u0026'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@$workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MW30PILPB7G1ylYd7uaVZCiLqSxxuqUwn$",
                   "input_string": "$workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u$",
                   "skip_execution": false
                 },
@@ -261,6 +276,7 @@
                           "completion_type": "succeeded",
                           "continue_on_failure": false,
                           "display_name": "Completed",
+                          "result_message": "Email address detected with $workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MW30PILPB7G1ylYd7uaVZCiLqSxxuqUwn$ domain",
                           "skip_execution": false
                         },
                         "object_type": "definition_activity"
@@ -295,7 +311,7 @@
                           "completion_type": "failed-completed",
                           "continue_on_failure": false,
                           "display_name": "Completed",
-                          "result_message": "Observable not valid for type email",
+                          "result_message": "Observable not valid a email with $workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MW30PILPB7G1ylYd7uaVZCiLqSxxuqUwn$ domain",
                           "skip_execution": false
                         },
                         "object_type": "definition_activity"
@@ -344,7 +360,18 @@
       }
     ],
     "categories": [
-      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+      "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r"
     ]
+  },
+  "categories": {
+    "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r": {
+      "unique_name": "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r",
+      "name": "SecureX",
+      "title": "SecureX",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
   }
 }
