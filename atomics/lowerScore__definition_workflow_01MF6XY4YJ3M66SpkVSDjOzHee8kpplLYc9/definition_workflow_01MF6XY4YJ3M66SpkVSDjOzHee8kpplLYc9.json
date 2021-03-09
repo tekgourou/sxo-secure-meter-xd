@@ -10,6 +10,44 @@
         "schema_id": "datatype.integer",
         "properties": {
           "value": 0,
+          "scope": "static",
+          "name": "SMXD_SCORE_MIN",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MF6XY4P438X1l6jkSv1PBsL6N9kuEeKcB",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.date",
+        "properties": {
+          "value": "0001-01-01T00:00:00+00:00",
+          "scope": "local",
+          "name": "Last Modified",
+          "type": "datatype.date",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MF6XY4P41I428IT7KTNbswtEhVU9mliC7",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil",
+        "properties": {
+          "scope": "output",
+          "name": "SMXD Updated Table",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MW2BB7ZGNG413WklRmMpslZ1xx0oFF9QL",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
           "scope": "local",
           "name": "Target Score",
           "type": "datatype.integer",
@@ -46,29 +84,28 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.integer",
+        "schema_id": "datatype.string",
         "properties": {
-          "value": 0,
-          "scope": "static",
-          "name": "SMXD_SCORE_MIN",
-          "type": "datatype.integer",
-          "is_required": false,
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MF6XY4P438X1l6jkSv1PBsL6N9kuEeKcB",
+        "unique_name": "variable_workflow_01MW1BVY3XUXF3Qvn3rUwboXRRx6aUcyJu8",
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.date",
+        "schema_id": "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil",
         "properties": {
-          "value": "0001-01-01T00:00:00+00:00",
-          "scope": "local",
-          "name": "Last Modified",
-          "type": "datatype.date",
+          "scope": "input",
+          "name": "SMXD Observable Table",
+          "type": "datatype.table",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MF6XY4P41I428IT7KTNbswtEhVU9mliC7",
+        "unique_name": "variable_workflow_01MW1CV26QYIW0ol5zdSIXbxsoYMvZWfRk4",
         "object_type": "variable_workflow"
       }
     ],
@@ -103,21 +140,25 @@
           "action_timeout": 180,
           "columns": [
             {
-              "column_name": "observable",
-              "column_type": "string"
-            },
-            {
               "column_name": "last_modified",
               "column_type": "date"
             },
             {
+              "column_name": "observable",
+              "column_type": "string"
+            },
+            {
               "column_name": "score",
               "column_type": "integer"
+            },
+            {
+              "column_name": "type",
+              "column_type": "string"
             }
           ],
           "continue_on_failure": false,
           "display_name": "Select from Table",
-          "input_table": "$global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3.global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3$",
+          "input_table": "$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MW1CV26QYIW0ol5zdSIXbxsoYMvZWfRk4$",
           "number_of_rows": {
             "all_rows": true,
             "at_most": false
@@ -128,7 +169,7 @@
             "no_sort": true,
             "sort_by": false
           },
-          "where_clause": "observable == '$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MF6XY4P3TZL5GmEZZ5g5n4coKt2e36DV0$'"
+          "where_clause": "observable == '$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MF6XY4P3TZL5GmEZZ5g5n4coKt2e36DV0$' AND type == '$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MW1BVY3XUXF3Qvn3rUwboXRRx6aUcyJu8$'"
         },
         "object_type": "definition_activity"
       },
@@ -279,7 +320,7 @@
           ],
           "continue_on_failure": false,
           "display_name": "Update table with new score",
-          "input_table": "$global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3.global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3$",
+          "input_table": "$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MW1CV26QYIW0ol5zdSIXbxsoYMvZWfRk4$",
           "row": [
             {
               "key": "last_modified",
@@ -294,40 +335,45 @@
           ],
           "rows": {
             "rows_matching_criteria": true,
-            "where_clause": "observable == '$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MF6XY4P3TZL5GmEZZ5g5n4coKt2e36DV0$'"
+            "where_clause": "observable == '$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MF6XY4P3TZL5GmEZZ5g5n4coKt2e36DV0$' AND type == '$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MW1BVY3XUXF3Qvn3rUwboXRRx6aUcyJu8$'"
           },
           "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MW2BLDH4DFZ0Ir14UH3smkVROibBVhgQa",
+        "name": "Set Variables",
+        "title": "Set updated table to output",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set updated table to output",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.output.variable_workflow_01MW2BB7ZGNG413WklRmMpslZ1xx0oFF9QL$",
+              "variable_value_new": "$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MW1CV26QYIW0ol5zdSIXbxsoYMvZWfRk4$"
+            }
+          ]
         },
         "object_type": "definition_activity"
       }
     ],
     "categories": [
-      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+      "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r"
     ]
   },
-  "variables": {
-    "variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3": {
-      "unique_name": "variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3",
-      "schema_id": "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil",
-      "properties": {
-        "value": [
-          {
-            "column_data": {
-              "last_modified": "2021-02-17T22:20:13.545276167Z",
-              "observable": "10.0.0.1",
-              "related": "",
-              "score": 1,
-              "type": "ip"
-            }
-          }
-        ],
-        "scope": "global",
-        "name": "Secure_Meter_XD",
-        "type": "datatype.table",
-        "is_required": false,
-        "is_invisible": false
-      },
-      "object_type": "variable"
+  "categories": {
+    "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r": {
+      "unique_name": "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r",
+      "name": "SecureX",
+      "title": "SecureX",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
     }
   },
   "table_types": {
@@ -337,17 +383,6 @@
       "display_name": "Secure_Meter_XD_Observables",
       "description": "Table used to contain observables tracked by Secure Meter XD",
       "columns": [
-        {
-          "name": "last_modified",
-          "title": "last_modified",
-          "type": "date"
-        },
-        {
-          "is_required": true,
-          "name": "observable",
-          "title": "observable",
-          "type": "string"
-        },
         {
           "name": "related",
           "title": "related",
@@ -365,6 +400,17 @@
           "is_required": true,
           "name": "type",
           "title": "type",
+          "type": "string"
+        },
+        {
+          "name": "last_modified",
+          "title": "last_modified",
+          "type": "date"
+        },
+        {
+          "is_required": true,
+          "name": "observable",
+          "title": "observable",
           "type": "string"
         }
       ],
