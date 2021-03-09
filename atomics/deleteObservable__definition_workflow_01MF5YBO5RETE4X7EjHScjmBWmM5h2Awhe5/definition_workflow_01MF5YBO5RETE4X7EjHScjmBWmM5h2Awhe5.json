@@ -18,6 +18,31 @@
         },
         "unique_name": "variable_workflow_01MF5YBNZ36IH0NI17WGcUgoohD0MBu3Rdj",
         "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MW14MD02RXC5CqLxtbLrPKNKekqnVj3Pp",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil",
+        "properties": {
+          "scope": "input",
+          "name": "SMXD Observable Table",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MW14VOPKBIO5hQFKqITFT0aoGSR553w9q",
+        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -42,19 +67,6 @@
     "object_type": "definition_workflow",
     "actions": [
       {
-        "unique_name": "definition_activity_01MF5YCDOHA4J4qj8E4jVlzLOPmCpn4PfpM",
-        "name": "Start Point",
-        "title": "Start Point",
-        "type": "logic.start_point",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "display_name": "Start Point",
-          "skip_execution": false
-        },
-        "object_type": "definition_activity"
-      },
-      {
         "unique_name": "definition_activity_01MF60ZVAD7V84sJum8prcz2yMZxGwzHkkc",
         "name": "Delete from Table",
         "title": "Delete from Table",
@@ -64,10 +76,10 @@
           "action_timeout": 180,
           "continue_on_failure": false,
           "display_name": "Delete from Table",
-          "input_table": "$global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3.global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3$",
+          "input_table": "$workflow.definition_workflow_01MF5YBO5RETE4X7EjHScjmBWmM5h2Awhe5.input.variable_workflow_01MW14VOPKBIO5hQFKqITFT0aoGSR553w9q$",
           "rows": {
             "rows_matching_criteria": true,
-            "where_clause": "observable == '$workflow.definition_workflow_01MF5YBO5RETE4X7EjHScjmBWmM5h2Awhe5.input.variable_workflow_01MF5YBNZ36IH0NI17WGcUgoohD0MBu3Rdj$'"
+            "where_clause": "observable == '$workflow.definition_workflow_01MF5YBO5RETE4X7EjHScjmBWmM5h2Awhe5.input.variable_workflow_01MF5YBNZ36IH0NI17WGcUgoohD0MBu3Rdj$' AND type == $workflow.definition_workflow_01MF5YBO5RETE4X7EjHScjmBWmM5h2Awhe5.input.variable_workflow_01MW14MD02RXC5CqLxtbLrPKNKekqnVj3Pp$"
           },
           "skip_execution": false
         },
@@ -160,44 +172,8 @@
       }
     ],
     "categories": [
-      "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r"
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
     ]
-  },
-  "categories": {
-    "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r": {
-      "unique_name": "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r",
-      "name": "SecureX",
-      "title": "SecureX",
-      "type": "basic.category",
-      "base_type": "category",
-      "category_type": "custom",
-      "object_type": "category"
-    }
-  },
-  "variables": {
-    "variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3": {
-      "unique_name": "variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3",
-      "schema_id": "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil",
-      "properties": {
-        "value": [
-          {
-            "column_data": {
-              "last_modified": "2021-02-17T22:20:13.545276167Z",
-              "observable": "10.0.0.1",
-              "related": "",
-              "score": 1,
-              "type": "ip"
-            }
-          }
-        ],
-        "scope": "global",
-        "name": "Secure_Meter_XD",
-        "type": "datatype.table",
-        "is_required": false,
-        "is_invisible": false
-      },
-      "object_type": "variable"
-    }
   },
   "table_types": {
     "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil": {
@@ -206,17 +182,6 @@
       "display_name": "Secure_Meter_XD_Observables",
       "description": "Table used to contain observables tracked by Secure Meter XD",
       "columns": [
-        {
-          "name": "last_modified",
-          "title": "last_modified",
-          "type": "date"
-        },
-        {
-          "is_required": true,
-          "name": "observable",
-          "title": "observable",
-          "type": "string"
-        },
         {
           "name": "related",
           "title": "related",
@@ -234,6 +199,17 @@
           "is_required": true,
           "name": "type",
           "title": "type",
+          "type": "string"
+        },
+        {
+          "name": "last_modified",
+          "title": "last_modified",
+          "type": "date"
+        },
+        {
+          "is_required": true,
+          "name": "observable",
+          "title": "observable",
           "type": "string"
         }
       ],
