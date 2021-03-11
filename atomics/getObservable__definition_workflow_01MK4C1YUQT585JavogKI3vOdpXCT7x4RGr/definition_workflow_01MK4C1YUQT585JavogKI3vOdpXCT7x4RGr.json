@@ -7,6 +7,32 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "datatype.date",
+        "properties": {
+          "value": "0001-01-01T00:00:00+00:00",
+          "scope": "output",
+          "name": "Last modified",
+          "type": "datatype.date",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MW5A1GL3QZ735fCH4jdYSVvKbJFqb7iNk",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "output",
+          "name": "Risk score",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MW4DHU5ICJA1YbrmVKYAHVRZXONDYpE77",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
@@ -20,42 +46,17 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.date",
-        "properties": {
-          "value": "0001-01-01T00:00:00+00:00",
-          "scope": "output",
-          "name": "last_modified",
-          "type": "datatype.date",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MW5A1GL3QZ735fCH4jdYSVvKbJFqb7iNk",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
           "scope": "input",
           "name": "observable_type",
           "type": "datatype.string",
+          "description": "Please enter the observable type based on the CTIM specs",
           "is_required": true,
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MW184IP7JOD5NpWOQufPOixEAUlXM4rDD",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.integer",
-        "properties": {
-          "value": 0,
-          "scope": "output",
-          "name": "risk_score",
-          "type": "datatype.integer",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MW4DHU5ICJA1YbrmVKYAHVRZXONDYpE77",
         "object_type": "variable_workflow"
       }
     ],
@@ -65,6 +66,7 @@
         "is_atomic": true
       },
       "delete_workflow_instance": false,
+      "description": "Retrieve an observable based on its value and type from the Global SMXD Observable table\n\nTarget: N/A\n\nAccount Key: N/A\n\nSteps:\n[] Search the observable from the Global SMXD observable table\n[]\u003e If not found, complete with failure\n[] Set the observable Risk score and Last Modified values found to the output variables\n\nMore details are available at https://github.com/kcdubois/sxo-secure-meter-xd\n\n",
       "display_name": "SMXD - Get Observable",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -187,6 +189,10 @@
             {
               "variable_to_update": "$workflow.definition_workflow_01MK4C1YUQT585JavogKI3vOdpXCT7x4RGr.output.variable_workflow_01MW4DHU5ICJA1YbrmVKYAHVRZXONDYpE77$",
               "variable_value_new": "$activity.definition_activity_01MK4C2OCYN5A0sbutsxeHpoVbaMp0FDaH2.output.output_table[0].score$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01MK4C1YUQT585JavogKI3vOdpXCT7x4RGr.output.variable_workflow_01MW5A1GL3QZ735fCH4jdYSVvKbJFqb7iNk$",
+              "variable_value_new": "$activity.definition_activity_01MK4C2OCYN5A0sbutsxeHpoVbaMp0FDaH2.output.output_table[0].last_modified$"
             }
           ]
         },
@@ -216,10 +222,10 @@
         "value": [
           {
             "column_data": {
-              "last_modified": "2021-03-09T18:26:45.098156511Z",
+              "last_modified": "2021-03-09T21:36:31.461005866Z",
               "observable": "10.0.0.1",
               "related": "",
-              "score": 7,
+              "score": 10,
               "type": "ip"
             }
           },
@@ -233,9 +239,9 @@
           },
           {
             "column_data": {
-              "last_modified": "2021-03-09T20:51:31Z",
+              "last_modified": "2021-03-10T06:00:10.682964339Z",
               "observable": "172.16.46.18",
-              "score": 3,
+              "score": 4,
               "type": "ip"
             }
           }
@@ -257,6 +263,17 @@
       "description": "Table used to contain observables tracked by Secure Meter XD",
       "columns": [
         {
+          "name": "last_modified",
+          "title": "last_modified",
+          "type": "date"
+        },
+        {
+          "is_required": true,
+          "name": "observable",
+          "title": "observable",
+          "type": "string"
+        },
+        {
           "name": "related",
           "title": "related",
           "type": "string"
@@ -273,17 +290,6 @@
           "is_required": true,
           "name": "type",
           "title": "type",
-          "type": "string"
-        },
-        {
-          "name": "last_modified",
-          "title": "last_modified",
-          "type": "date"
-        },
-        {
-          "is_required": true,
-          "name": "observable",
-          "title": "observable",
           "type": "string"
         }
       ],
