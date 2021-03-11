@@ -9,14 +9,98 @@
       {
         "schema_id": "datatype.string",
         "properties": {
+          "value": "Malicious",
+          "scope": "local",
+          "name": "AMP_Malicious_GroupName",
+          "type": "datatype.string",
+          "description": "Add AMP Malicious Group Name is you enable the Cisco Secure Endpoint Response",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MXMTZKV08KF4WaYpj4bHYi7DmxTSuMBvL",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
           "value": "",
           "scope": "input",
-          "name": "observable_value",
+          "name": "Reason",
+          "type": "datatype.string",
+          "description": "Why Observable Risk Score is raised - NOTES",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MX8S2CI9XE47AYZeML2wADsohgBIgG2Us",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Suspicious",
+          "scope": "local",
+          "name": "AMP_Suspicious_GroupName",
+          "type": "datatype.string",
+          "description": "Add AMP Suspicious Group Name is you enable the Cisco Secure Endpoint Response",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MXMSWCZJYSL05XEQBGv5uz9Fk81Mbl0ED",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "TLP",
+          "type": "datatype.string",
+          "description": "Optional",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MX96JQID3HF06jFtpf5GrnNtBNvpP4vH4",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Severity",
+          "type": "datatype.string",
+          "description": "Optional",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MX96OG88IE56FW3RgsshsuSwJVIxFCRK1",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Disposition",
+          "type": "datatype.string",
+          "description": "Common - Suspicious - Malicious",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MX96ECU1GI03cPnZHa2i8bfgFEvUWQWAP",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MX8S2CI9YI51bJNCOKlCI7WYKtMvwIIzm",
+        "unique_name": "variable_workflow_01MX8S2CI9UXH4qy1auxcj96FjKlxSaspFi",
         "object_type": "variable_workflow"
       },
       {
@@ -37,65 +121,40 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "Severity",
+          "name": "observable_value",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MX96OG88IE56FW3RgsshsuSwJVIxFCRK1",
+        "unique_name": "variable_workflow_01MX8S2CI9YI51bJNCOKlCI7WYKtMvwIIzm",
         "object_type": "variable_workflow"
       },
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "observable_type",
+          "value": "DGB7Q53P3PQI1HF87OXX",
+          "scope": "local",
+          "name": "Duo_GroupID_Suspicious",
           "type": "datatype.string",
+          "description": "Group ID can be found using the web gui URL\n\nex: https://admin-dd952xxx.duosecurity.com/groups/DGB7QxxxxxQI1HF87OXX",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MX8S2CI9UXH4qy1auxcj96FjKlxSaspFi",
+        "unique_name": "variable_workflow_01MXLJPVT5KGA2hrphjh2IRKL9Q4M66wvyM",
         "object_type": "variable_workflow"
       },
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Reason",
+          "value": "DGIRUM1C3TUBMDS1T9A1",
+          "scope": "local",
+          "name": "Duo_GroupID_Malicious",
           "type": "datatype.string",
-          "description": "Why Observable Risk Score is raised",
+          "description": "Group ID can be found using the web gui URL\n\nex: https://admin-dd952xxx.duosecurity.com/groups/DGB7QxxxxxQI1HF87OXX",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MX8S2CI9XE47AYZeML2wADsohgBIgG2Us",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "TLP",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MX96JQID3HF06jFtpf5GrnNtBNvpP4vH4",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Disposition",
-          "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MX96ECU1GI03cPnZHa2i8bfgFEvUWQWAP",
+        "unique_name": "variable_workflow_01MXLMTPMZCLC3tPxESWhGISr5E8VDYYVCI",
         "object_type": "variable_workflow"
       }
     ],
@@ -104,7 +163,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "description": "This workflow takes a CRUD atomic actions of SMXD to raise the risk score of an observable and issue an individual judgement\nas well as response actions depending on the observable type and judgement disposition.\n\nTarget Group: Default TargetGroup\n\nTargets Used: CTR_For_Access_Token, Private_CTIA_Target\n\n\nSteps:\n[] Validate that the observable type is supported by SMXD\n[] Search for the observable\n[] If not found, create the observable in SMXD with a score of 1\n[] Start by raising the score\n[] Generate Access token for SXTR and convert the risk score to a judgement\n[]\u003e If disposition is Common, go into the Common respond actions\n[]\u003e If disposition is Suspicious, go into the suspicious respond actions\n[]\u003e If disposition is Malicious, go into the Malicious respond actions\n\nMore details are available at https://github.com/kcdubois/sxo-secure-meter-xd\n",
+      "description": "Target Group: Default TargetGroup\nTarget Group Type: HTTP Endpoint, SMTP Endpoint(optional)\nTargets Used: CTR_For_Access_Token, Private_CTIA_Target, AMP_Target(optional), Duo(optional), SWC_Target(optional), Azure_For_Access_Token(optional), Azure_Graph_API(optional)\n\nResponse module are DISABLE per default. Please turn on Response based on use cases.\n\nSteps:\n[] \n\nMore details are available at https://github.com/kcdubois/sxo-secure-meter-xd\\n",
       "display_name": "SMXD - Response actions based on disposition",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -162,9 +221,151 @@
               },
               "continue_on_failure": false,
               "display_name": "Common",
-              "skip_execution": true
+              "skip_execution": false
             },
-            "object_type": "definition_activity"
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MXNMPAT25PN0XtpWkfMWuy4RJdMyXSOuX",
+                "name": "Group",
+                "title": "Response to Threat",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Response to Threat",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01MXNOKGO7WXS71Rs8hqnbbtCp6QbFxfwj0",
+                    "name": "Condition Block",
+                    "title": "Condition Block",
+                    "type": "logic.if_else",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Condition Block",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "blocks": [
+                      {
+                        "unique_name": "definition_activity_01MXNOL3LXJBT7KMKPijfupVTcy7fI0Up98",
+                        "name": "Condition Branch",
+                        "title": "IP",
+                        "type": "logic.condition_block",
+                        "base_type": "activity",
+                        "properties": {
+                          "condition": {
+                            "left_operand": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9UXH4qy1auxcj96FjKlxSaspFi$",
+                            "operator": "eq",
+                            "right_operand": "IP"
+                          },
+                          "continue_on_failure": false,
+                          "display_name": "IP",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01MXNP1HA1KER20bvI7A1tQqQpFDbu1ivYC",
+                            "name": "Group",
+                            "title": "Optional Response Actions",
+                            "type": "logic.group",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "description": "Available for you to add any additional action for this risk score.",
+                              "display_name": "Optional Response Actions",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      },
+                      {
+                        "unique_name": "definition_activity_01MXNOL49UNQ92n1lpss0yxgQPqZjh013dK",
+                        "name": "Condition Branch",
+                        "title": "Hostname",
+                        "type": "logic.condition_block",
+                        "base_type": "activity",
+                        "properties": {
+                          "condition": {
+                            "left_operand": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9UXH4qy1auxcj96FjKlxSaspFi$",
+                            "operator": "eq",
+                            "right_operand": "hostname"
+                          },
+                          "continue_on_failure": false,
+                          "display_name": "Hostname",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01MXNPC4SUR8D7VQF4i1Z3LBYZX8vzQiTUM",
+                            "name": "Group",
+                            "title": "Optional Response Actions",
+                            "type": "logic.group",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "description": "Available for you to add any additional action for this risk score.",
+                              "display_name": "Optional Response Actions",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      },
+                      {
+                        "unique_name": "definition_activity_01MXNPFM7R94G5bwwBWb30f1XL3YXpwgpRU",
+                        "name": "Condition Branch",
+                        "title": "user or email",
+                        "type": "logic.condition_block",
+                        "base_type": "activity",
+                        "properties": {
+                          "condition": {
+                            "left_operand": {
+                              "left_operand": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9UXH4qy1auxcj96FjKlxSaspFi$",
+                              "operator": "eq",
+                              "right_operand": "user"
+                            },
+                            "operator": "or",
+                            "right_operand": {
+                              "left_operand": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9UXH4qy1auxcj96FjKlxSaspFi$",
+                              "operator": "eq",
+                              "right_operand": "email"
+                            }
+                          },
+                          "continue_on_failure": false,
+                          "display_name": "user or email",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01MXNQ51UC5BY7iRHrtzuV9lnWz0qiHAhOj",
+                            "name": "Group",
+                            "title": "Optional Response Actions",
+                            "type": "logic.group",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "description": "Available for you to add any additional action for this risk score.",
+                              "display_name": "Optional Response Actions",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           },
           {
             "unique_name": "definition_activity_01MX8SA6YYYEM7mculJqKMlS6kSnYV7y2PA",
@@ -273,15 +474,299 @@
                         ]
                       },
                       {
-                        "unique_name": "definition_activity_01MX8SC8VWWBA4TCKeLyofGYiISAp2NzLpv",
+                        "unique_name": "definition_activity_01MXLTEYIQMG27kOquRmBDjWUgJoJSuOny2",
                         "name": "Group",
-                        "title": "Optional Actions",
+                        "title": "Cisco Secure Endpoint",
+                        "type": "logic.group",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Cisco Secure Endpoint",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01MXLTTVUMGLY10aFXDekMzFBnEHb2V3bZg",
+                            "name": "AMP - Get Connector GUID",
+                            "title": "AMP - Get Connector GUID",
+                            "type": "workflow.atomic_workflow",
+                            "base_type": "subworkflow",
+                            "properties": {
+                              "continue_on_failure": true,
+                              "display_name": "AMP - Get Connector GUID",
+                              "input": {
+                                "variable_workflow_01EO48TNSC9JC3uWgLAXfEGqYO8MmKD2Ail": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9YI51bJNCOKlCI7WYKtMvwIIzm$",
+                                "variable_workflow_01EO48TNSCBGM4spAE6GGj77kIra5ERGlgX": ""
+                              },
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "override_workflow_target_group_criteria": true,
+                                "target_group": {
+                                  "run_on_all_targets": false,
+                                  "use_criteria": {
+                                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                    "conditions": [
+                                      {
+                                        "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                        "operator": "eq",
+                                        "right_operand": "AMP_Target"
+                                      }
+                                    ]
+                                  }
+                                }
+                              },
+                              "workflow_id": "definition_workflow_01EO48TO48SL35JnXGSvBIqptIfbsjt65eR"
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_01MXM4S075X6S3lcjzIN6WbOTfZEOY84urw",
+                            "name": "AMP - Get Group by Name",
+                            "title": "AMP - Get Group by Name",
+                            "type": "workflow.atomic_workflow",
+                            "base_type": "subworkflow",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "AMP - Get Group by Name",
+                              "input": {
+                                "variable_workflow_01GMLE4X2LDJH6nycISznSkluWqNGXZ72i1": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.local.variable_workflow_01MXMSWCZJYSL05XEQBGv5uz9Fk81Mbl0ED$"
+                              },
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "override_workflow_target_group_criteria": true,
+                                "target_group": {
+                                  "run_on_all_targets": false,
+                                  "use_criteria": {
+                                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                    "conditions": [
+                                      {
+                                        "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                        "operator": "eq",
+                                        "right_operand": "AMP_Target"
+                                      }
+                                    ]
+                                  }
+                                }
+                              },
+                              "workflow_id": "definition_workflow_01GMLE4XFLQ0G3eK6bEbT1QAjbq5L3gyttr"
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_01MXLTW77BSTZ7OFPj7dUNwRnXNnbVKFs8i",
+                            "name": "AMP - Move Computer to Group",
+                            "title": "AMP - Move Computer to Group",
+                            "type": "workflow.atomic_workflow",
+                            "base_type": "subworkflow",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "AMP - Move Computer to Group",
+                              "input": {
+                                "variable_workflow_01FLAR2I50UOM44MGCGKMuikBplJTk7llMO": "$activity.definition_activity_01MXLTTVUMGLY10aFXDekMzFBnEHb2V3bZg.output.variable_workflow_01EO48TNSC7E1064kdBZmuA7JuvJ1ZJtux2$",
+                                "variable_workflow_01FLASNK8V9YK5XTLMywR1jQfrtbWiM2Yp5": "$activity.definition_activity_01MXM4S075X6S3lcjzIN6WbOTfZEOY84urw.output.variable_workflow_01GMLF9BPOZC26zJhpz8bp7DLMULMbpcc0y$"
+                              },
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "override_workflow_target_group_criteria": true,
+                                "target_group": {
+                                  "run_on_all_targets": false,
+                                  "use_criteria": {
+                                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                    "conditions": [
+                                      {
+                                        "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                        "operator": "eq",
+                                        "right_operand": "AMP_Target"
+                                      }
+                                    ]
+                                  }
+                                }
+                              },
+                              "workflow_id": "definition_workflow_01FLAR2IT5COJ1HFKMKazQkBlsJ72n028x9"
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      },
+                      {
+                        "unique_name": "definition_activity_01MXN4YDK2CLF5WOfx930MTFZHHULhunXVk",
+                        "name": "Group",
+                        "title": "Optional Response Actions",
                         "type": "logic.group",
                         "base_type": "activity",
                         "properties": {
                           "continue_on_failure": false,
                           "description": "Available for you to add any additional action for this risk score.",
-                          "display_name": "Optional Actions",
+                          "display_name": "Optional Response Actions",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01MXN0WWHU6MJ3AxGeQiarq8dZMHcFqUc52",
+                    "name": "Condition Branch",
+                    "title": "Hostname",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9UXH4qy1auxcj96FjKlxSaspFi$",
+                        "operator": "eq",
+                        "right_operand": "hostname"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Hostname",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01MXN0Y6VU1V86CdNtlYzlNux6YHxfs481v",
+                        "name": "Group",
+                        "title": "Cisco Secure Endpoint",
+                        "type": "logic.group",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Cisco Secure Endpoint",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01MXN0YJ3KFHZ7NaJH4M6rOFCJC9x52D7Mk",
+                            "name": "AMP - Get Connector GUID",
+                            "title": "AMP - Get Connector GUID",
+                            "type": "workflow.atomic_workflow",
+                            "base_type": "subworkflow",
+                            "properties": {
+                              "continue_on_failure": true,
+                              "display_name": "AMP - Get Connector GUID",
+                              "input": {
+                                "variable_workflow_01EO48TNSC9JC3uWgLAXfEGqYO8MmKD2Ail": "",
+                                "variable_workflow_01EO48TNSCBGM4spAE6GGj77kIra5ERGlgX": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9YI51bJNCOKlCI7WYKtMvwIIzm$"
+                              },
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "override_workflow_target_group_criteria": true,
+                                "target_group": {
+                                  "run_on_all_targets": false,
+                                  "use_criteria": {
+                                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                    "conditions": [
+                                      {
+                                        "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                        "operator": "eq",
+                                        "right_operand": "AMP_Target"
+                                      }
+                                    ]
+                                  }
+                                }
+                              },
+                              "workflow_id": "definition_workflow_01EO48TO48SL35JnXGSvBIqptIfbsjt65eR"
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_01MXN0Z6K6H8W3Z2EI9c00Df6dUugbOqYne",
+                            "name": "AMP - Get Group by Name",
+                            "title": "AMP - Get Group by Name",
+                            "type": "workflow.atomic_workflow",
+                            "base_type": "subworkflow",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "AMP - Get Group by Name",
+                              "input": {
+                                "variable_workflow_01GMLE4X2LDJH6nycISznSkluWqNGXZ72i1": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.local.variable_workflow_01MXMSWCZJYSL05XEQBGv5uz9Fk81Mbl0ED$"
+                              },
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "override_workflow_target_group_criteria": true,
+                                "target_group": {
+                                  "run_on_all_targets": false,
+                                  "use_criteria": {
+                                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                    "conditions": [
+                                      {
+                                        "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                        "operator": "eq",
+                                        "right_operand": "AMP_Target"
+                                      }
+                                    ]
+                                  }
+                                }
+                              },
+                              "workflow_id": "definition_workflow_01GMLE4XFLQ0G3eK6bEbT1QAjbq5L3gyttr"
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_01MXN10OHF6IX1Lgdn4DoUruB7NWfiYLdFh",
+                            "name": "AMP - Move Computer to Group",
+                            "title": "AMP - Move Computer to Group",
+                            "type": "workflow.atomic_workflow",
+                            "base_type": "subworkflow",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "AMP - Move Computer to Group",
+                              "input": {
+                                "variable_workflow_01FLAR2I50UOM44MGCGKMuikBplJTk7llMO": "$activity.definition_activity_01MXN0YJ3KFHZ7NaJH4M6rOFCJC9x52D7Mk.output.variable_workflow_01EO48TNSC7E1064kdBZmuA7JuvJ1ZJtux2$",
+                                "variable_workflow_01FLASNK8V9YK5XTLMywR1jQfrtbWiM2Yp5": "$activity.definition_activity_01MXN0Z6K6H8W3Z2EI9c00Df6dUugbOqYne.output.variable_workflow_01GMLF9BPOZC26zJhpz8bp7DLMULMbpcc0y$"
+                              },
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "override_workflow_target_group_criteria": true,
+                                "target_group": {
+                                  "run_on_all_targets": false,
+                                  "use_criteria": {
+                                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                    "conditions": [
+                                      {
+                                        "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                        "operator": "eq",
+                                        "right_operand": "AMP_Target"
+                                      }
+                                    ]
+                                  }
+                                }
+                              },
+                              "workflow_id": "definition_workflow_01FLAR2IT5COJ1HFKMKazQkBlsJ72n028x9"
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      },
+                      {
+                        "unique_name": "definition_activity_01MXN11LF592P1UA2CtW8SgNYFJnzMecZEV",
+                        "name": "Group",
+                        "title": "Optional Response Actions",
+                        "type": "logic.group",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "description": "Available for you to add any additional action for this risk score.",
+                          "display_name": "Optional Response Actions",
                           "skip_execution": false
                         },
                         "object_type": "definition_activity"
@@ -403,7 +888,7 @@
                                       "allow_auto_redirect": true,
                                       "content_type": "application/json",
                                       "continue_on_error_status_code": false,
-                                      "continue_on_failure": false,
+                                      "continue_on_failure": true,
                                       "custom_headers": [
                                         {
                                           "name": "Authorization",
@@ -444,7 +929,7 @@
                                     "base_type": "activity",
                                     "properties": {
                                       "action_timeout": 180,
-                                      "continue_on_failure": false,
+                                      "continue_on_failure": true,
                                       "display_name": "Extract manager info",
                                       "input_json": "$activity.definition_activity_01MX8SEV0607W5gIw0E9VzK3sgofZXrHPRp.output.response_body$",
                                       "jsonpath_queries": [
@@ -485,7 +970,7 @@
                                     "type": "workflow.atomic_workflow",
                                     "base_type": "subworkflow",
                                     "properties": {
-                                      "continue_on_failure": false,
+                                      "continue_on_failure": true,
                                       "display_name": "Azure Graph - Get User",
                                       "input": {
                                         "variable_workflow_01HQMOH81CVVQ1FwzPkCHxu19d7VReUe2wq": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9YI51bJNCOKlCI7WYKtMvwIIzm$",
@@ -524,7 +1009,7 @@
                                     "base_type": "activity",
                                     "properties": {
                                       "action_timeout": 180,
-                                      "continue_on_failure": false,
+                                      "continue_on_failure": true,
                                       "display_name": "Extract user info",
                                       "input_json": "$activity.definition_activity_01MX8SFQFEJB47l6KfGBWixYSYvuU1v1tsD.output.variable_workflow_01HQMWPWHZOS60fFyJqzE1irwD6y6etv9ul$",
                                       "jsonpath_queries": [
@@ -558,7 +1043,7 @@
                               "body": " ! Alert !\n\nUser - $activity.definition_activity_01MX8SGGEFJVA46yXsPFmOm40FUp7agGybh.output.jsonpath_queries.displayName$ risk score is now $workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX96ECU1GI03cPnZHa2i8bfgFEvUWQWAP$\n$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9XE47AYZeML2wADsohgBIgG2Us$",
                               "cc": "$activity.definition_activity_01MX8SGGEFJVA46yXsPFmOm40FUp7agGybh.output.jsonpath_queries.mail$",
                               "continue_if_one_address_valid": false,
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Send Email",
                               "runtime_user": {
                                 "override_target_runtime_user": false,
@@ -596,7 +1081,7 @@
                         "properties": {
                           "continue_on_failure": false,
                           "display_name": "Cisco Secure Access by Duo",
-                          "skip_execution": true
+                          "skip_execution": false
                         },
                         "object_type": "definition_activity",
                         "actions": [
@@ -607,7 +1092,7 @@
                             "type": "workflow.atomic_workflow",
                             "base_type": "subworkflow",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "description": "Group ID can be found using the web gui URL\n\nex: https://admin-dd952xxx.duosecurity.com/groups/DGB7QxxxxxQI1HF87OXX",
                               "display_name": "Duo Admin - Add User to Group",
                               "input": {
@@ -615,7 +1100,7 @@
                                 "variable_workflow_01FZJJP53IEF01Bn0NRLuKKwqakqb2fBmHk": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9YI51bJNCOKlCI7WYKtMvwIIzm$",
                                 "variable_workflow_01FZJJP53IJ6A0TztGT43MOiZex7UQTS79E": "$global.variable_01JBFLXC643HF1ugwbVoGAFGk9Co2XntKOE.global.variable_01JBFLXC643HF1ugwbVoGAFGk9Co2XntKOE$",
                                 "variable_workflow_01FZJJP53IMSS0336uhOPRrxOhiRNfaQ9Xx": "$global.variable_01J3NMTLR7YNW6Mhw1jTeohcSLMbVqTHWbQ.global.variable_01J3NMTLR7YNW6Mhw1jTeohcSLMbVqTHWbQ$",
-                                "variable_workflow_01FZJOGBWYEVH5TzdOjnacl6NTHL7IwRnUw": "DGB7Q53P3PQI1HF87OXX"
+                                "variable_workflow_01FZJOGBWYEVH5TzdOjnacl6NTHL7IwRnUw": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.local.variable_workflow_01MXLJPVT5KGA2hrphjh2IRKL9Q4M66wvyM$"
                               },
                               "runtime_user": {
                                 "target_default": true
@@ -646,13 +1131,13 @@
                       {
                         "unique_name": "definition_activity_01MX8SIFWDB6U46klrIMOedqMRkml7XUAnV",
                         "name": "Group",
-                        "title": "Optional Actions",
+                        "title": "Optional Response Actions",
                         "type": "logic.group",
                         "base_type": "activity",
                         "properties": {
                           "continue_on_failure": false,
                           "description": "Available for you to add any additional action for this risk score.",
-                          "display_name": "Optional Actions",
+                          "display_name": "Optional Response Actions",
                           "skip_execution": false
                         },
                         "object_type": "definition_activity"
@@ -826,9 +1311,12 @@
     }
   },
   "atomic_workflows": [
-    "definition_workflow_01MWYH0Z48GXB00sKAG1EmSzBMr0nRx3NUh",
     "definition_workflow_01HQN7N57GLKN780LTDUabTblE3OpMPQVfx",
-    "definition_workflow_01HQMN83DJMIK6FVscJcsKFyF9CpK82NA5l",
-    "definition_workflow_01FZJJP5I5SDH0wtEdhNtBmG20mUM9tzjgd"
+    "definition_workflow_01GMLE4XFLQ0G3eK6bEbT1QAjbq5L3gyttr",
+    "definition_workflow_01FLAR2IT5COJ1HFKMKazQkBlsJ72n028x9",
+    "definition_workflow_01EO48TO48SL35JnXGSvBIqptIfbsjt65eR",
+    "definition_workflow_01FZJJP5I5SDH0wtEdhNtBmG20mUM9tzjgd",
+    "definition_workflow_01MWYH0Z48GXB00sKAG1EmSzBMr0nRx3NUh",
+    "definition_workflow_01HQMN83DJMIK6FVscJcsKFyF9CpK82NA5l"
   ]
 }
