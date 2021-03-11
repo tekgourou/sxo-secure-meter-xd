@@ -31,18 +31,6 @@
         },
         "unique_name": "variable_workflow_01MW14MD02RXC5CqLxtbLrPKNKekqnVj3Pp",
         "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil",
-        "properties": {
-          "scope": "input",
-          "name": "SMXD Observable Table",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MW14VOPKBIO5hQFKqITFT0aoGSR553w9q",
-        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -51,6 +39,7 @@
         "is_atomic": true
       },
       "delete_workflow_instance": false,
+      "description": "Delete an observable based on its value and type from the Global SMXD Observable table\n\nTarget: N/A\n\nAccount Key: N/A\n\nSteps:\n[] Delete the observable from the Global SMXD observable table\n[]\u003e If 1 row was affected, complete with success\n[]\u003e If not, complete with failure\n\nMore details are available at https://github.com/kcdubois/sxo-secure-meter-xd\n\n",
       "display_name": "SMXD - Delete Observable",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -76,10 +65,10 @@
           "action_timeout": 180,
           "continue_on_failure": false,
           "display_name": "Delete from Table",
-          "input_table": "$workflow.definition_workflow_01MF5YBO5RETE4X7EjHScjmBWmM5h2Awhe5.input.variable_workflow_01MW14VOPKBIO5hQFKqITFT0aoGSR553w9q$",
+          "input_table": "$global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3.global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3$",
           "rows": {
             "rows_matching_criteria": true,
-            "where_clause": "observable == '$workflow.definition_workflow_01MF5YBO5RETE4X7EjHScjmBWmM5h2Awhe5.input.variable_workflow_01MF5YBNZ36IH0NI17WGcUgoohD0MBu3Rdj$' AND type == $workflow.definition_workflow_01MF5YBO5RETE4X7EjHScjmBWmM5h2Awhe5.input.variable_workflow_01MW14MD02RXC5CqLxtbLrPKNKekqnVj3Pp$"
+            "where_clause": "observable == '$workflow.definition_workflow_01MF5YBO5RETE4X7EjHScjmBWmM5h2Awhe5.input.variable_workflow_01MF5YBNZ36IH0NI17WGcUgoohD0MBu3Rdj$' AND type == \"$workflow.definition_workflow_01MF5YBO5RETE4X7EjHScjmBWmM5h2Awhe5.input.variable_workflow_01MW14MD02RXC5CqLxtbLrPKNKekqnVj3Pp$\""
           },
           "skip_execution": false
         },
@@ -172,8 +161,60 @@
       }
     ],
     "categories": [
-      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+      "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r"
     ]
+  },
+  "categories": {
+    "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r": {
+      "unique_name": "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r",
+      "name": "SecureX",
+      "title": "SecureX",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "variables": {
+    "variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3": {
+      "unique_name": "variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3",
+      "schema_id": "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil",
+      "properties": {
+        "value": [
+          {
+            "column_data": {
+              "last_modified": "2021-03-09T21:36:31.461005866Z",
+              "observable": "10.0.0.1",
+              "related": "",
+              "score": 10,
+              "type": "ip"
+            }
+          },
+          {
+            "column_data": {
+              "last_modified": "2021-03-09T06:00:08.614584805Z",
+              "observable": "172.16.47.36",
+              "score": 4,
+              "type": "ip"
+            }
+          },
+          {
+            "column_data": {
+              "last_modified": "2021-03-10T06:00:10.682964339Z",
+              "observable": "172.16.46.18",
+              "score": 4,
+              "type": "ip"
+            }
+          }
+        ],
+        "scope": "global",
+        "name": "Secure_Meter_XD",
+        "type": "datatype.table",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
   },
   "table_types": {
     "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil": {
@@ -182,6 +223,17 @@
       "display_name": "Secure_Meter_XD_Observables",
       "description": "Table used to contain observables tracked by Secure Meter XD",
       "columns": [
+        {
+          "name": "last_modified",
+          "title": "last_modified",
+          "type": "date"
+        },
+        {
+          "is_required": true,
+          "name": "observable",
+          "title": "observable",
+          "type": "string"
+        },
         {
           "name": "related",
           "title": "related",
@@ -199,17 +251,6 @@
           "is_required": true,
           "name": "type",
           "title": "type",
-          "type": "string"
-        },
-        {
-          "name": "last_modified",
-          "title": "last_modified",
-          "type": "date"
-        },
-        {
-          "is_required": true,
-          "name": "observable",
-          "title": "observable",
           "type": "string"
         }
       ],
