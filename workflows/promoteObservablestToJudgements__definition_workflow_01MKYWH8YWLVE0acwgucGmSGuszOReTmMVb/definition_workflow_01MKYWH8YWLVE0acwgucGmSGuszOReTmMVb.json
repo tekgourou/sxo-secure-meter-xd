@@ -1,0 +1,439 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01MKYWH8YWLVE0acwgucGmSGuszOReTmMVb",
+    "name": "Promote SMXD Observables to SXTR Judgements",
+    "title": "Promote SMXD Observables to SXTR Judgements",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "SXTR_ACCESS_TOKEN",
+          "type": "datatype.secure_string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MRRR4GHAEZE5tHWDPTvtdl9R5aHMtrwIx",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Promote SMXD Observables to SXTR Judgements",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_01JFR9GPKB5YW3wQR95oQmbTfKKtVKpVbCz",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01MKYWLFBM6ZD6X86hRh8arBtQQYGLFsIw2",
+        "name": "Calculate Date",
+        "title": "Calculate 30 days in the past",
+        "type": "core.calculate_date",
+        "base_type": "activity",
+        "properties": {
+          "adjustment": -2592000,
+          "continue_on_failure": false,
+          "description": "Caulcate 30 days in the past from today ",
+          "display_name": "Calculate 30 days in the past",
+          "original_date": "$workflow.definition_workflow_01MKYWH8YWLVE0acwgucGmSGuszOReTmMVb.output.start_time$",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MRRYW0XIOLC7kI5EtYnBb5nmrDskisszr",
+        "name": "Format Date",
+        "title": "Format Date",
+        "type": "core.format_date",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Format Date",
+          "format_string": "2006-01-02T15:04:05Z",
+          "original_date": "$activity.definition_activity_01MKYWLFBM6ZD6X86hRh8arBtQQYGLFsIw2.output.result$",
+          "skip_execution": false,
+          "use_custom_format": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MMN8Y9QMDSL6hgAwKRIbJhXZTTw8fwyhD",
+        "name": "Parallel Block",
+        "title": "Parallel Block",
+        "type": "logic.parallel",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Parallel Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01MMN8Z6THWFJ6i9a0fSeniA8pmLqVWh8F0",
+            "name": "Parallel Branch",
+            "title": "Get observable table",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Get observable table",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MKYYDSJBQCF1dRy2CArBAo767rfHAv9Oz",
+                "name": "Select from Table",
+                "title": "Retrieve observable from SMXD",
+                "type": "core.selectfromtable",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "columns": [
+                    {
+                      "column_name": "last_modified",
+                      "column_type": "date"
+                    },
+                    {
+                      "column_name": "observable",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "related",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "score",
+                      "column_type": "integer"
+                    },
+                    {
+                      "column_name": "type",
+                      "column_type": "string"
+                    }
+                  ],
+                  "continue_on_failure": false,
+                  "display_name": "Retrieve observable from SMXD",
+                  "input_table": "$global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3.global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3$",
+                  "number_of_rows": {
+                    "all_rows": true,
+                    "at_most": false
+                  },
+                  "persist_output": false,
+                  "skip_execution": false,
+                  "sorting": {
+                    "no_sort": true
+                  },
+                  "where_clause": "last_modified \u003e= $activity.definition_activity_01MRRYW0XIOLC7kI5EtYnBb5nmrDskisszr.output.result$"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MMN8Z7HJRWQ313Q4R1uxVm1ZpFq34pGTE",
+            "name": "Parallel Branch",
+            "title": "Get SXTR OAuth Token",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Get SXTR OAuth Token",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MMNZH83LELJ602LVrJPwm6Py8UlCj8PeP",
+                "name": "Threat Response v2 - Generate Access Token",
+                "title": "Threat Response v2 - Generate Access Token",
+                "type": "workflow.atomic_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Threat Response v2 - Generate Access Token",
+                  "runtime_user": {
+                    "override_target_runtime_user": true,
+                    "runtime_user_id": "definition_runtime_user_01JFR9F2QXC1S5hgf7tT7VE3mD7UMIbPc9g",
+                    "runtime_user_type": "runtime_user.web-service_basic_credentials"
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01JFR9G92ZGUP7SvCBlOa9kEQ0duoT1ZqpL",
+                    "target_type": "web-service.endpoint"
+                  },
+                  "workflow_id": "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01MMNB3CEYQ781mouxY4xjHzPNiHU5BAfUk",
+                "name": "Condition Block",
+                "title": "Was SXTR Login successful?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Was SXTR Login successful?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01MMNB3Z8REY35g5n1XLxejgy1Vy1xLfapv",
+                    "name": "Condition Branch",
+                    "title": "No",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01MMNZH83LELJ602LVrJPwm6Py8UlCj8PeP.output.succeeded$",
+                        "operator": "eq",
+                        "right_operand": false
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "No",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01MMNC0NBT1Q73gVzybaLgRTkyialctdkKR",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Error retrieving JWT for SXTR",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01MKZ1JF6FP9T18hlcSFdnGpD0pBzZNPBnM",
+        "name": "For Each",
+        "title": "For each observable",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "For each observable",
+          "skip_execution": false,
+          "source_array": "$activity.definition_activity_01MKYYDSJBQCF1dRy2CArBAo767rfHAv9Oz.output.output_table$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01MX9O12ORIAG2QH7TZZ5Gm8TyPukXrDxjj",
+            "name": "SMXD - Convert Risk score to judgement",
+            "title": "SMXD - Convert Risk score to judgement",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "SMXD - Convert Risk score to judgement",
+              "input": {
+                "variable_workflow_01MX7FMRQ9DS67f47vduWFV7dCJH8uUIXDx": "$activity.definition_activity_01MKZ1JF6FP9T18hlcSFdnGpD0pBzZNPBnM.input.source_array[@].observable$",
+                "variable_workflow_01MX7FMRQ9EYU7YgNxzVZs5PQYjhg5Z52M4": "$activity.definition_activity_01MKZ1JF6FP9T18hlcSFdnGpD0pBzZNPBnM.input.source_array[@].type$",
+                "variable_workflow_01MX7IAM09EOV61RdC2l2EqdxKqL8i7i34t": "$activity.definition_activity_01MKZ1JF6FP9T18hlcSFdnGpD0pBzZNPBnM.input.source_array[@].score$",
+                "variable_workflow_01MX7IO4S1VZW0p6Zr8YSKY83jFmONVywr1": "$activity.definition_activity_01MMNZH83LELJ602LVrJPwm6Py8UlCj8PeP.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$",
+                "variable_workflow_01MX7NE453F304BO3yWIN76kC5wY94xAhMl": 7,
+                "variable_workflow_01MX8YUFPSNVF1vXwpyBMTFyPFCb88VQc5z": "Risk Score threshold crossed during scheduled promotion"
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "target_type": "web-service.endpoint",
+                "use_workflow_target": true
+              },
+              "workflow_id": "definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r"
+    ]
+  },
+  "categories": {
+    "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r": {
+      "unique_name": "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r",
+      "name": "SecureX",
+      "title": "SecureX",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_01JFR9G92ZGUP7SvCBlOa9kEQ0duoT1ZqpL": {
+      "unique_name": "definition_target_01JFR9G92ZGUP7SvCBlOa9kEQ0duoT1ZqpL",
+      "name": "CTR_For_Access_Token",
+      "title": "CTR_For_Access_Token",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01JFVKO0DEFCI2bSlWiJA7lpRoOPZ5rwZjC",
+        "description": "CTR_For_Access_Token",
+        "disable_certificate_validation": false,
+        "display_name": "CTR_For_Access_Token",
+        "host": "visibility.amp.cisco.com",
+        "no_runtime_user": false,
+        "path": "/iroh",
+        "protocol": "https"
+      }
+    },
+    "definition_target_01JFR9GPKB5YW3wQR95oQmbTfKKtVKpVbCz": {
+      "unique_name": "definition_target_01JFR9GPKB5YW3wQR95oQmbTfKKtVKpVbCz",
+      "name": "Private_CTIA_Target",
+      "title": "Private_CTIA_Target",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "Private_CTIA_Target",
+        "disable_certificate_validation": false,
+        "display_name": "Private_CTIA_Target",
+        "host": "private.intel.amp.cisco.com",
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01JFVKO0DEFCI2bSlWiJA7lpRoOPZ5rwZjC": {
+      "unique_name": "definition_runtime_user_01JFVKO0DEFCI2bSlWiJA7lpRoOPZ5rwZjC",
+      "name": "SecureX-full-admin",
+      "title": "SecureX-full-admin",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "auth_option": "*****",
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "SecureX-full-admin"
+      }
+    }
+  },
+  "variables": {
+    "variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3": {
+      "unique_name": "variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3",
+      "schema_id": "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil",
+      "properties": {
+        "value": [
+          {
+            "column_data": {
+              "last_modified": "2021-03-11T02:20:30.01383171Z",
+              "observable": "10.0.0.1",
+              "related": "",
+              "score": 9,
+              "type": "ip"
+            }
+          },
+          {
+            "column_data": {
+              "last_modified": "2021-03-09T06:00:08.614584805Z",
+              "observable": "172.16.47.36",
+              "score": 4,
+              "type": "ip"
+            }
+          },
+          {
+            "column_data": {
+              "last_modified": "2021-03-10T06:00:10.682964339Z",
+              "observable": "172.16.46.18",
+              "score": 4,
+              "type": "ip"
+            }
+          }
+        ],
+        "scope": "global",
+        "name": "Secure_Meter_XD",
+        "type": "datatype.table",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "table_types": {
+    "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil": {
+      "unique_name": "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil",
+      "data_type": "datatype.tabletype",
+      "display_name": "Secure_Meter_XD_Observables",
+      "description": "Table used to contain observables tracked by Secure Meter XD",
+      "columns": [
+        {
+          "is_required": true,
+          "name": "type",
+          "title": "type",
+          "type": "string"
+        },
+        {
+          "name": "last_modified",
+          "title": "last_modified",
+          "type": "date"
+        },
+        {
+          "is_required": true,
+          "name": "observable",
+          "title": "observable",
+          "type": "string"
+        },
+        {
+          "name": "related",
+          "title": "related",
+          "type": "string"
+        },
+        {
+          "is_required": true,
+          "maximum": 10,
+          "minimum": 1,
+          "name": "score",
+          "title": "score",
+          "type": "integer"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
+    "definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo"
+  ]
+}
