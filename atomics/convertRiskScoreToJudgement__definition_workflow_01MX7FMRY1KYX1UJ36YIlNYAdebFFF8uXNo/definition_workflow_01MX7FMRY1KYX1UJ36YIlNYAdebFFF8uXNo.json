@@ -7,6 +7,19 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MX7FMRQ9DS67f47vduWFV7dCJH8uUIXDx",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.integer",
         "properties": {
           "value": 7,
@@ -25,64 +38,38 @@
         "properties": {
           "value": "",
           "scope": "output",
+          "name": "Judgement Disposition",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MX7QYTBJ5TG1RNf5rj2yMIcQBt6wdRA9T",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Local Severity",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MX7TT3BNPGH29iJurVpvD5qL2rcpaShGI",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
           "name": "Judgement TLP",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MX7R37VSABK7OvcV3WUMd5V1XpB3Ndigm",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.secure_string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Access Token",
-          "type": "datatype.secure_string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MX7IO4S1VZW0p6Zr8YSKY83jFmONVywr1",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Local TLP",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MX7TKMLIOH33bH7XdMtZM4AcMZHochznp",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "observable_value",
-          "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MX7FMRQ9DS67f47vduWFV7dCJH8uUIXDx",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Local Disposition",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MX7TPFYMDMT5BsfJpx1TfVGl3lhd51tUJ",
         "object_type": "variable_workflow"
       },
       {
@@ -103,25 +90,38 @@
         "properties": {
           "value": "",
           "scope": "output",
-          "name": "Judgement Disposition",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MX7QYTBJ5TG1RNf5rj2yMIcQBt6wdRA9T",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
           "name": "Judgement Severity",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MX7RAEE174014nLpR7QaUWHbXyzxVSTwd",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Local TLP",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MX7TKMLIOH33bH7XdMtZM4AcMZHochznp",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Local Disposition",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MX7TPFYMDMT5BsfJpx1TfVGl3lhd51tUJ",
         "object_type": "variable_workflow"
       },
       {
@@ -140,14 +140,28 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Local Severity",
+          "value": "Risk Score threshold crossed",
+          "scope": "input",
+          "name": "Reason",
           "type": "datatype.string",
+          "description": "Reason for the raised score",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MX7TT3BNPGH29iJurVpvD5qL2rcpaShGI",
+        "unique_name": "variable_workflow_01MX8YUFPSNVF1vXwpyBMTFyPFCb88VQc5z",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Access Token",
+          "type": "datatype.secure_string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MX7IO4S1VZW0p6Zr8YSKY83jFmONVywr1",
         "object_type": "variable_workflow"
       },
       {
@@ -419,7 +433,7 @@
           "variables_to_update": [
             {
               "variable_to_update": "$workflow.definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo.local.variable_workflow_01MX7KSLKUGYD6DWNudi5oRFv13mcuexZJc$",
-              "variable_value_new": "{\n\"valid_time\": {\n\"end_time\": \"$activity.definition_activity_01MX7JXS7M5BJ2IhzHxkg3pFmoJFPh4IoJE.output.script_queries.timeISO$\"\n},\n\"observable\": {\n\"value\": \"$workflow.definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo.input.variable_workflow_01MX7FMRQ9DS67f47vduWFV7dCJH8uUIXDx$\",\n\"type\": \"$workflow.definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo.input.variable_workflow_01MX7FMRQ9EYU7YgNxzVZs5PQYjhg5Z52M4$\"\n},\n\"source\": \"Secure MeterXD\",\n\"disposition_name\": \"$workflow.definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo.local.variable_workflow_01MX7TPFYMDMT5BsfJpx1TfVGl3lhd51tUJ$\",\n\"priority\": 100,\n\"tlp\": \"$workflow.definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo.local.variable_workflow_01MX7TKMLIOH33bH7XdMtZM4AcMZHochznp$\",\n\"severity\": \"$workflow.definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo.local.variable_workflow_01MX7TT3BNPGH29iJurVpvD5qL2rcpaShGI$\",\n\"confidence\": \"High\"\n}"
+              "variable_value_new": "{\n\"valid_time\": {\n\"end_time\": \"$activity.definition_activity_01MX7JXS7M5BJ2IhzHxkg3pFmoJFPh4IoJE.output.script_queries.timeISO$\"\n},\n\"observable\": {\n\"value\": \"$workflow.definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo.input.variable_workflow_01MX7FMRQ9DS67f47vduWFV7dCJH8uUIXDx$\",\n\"type\": \"$workflow.definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo.input.variable_workflow_01MX7FMRQ9EYU7YgNxzVZs5PQYjhg5Z52M4$\"\n},\n\"source\": \"Secure MeterXD\",\n\"disposition_name\": \"$workflow.definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo.local.variable_workflow_01MX7TPFYMDMT5BsfJpx1TfVGl3lhd51tUJ$\",\n\"priority\": 100,\n\"tlp\": \"$workflow.definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo.local.variable_workflow_01MX7TKMLIOH33bH7XdMtZM4AcMZHochznp$\",\n\"severity\": \"$workflow.definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo.local.variable_workflow_01MX7TT3BNPGH29iJurVpvD5qL2rcpaShGI$\",\n\"confidence\": \"High\",\n\"reason\": \"$workflow.definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo.input.variable_workflow_01MX8YUFPSNVF1vXwpyBMTFyPFCb88VQc5z$\"\n}"
             }
           ]
         },
