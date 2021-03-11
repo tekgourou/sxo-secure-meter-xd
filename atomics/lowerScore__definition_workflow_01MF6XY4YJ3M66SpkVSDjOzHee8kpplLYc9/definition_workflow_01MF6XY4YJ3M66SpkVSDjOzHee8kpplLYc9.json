@@ -7,41 +7,16 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.integer",
+        "schema_id": "datatype.string",
         "properties": {
-          "value": 0,
-          "scope": "static",
-          "name": "SMXD_SCORE_MIN",
-          "type": "datatype.integer",
-          "is_required": false,
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MF6XY4P438X1l6jkSv1PBsL6N9kuEeKcB",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.date",
-        "properties": {
-          "value": "0001-01-01T00:00:00+00:00",
-          "scope": "local",
-          "name": "Last Modified",
-          "type": "datatype.date",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MF6XY4P41I428IT7KTNbswtEhVU9mliC7",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil",
-        "properties": {
-          "scope": "output",
-          "name": "SMXD Updated Table",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MW2BB7ZGNG413WklRmMpslZ1xx0oFF9QL",
+        "unique_name": "variable_workflow_01MF6XY4P3TZL5GmEZZ5g5n4coKt2e36DV0",
         "object_type": "variable_workflow"
       },
       {
@@ -55,6 +30,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MF6XY4P3XXB3eNObaBnD8JyTenqHDloe1",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "static",
+          "name": "Minimum score",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MF6XY4P438X1l6jkSv1PBsL6N9kuEeKcB",
         "object_type": "variable_workflow"
       },
       {
@@ -75,19 +63,6 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "observable_value",
-          "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MF6XY4P3TZL5GmEZZ5g5n4coKt2e36DV0",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
           "name": "observable_type",
           "type": "datatype.string",
           "is_required": true,
@@ -97,15 +72,29 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil",
+        "schema_id": "datatype.string",
         "properties": {
-          "scope": "input",
-          "name": "SMXD Observable Table",
-          "type": "datatype.table",
+          "value": "",
+          "scope": "output",
+          "name": "Risk score",
+          "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MW1CV26QYIW0ol5zdSIXbxsoYMvZWfRk4",
+        "unique_name": "variable_workflow_01MX776L0K1MA5RhhHYCDFP1qiz6cj1x4Hv",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.date",
+        "properties": {
+          "value": "0001-01-01T00:00:00+00:00",
+          "scope": "local",
+          "name": "Last Modified",
+          "type": "datatype.date",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MF6XY4P41I428IT7KTNbswtEhVU9mliC7",
         "object_type": "variable_workflow"
       }
     ],
@@ -115,6 +104,7 @@
         "is_atomic": true
       },
       "delete_workflow_instance": false,
+      "description": "Lower the risk score of an observable based on its value and type from the Global SMXD Observable table\n\nTarget: N/A\n\nAccount Key: N/A\n\nSteps:\n[] Search the observable from the Global SMXD observable table\n[]\u003e If not found, complete with failure\n[] Calculate the target score from the current score and increment value\n[] Check if the target score is lower than the minimum score\n[]\u003e If it is, set target score to maximum value\n[]\u003e If not, set the target score variable to new score\n[] Update Global table with new value and update the last modified field\n[] Set new score as output\n\nMore details are available at https://github.com/kcdubois/sxo-secure-meter-xd\n\n",
       "display_name": "SMXD - Lower score",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -144,21 +134,13 @@
               "column_type": "date"
             },
             {
-              "column_name": "observable",
-              "column_type": "string"
-            },
-            {
               "column_name": "score",
               "column_type": "integer"
-            },
-            {
-              "column_name": "type",
-              "column_type": "string"
             }
           ],
           "continue_on_failure": false,
           "display_name": "Select from Table",
-          "input_table": "$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MW1CV26QYIW0ol5zdSIXbxsoYMvZWfRk4$",
+          "input_table": "$global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3.global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3$",
           "number_of_rows": {
             "all_rows": true,
             "at_most": false
@@ -172,6 +154,56 @@
           "where_clause": "observable == '$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MF6XY4P3TZL5GmEZZ5g5n4coKt2e36DV0$' AND type == '$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MW1BVY3XUXF3Qvn3rUwboXRRx6aUcyJu8$'"
         },
         "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MX77BQ12DJT6cAu9QD2zIa6FUJdYAhRng",
+        "name": "Condition Block",
+        "title": "Observable found?",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Observable found?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01MX77CCQ2TV914aoAf4Er9N97qlBFfvmGG",
+            "name": "Condition Branch",
+            "title": "No",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01MF6XZ3I76OV6vJOgVv5vHkTnoB9bbw97i.output.row_count$",
+                "operator": "eq",
+                "right_operand": 0
+              },
+              "continue_on_failure": false,
+              "display_name": "No",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MX77PCJU7H673ZCrbxDD0pwD4iYkOXCag",
+                "name": "Completed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "failed-completed",
+                  "continue_on_failure": false,
+                  "display_name": "Completed",
+                  "result_message": "Observable not found in the table.\nObservable value: $workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MF6XY4P3TZL5GmEZZ5g5n4coKt2e36DV0$\nObservable type: $workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MW1BVY3XUXF3Qvn3rUwboXRRx6aUcyJu8$",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
       },
       {
         "unique_name": "definition_activity_01MF6XZRKT2454ADvCrojveaEj7Gm5ZcEki",
@@ -233,12 +265,12 @@
               {
                 "unique_name": "definition_activity_01MF6Y286KCVV7GxI34II12tTQp79d6Q9pR",
                 "name": "Set Variables",
-                "title": "Set Variables",
+                "title": "Set target score to the minimum",
                 "type": "core.set_multiple_variables",
                 "base_type": "activity",
                 "properties": {
                   "continue_on_failure": false,
-                  "display_name": "Set Variables",
+                  "display_name": "Set target score to the minimum",
                   "skip_execution": false,
                   "variables_to_update": [
                     {
@@ -276,12 +308,12 @@
               {
                 "unique_name": "definition_activity_01MF6Y3IJU1PX5CO8RZAHCpKRnVKW1bFTxf",
                 "name": "Set Variables",
-                "title": "Set Variables",
+                "title": "Set the target score to computed value",
                 "type": "core.set_multiple_variables",
                 "base_type": "activity",
                 "properties": {
                   "continue_on_failure": false,
-                  "display_name": "Set Variables",
+                  "display_name": "Set the target score to computed value",
                   "skip_execution": false,
                   "variables_to_update": [
                     {
@@ -320,7 +352,7 @@
           ],
           "continue_on_failure": false,
           "display_name": "Update table with new score",
-          "input_table": "$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MW1CV26QYIW0ol5zdSIXbxsoYMvZWfRk4$",
+          "input_table": "$global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3.global.variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3$",
           "row": [
             {
               "key": "last_modified",
@@ -342,19 +374,19 @@
         "object_type": "definition_activity"
       },
       {
-        "unique_name": "definition_activity_01MW2BLDH4DFZ0Ir14UH3smkVROibBVhgQa",
+        "unique_name": "definition_activity_01MX78FF97O0R72NQubHZ0ARj8NugjDMfww",
         "name": "Set Variables",
-        "title": "Set updated table to output",
+        "title": "Set risk score output",
         "type": "core.set_multiple_variables",
         "base_type": "activity",
         "properties": {
           "continue_on_failure": false,
-          "display_name": "Set updated table to output",
+          "display_name": "Set risk score output",
           "skip_execution": false,
           "variables_to_update": [
             {
-              "variable_to_update": "$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.output.variable_workflow_01MW2BB7ZGNG413WklRmMpslZ1xx0oFF9QL$",
-              "variable_value_new": "$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.input.variable_workflow_01MW1CV26QYIW0ol5zdSIXbxsoYMvZWfRk4$"
+              "variable_to_update": "$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.output.variable_workflow_01MX776L0K1MA5RhhHYCDFP1qiz6cj1x4Hv$",
+              "variable_value_new": "$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.local.variable_workflow_01MF6XY4P3XXB3eNObaBnD8JyTenqHDloe1$"
             }
           ]
         },
@@ -376,6 +408,47 @@
       "object_type": "category"
     }
   },
+  "variables": {
+    "variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3": {
+      "unique_name": "variable_01MF4XQ8JH2PL6TZ9JERt7MTNTpzV3GfgD3",
+      "schema_id": "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil",
+      "properties": {
+        "value": [
+          {
+            "column_data": {
+              "last_modified": "2021-03-11T02:20:30.01383171Z",
+              "observable": "10.0.0.1",
+              "related": "",
+              "score": 9,
+              "type": "ip"
+            }
+          },
+          {
+            "column_data": {
+              "last_modified": "2021-03-09T06:00:08.614584805Z",
+              "observable": "172.16.47.36",
+              "score": 4,
+              "type": "ip"
+            }
+          },
+          {
+            "column_data": {
+              "last_modified": "2021-03-10T06:00:10.682964339Z",
+              "observable": "172.16.46.18",
+              "score": 4,
+              "type": "ip"
+            }
+          }
+        ],
+        "scope": "global",
+        "name": "Secure_Meter_XD",
+        "type": "datatype.table",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  },
   "table_types": {
     "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil": {
       "unique_name": "tabletype_01MF4WGQQ9KTZ6pHPdsUJe0wTHBJ7IpSxil",
@@ -383,11 +456,6 @@
       "display_name": "Secure_Meter_XD_Observables",
       "description": "Table used to contain observables tracked by Secure Meter XD",
       "columns": [
-        {
-          "name": "related",
-          "title": "related",
-          "type": "string"
-        },
         {
           "is_required": true,
           "maximum": 10,
@@ -411,6 +479,11 @@
           "is_required": true,
           "name": "observable",
           "title": "observable",
+          "type": "string"
+        },
+        {
+          "name": "related",
+          "title": "related",
           "type": "string"
         }
       ],
