@@ -11,23 +11,10 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "observable_value",
-          "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
           "name": "email_domain",
           "type": "datatype.string",
-          "description": "Please enter your Email domain",
-          "is_required": true,
+          "description": "If your observable type is an email address, please enter the domain portion of it to validate against your owned domains.",
+          "is_required": false,
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MW30PILPB7G1ylYd7uaVZCiLqSxxuqUwn",
@@ -45,6 +32,19 @@
         },
         "unique_name": "variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na",
         "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u",
+        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -53,7 +53,7 @@
         "is_atomic": true
       },
       "delete_workflow_instance": false,
-      "description": "Currently supported types : \n- Private IP\n- email with domain provided in the input\n- user\n\n",
+      "description": "Validate the observable type supported by the SMXD workflows\n\nTarget: N/A\n\nAccount Key: N/A\n\nSteps:\n[] For type \"ip\", validate the format of an RFC 1918 address\n[] For type \"email\", validate the email address and the internal domain\n[] For type \"user\", pass.\n\nMore details are available at https://github.com/kcdubois/sxo-secure-meter-xd\n\n\n",
       "display_name": "SMXD - Validate Observable type",
       "runtime_user": {
         "override_target_runtime_user": false,
