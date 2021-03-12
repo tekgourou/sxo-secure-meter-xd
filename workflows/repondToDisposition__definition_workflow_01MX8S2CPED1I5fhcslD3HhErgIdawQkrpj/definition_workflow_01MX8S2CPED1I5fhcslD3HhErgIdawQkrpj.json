@@ -9,15 +9,67 @@
       {
         "schema_id": "datatype.string",
         "properties": {
+          "value": "Suspicious",
+          "scope": "local",
+          "name": "Azure_AD_GroupName_Suspicious",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MXOSFCBU8RS0lZytrnnDBB0Xl1Gx96qVw",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
           "value": "",
           "scope": "input",
-          "name": "TLP",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MX8S2CI9YI51bJNCOKlCI7WYKtMvwIIzm",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MX8S2CI9UXH4qy1auxcj96FjKlxSaspFi",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "DGA6ZCQWDYSQZUDD9WUN",
+          "scope": "local",
+          "name": "Duo_GroupID_Common",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MXPRVJU56U27G0byTHonqQ2T5ez8TbQ3R",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Severity",
           "type": "datatype.string",
           "description": "Optional",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MX96JQID3HF06jFtpf5GrnNtBNvpP4vH4",
+        "unique_name": "variable_workflow_01MX96OG88IE56FW3RgsshsuSwJVIxFCRK1",
         "object_type": "variable_workflow"
       },
       {
@@ -37,59 +89,6 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "Suspicious",
-          "scope": "local",
-          "name": "Azure_AD_GroupName_Suspicious",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MXOSFCBU8RS0lZytrnnDBB0Xl1Gx96qVw",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Disposition",
-          "type": "datatype.string",
-          "description": "Common - Suspicious - Malicious",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MX96ECU1GI03cPnZHa2i8bfgFEvUWQWAP",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "observable_value",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MX8S2CI9YI51bJNCOKlCI7WYKtMvwIIzm",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "Common",
-          "scope": "local",
-          "name": "Azure_AD_GroupName_Common",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MXP7FNTVMZP4A7zbVwSV37YfdtTxBnItF",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
           "value": "Malicious",
           "scope": "local",
           "name": "Azure_AD_GroupName_Malicious",
@@ -103,15 +102,29 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "Malicious",
+          "value": "Suspicious",
           "scope": "local",
-          "name": "AMP_Malicious_GroupName",
+          "name": "AMP_Suspicious_GroupName",
           "type": "datatype.string",
-          "description": "Add AMP Malicious Group Name is you enable the Cisco Secure Endpoint Response",
+          "description": "Add AMP Suspicious Group Name is you enable the Cisco Secure Endpoint Response",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MXMTZKV08KF4WaYpj4bHYi7DmxTSuMBvL",
+        "unique_name": "variable_workflow_01MXMSWCZJYSL05XEQBGv5uz9Fk81Mbl0ED",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "DGIRUM1C3TUBMDS1T9A1",
+          "scope": "local",
+          "name": "Duo_GroupID_Malicious",
+          "type": "datatype.string",
+          "description": "Group ID can be found using the web gui URL\n\nex: https://admin-dd952xxx.duosecurity.com/groups/DGB7QxxxxxQI1HF87OXX",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MXLMTPMZCLC3tPxESWhGISr5E8VDYYVCI",
         "object_type": "variable_workflow"
       },
       {
@@ -133,54 +146,13 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "Severity",
+          "name": "TLP",
           "type": "datatype.string",
           "description": "Optional",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MX96OG88IE56FW3RgsshsuSwJVIxFCRK1",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "Suspicious",
-          "scope": "local",
-          "name": "AMP_Suspicious_GroupName",
-          "type": "datatype.string",
-          "description": "Add AMP Suspicious Group Name is you enable the Cisco Secure Endpoint Response",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MXMSWCZJYSL05XEQBGv5uz9Fk81Mbl0ED",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "observable_type",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MX8S2CI9UXH4qy1auxcj96FjKlxSaspFi",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "DGIRUM1C3TUBMDS1T9A1",
-          "scope": "local",
-          "name": "Duo_GroupID_Malicious",
-          "type": "datatype.string",
-          "description": "Group ID can be found using the web gui URL\n\nex: https://admin-dd952xxx.duosecurity.com/groups/DGB7QxxxxxQI1HF87OXX",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MXLMTPMZCLC3tPxESWhGISr5E8VDYYVCI",
+        "unique_name": "variable_workflow_01MX96JQID3HF06jFtpf5GrnNtBNvpP4vH4",
         "object_type": "variable_workflow"
       },
       {
@@ -199,14 +171,42 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "DGA6ZCQWDYSQZUDD9WUN",
+          "value": "",
+          "scope": "input",
+          "name": "Disposition",
+          "type": "datatype.string",
+          "description": "Common - Suspicious - Malicious",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MX96ECU1GI03cPnZHa2i8bfgFEvUWQWAP",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Common",
           "scope": "local",
-          "name": "Duo_GroupID_Common",
+          "name": "Azure_AD_GroupName_Common",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MXPRVJU56U27G0byTHonqQ2T5ez8TbQ3R",
+        "unique_name": "variable_workflow_01MXP7FNTVMZP4A7zbVwSV37YfdtTxBnItF",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Malicious",
+          "scope": "local",
+          "name": "AMP_Malicious_GroupName",
+          "type": "datatype.string",
+          "description": "Add AMP Malicious Group Name is you enable the Cisco Secure Endpoint Response",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MXMTZKV08KF4WaYpj4bHYi7DmxTSuMBvL",
         "object_type": "variable_workflow"
       }
     ],
@@ -1528,6 +1528,142 @@
                           },
                           {
                             "unique_name": "definition_activity_01MXTV1S5AQ4H46WvP4znqS15RBbEAmbegf",
+                            "name": "Parallel Branch",
+                            "title": "Optional Response Actions",
+                            "type": "logic.parallel_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Optional Response Actions",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01MYJHYY56F7K5rMtZAZQxVfDV4Pbu9TQhm",
+                    "name": "Condition Branch",
+                    "title": "amp_computer_guid",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9UXH4qy1auxcj96FjKlxSaspFi$",
+                        "operator": "eq",
+                        "right_operand": "amp_computer_guid"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "amp_computer_guid",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01MYJHYZ43XOE0HptxtldarZUm5uunfSOuk",
+                        "name": "Parallel Block",
+                        "title": "Parallel Block",
+                        "type": "logic.parallel",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Parallel Block",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_01MYJHZB0S9IJ5Ufy50kLN4KwPS2ZB4f847",
+                            "name": "Parallel Branch",
+                            "title": "Cisco Secure Endpoint",
+                            "type": "logic.parallel_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Cisco Secure Endpoint",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_01MYJHZYTST590zBcYbEeqZsmfSUO7INvYD",
+                                "name": "AMP - Get Group by Name",
+                                "title": "AMP - Get Group by Name",
+                                "type": "workflow.atomic_workflow",
+                                "base_type": "subworkflow",
+                                "properties": {
+                                  "continue_on_failure": true,
+                                  "display_name": "AMP - Get Group by Name",
+                                  "input": {
+                                    "variable_workflow_01GMLE4X2LDJH6nycISznSkluWqNGXZ72i1": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.local.variable_workflow_01MXMSWCZJYSL05XEQBGv5uz9Fk81Mbl0ED$"
+                                  },
+                                  "runtime_user": {
+                                    "target_default": true
+                                  },
+                                  "skip_execution": false,
+                                  "target": {
+                                    "override_workflow_target_group_criteria": true,
+                                    "target_group": {
+                                      "run_on_all_targets": false,
+                                      "use_criteria": {
+                                        "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                        "conditions": [
+                                          {
+                                            "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                            "operator": "eq",
+                                            "right_operand": "AMP_Target"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  },
+                                  "workflow_id": "definition_workflow_01GMLE4XFLQ0G3eK6bEbT1QAjbq5L3gyttr"
+                                },
+                                "object_type": "definition_activity"
+                              },
+                              {
+                                "unique_name": "definition_activity_01MYJI0WFLQ6B2oATa8wA56C5gbfZGqWBUM",
+                                "name": "AMP - Move Computer to Group",
+                                "title": "AMP - Move Computer to Group",
+                                "type": "workflow.atomic_workflow",
+                                "base_type": "subworkflow",
+                                "properties": {
+                                  "continue_on_failure": true,
+                                  "display_name": "AMP - Move Computer to Group",
+                                  "input": {
+                                    "variable_workflow_01FLAR2I50UOM44MGCGKMuikBplJTk7llMO": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9YI51bJNCOKlCI7WYKtMvwIIzm$",
+                                    "variable_workflow_01FLASNK8V9YK5XTLMywR1jQfrtbWiM2Yp5": "$activity.definition_activity_01MYJHZYTST590zBcYbEeqZsmfSUO7INvYD.output.variable_workflow_01GMLF9BPOZC26zJhpz8bp7DLMULMbpcc0y$"
+                                  },
+                                  "runtime_user": {
+                                    "target_default": true
+                                  },
+                                  "skip_execution": false,
+                                  "target": {
+                                    "override_workflow_target_group_criteria": true,
+                                    "target_group": {
+                                      "run_on_all_targets": false,
+                                      "use_criteria": {
+                                        "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                        "conditions": [
+                                          {
+                                            "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                            "operator": "eq",
+                                            "right_operand": "AMP_Target"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  },
+                                  "workflow_id": "definition_workflow_01FLAR2IT5COJ1HFKMKazQkBlsJ72n028x9"
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_01MYJI1J8SYDJ6KWcbsAknuYzgo8F34cXmh",
                             "name": "Parallel Branch",
                             "title": "Optional Response Actions",
                             "type": "logic.parallel_block",
@@ -3164,6 +3300,223 @@
                         ]
                       },
                       {
+                        "unique_name": "definition_activity_01MYJKGUPWT7W2qzMdzanpYpTZeuzRd1uXO",
+                        "name": "Condition Branch",
+                        "title": "amp_computer_guid",
+                        "type": "logic.condition_block",
+                        "base_type": "activity",
+                        "properties": {
+                          "condition": {
+                            "left_operand": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9UXH4qy1auxcj96FjKlxSaspFi$",
+                            "operator": "eq",
+                            "right_operand": "amp_computer_guid"
+                          },
+                          "continue_on_failure": false,
+                          "display_name": "amp_computer_guid",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01MYJKGVP1P1Y127rb58LZgiI9VN8QYBjU1",
+                            "name": "Parallel Block",
+                            "title": "Parallel Block",
+                            "type": "logic.parallel",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Parallel Block",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "blocks": [
+                              {
+                                "unique_name": "definition_activity_01MYJKH7CIHXR3EhwdIHePADPsJGAqJMBHE",
+                                "name": "Parallel Branch",
+                                "title": "Cisco Secure Endpoint",
+                                "type": "logic.parallel_block",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": false,
+                                  "display_name": "Cisco Secure Endpoint",
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity",
+                                "actions": [
+                                  {
+                                    "unique_name": "definition_activity_01MYJKHUJ9DHT7N8OdunC9JoDcA7rxFmEEI",
+                                    "name": "Parallel Block",
+                                    "title": "Parallel Block",
+                                    "type": "logic.parallel",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "continue_on_failure": false,
+                                      "display_name": "Parallel Block",
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity",
+                                    "blocks": [
+                                      {
+                                        "unique_name": "definition_activity_01MYJKI5UA38Q74ooFWoHXWJCque47v9Ljd",
+                                        "name": "Parallel Branch",
+                                        "title": "Move device to group",
+                                        "type": "logic.parallel_block",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "continue_on_failure": false,
+                                          "display_name": "Move device to group",
+                                          "skip_execution": false
+                                        },
+                                        "object_type": "definition_activity",
+                                        "actions": [
+                                          {
+                                            "unique_name": "definition_activity_01MYJKI6K7YTI1gIK24LqeLZgUtUEGGW36v",
+                                            "name": "AMP - Get Group by Name",
+                                            "title": "AMP - Get Group by Name",
+                                            "type": "workflow.atomic_workflow",
+                                            "base_type": "subworkflow",
+                                            "properties": {
+                                              "continue_on_failure": true,
+                                              "display_name": "AMP - Get Group by Name",
+                                              "input": {
+                                                "variable_workflow_01GMLE4X2LDJH6nycISznSkluWqNGXZ72i1": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.local.variable_workflow_01MXMTZKV08KF4WaYpj4bHYi7DmxTSuMBvL$"
+                                              },
+                                              "runtime_user": {
+                                                "target_default": true
+                                              },
+                                              "skip_execution": false,
+                                              "target": {
+                                                "override_workflow_target_group_criteria": true,
+                                                "target_group": {
+                                                  "run_on_all_targets": false,
+                                                  "use_criteria": {
+                                                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                                    "conditions": [
+                                                      {
+                                                        "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                                        "operator": "eq",
+                                                        "right_operand": "AMP_Target"
+                                                      }
+                                                    ]
+                                                  }
+                                                }
+                                              },
+                                              "workflow_id": "definition_workflow_01GMLE4XFLQ0G3eK6bEbT1QAjbq5L3gyttr"
+                                            },
+                                            "object_type": "definition_activity"
+                                          },
+                                          {
+                                            "unique_name": "definition_activity_01MYJKITGQ2GN22X5dmkA4gWYdoEw3LOxGp",
+                                            "name": "AMP - Move Computer to Group",
+                                            "title": "AMP - Move Computer to Group",
+                                            "type": "workflow.atomic_workflow",
+                                            "base_type": "subworkflow",
+                                            "properties": {
+                                              "continue_on_failure": true,
+                                              "display_name": "AMP - Move Computer to Group",
+                                              "input": {
+                                                "variable_workflow_01FLAR2I50UOM44MGCGKMuikBplJTk7llMO": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9YI51bJNCOKlCI7WYKtMvwIIzm$",
+                                                "variable_workflow_01FLASNK8V9YK5XTLMywR1jQfrtbWiM2Yp5": "$activity.definition_activity_01MYJKI6K7YTI1gIK24LqeLZgUtUEGGW36v.output.variable_workflow_01GMLF9BPOZC26zJhpz8bp7DLMULMbpcc0y$"
+                                              },
+                                              "runtime_user": {
+                                                "target_default": true
+                                              },
+                                              "skip_execution": false,
+                                              "target": {
+                                                "override_workflow_target_group_criteria": true,
+                                                "target_group": {
+                                                  "run_on_all_targets": false,
+                                                  "use_criteria": {
+                                                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                                    "conditions": [
+                                                      {
+                                                        "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                                        "operator": "eq",
+                                                        "right_operand": "AMP_Target"
+                                                      }
+                                                    ]
+                                                  }
+                                                }
+                                              },
+                                              "workflow_id": "definition_workflow_01FLAR2IT5COJ1HFKMKazQkBlsJ72n028x9"
+                                            },
+                                            "object_type": "definition_activity"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "unique_name": "definition_activity_01MYJKJGBJ58M75VHNI32gQlPjv43PEf8ac",
+                                        "name": "Parallel Branch",
+                                        "title": "Isolate device",
+                                        "type": "logic.parallel_block",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "continue_on_failure": false,
+                                          "display_name": "Isolate device",
+                                          "skip_execution": false
+                                        },
+                                        "object_type": "definition_activity",
+                                        "actions": [
+                                          {
+                                            "unique_name": "definition_activity_01MYJKJH28E5N56OTt4jNNG2c9oJ7hMuc62",
+                                            "name": "AMP - Isolate Host",
+                                            "title": "AMP - Isolate Host",
+                                            "type": "workflow.atomic_workflow",
+                                            "base_type": "subworkflow",
+                                            "properties": {
+                                              "continue_on_failure": true,
+                                              "display_name": "AMP - Isolate Host",
+                                              "input": {
+                                                "variable_workflow_01FLAVEEVLIML1kDED2T9JctB4oQUWBVvaQ": "$workflow.definition_workflow_01MX8S2CPED1I5fhcslD3HhErgIdawQkrpj.input.variable_workflow_01MX8S2CI9YI51bJNCOKlCI7WYKtMvwIIzm$"
+                                              },
+                                              "runtime_user": {
+                                                "target_default": true
+                                              },
+                                              "skip_execution": false,
+                                              "target": {
+                                                "override_workflow_target_group_criteria": true,
+                                                "target_group": {
+                                                  "run_on_all_targets": false,
+                                                  "use_criteria": {
+                                                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                                    "conditions": [
+                                                      {
+                                                        "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                                        "operator": "eq",
+                                                        "right_operand": "AMP_Target"
+                                                      }
+                                                    ]
+                                                  }
+                                                }
+                                              },
+                                              "workflow_id": "definition_workflow_01FLAVEFJ8QLQ7UEi6gFNp1yotu1K18VEZS"
+                                            },
+                                            "object_type": "definition_activity"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "unique_name": "definition_activity_01MYJKKE0V5AZ2jvC1xv8IWCfpqEZgwiZem",
+                                "name": "Parallel Branch",
+                                "title": "Optional Response Actions",
+                                "type": "logic.parallel_block",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": false,
+                                  "display_name": "Optional Response Actions",
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
                         "unique_name": "definition_activity_01MXRC0QU6U895QVW4yWpvLb36FT5BbEAiF",
                         "name": "Condition Branch",
                         "title": "user or email",
@@ -4516,18 +4869,18 @@
     }
   },
   "atomic_workflows": [
-    "definition_workflow_01FLAVEFJ8QLQ7UEi6gFNp1yotu1K18VEZS",
-    "definition_workflow_01HQN7N57GLKN780LTDUabTblE3OpMPQVfx",
-    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
-    "definition_workflow_01FZM2QCWMEV35NL3VeciPMvYIwheA7diQv",
-    "definition_workflow_01MWYH0Z48GXB00sKAG1EmSzBMr0nRx3NUh",
-    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
-    "definition_workflow_01FLAR2IT5COJ1HFKMKazQkBlsJ72n028x9",
-    "definition_workflow_01HQMN83DJMIK6FVscJcsKFyF9CpK82NA5l",
-    "definition_workflow_01JW55LI4S0FY7LmLrsEarUYEGxsrgBIJT1",
     "definition_workflow_01JCLQ9QMVN4W3IC93cXg0oFdETENeeG9Jq",
+    "definition_workflow_01FLAVEFJ8QLQ7UEi6gFNp1yotu1K18VEZS",
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
+    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
+    "definition_workflow_01HQMN83DJMIK6FVscJcsKFyF9CpK82NA5l",
+    "definition_workflow_01HQN7N57GLKN780LTDUabTblE3OpMPQVfx",
     "definition_workflow_01FZJJP5I5SDH0wtEdhNtBmG20mUM9tzjgd",
+    "definition_workflow_01MWYH0Z48GXB00sKAG1EmSzBMr0nRx3NUh",
+    "definition_workflow_01EO48TO48SL35JnXGSvBIqptIfbsjt65eR",
     "definition_workflow_01GMLE4XFLQ0G3eK6bEbT1QAjbq5L3gyttr",
-    "definition_workflow_01EO48TO48SL35JnXGSvBIqptIfbsjt65eR"
+    "definition_workflow_01FZM2QCWMEV35NL3VeciPMvYIwheA7diQv",
+    "definition_workflow_01FLAR2IT5COJ1HFKMKazQkBlsJ72n028x9",
+    "definition_workflow_01JW55LI4S0FY7LmLrsEarUYEGxsrgBIJT1"
   ]
 }
