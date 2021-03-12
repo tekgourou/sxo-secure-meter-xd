@@ -7,6 +7,32 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "datatype.date",
+        "properties": {
+          "value": "0001-01-01T00:00:00+00:00",
+          "scope": "local",
+          "name": "Last Modified",
+          "type": "datatype.date",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MF6XY4P41I428IT7KTNbswtEhVU9mliC7",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MW1BVY3XUXF3Qvn3rUwboXRRx6aUcyJu8",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
@@ -59,42 +85,16 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "datatype.integer",
         "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "observable_type",
-          "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MW1BVY3XUXF3Qvn3rUwboXRRx6aUcyJu8",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
+          "value": 1,
           "scope": "output",
-          "name": "Risk score",
-          "type": "datatype.string",
+          "name": "Risk Score",
+          "type": "datatype.integer",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MX776L0K1MA5RhhHYCDFP1qiz6cj1x4Hv",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.date",
-        "properties": {
-          "value": "0001-01-01T00:00:00+00:00",
-          "scope": "local",
-          "name": "Last Modified",
-          "type": "datatype.date",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MF6XY4P41I428IT7KTNbswtEhVU9mliC7",
+        "unique_name": "variable_workflow_01MYQ6GDCK8BR5WP6oRDVZMYMegc8aUjQCa",
         "object_type": "variable_workflow"
       }
     ],
@@ -385,7 +385,7 @@
           "skip_execution": false,
           "variables_to_update": [
             {
-              "variable_to_update": "$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.output.variable_workflow_01MX776L0K1MA5RhhHYCDFP1qiz6cj1x4Hv$",
+              "variable_to_update": "$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.output.variable_workflow_01MYQ6GDCK8BR5WP6oRDVZMYMegc8aUjQCa$",
               "variable_value_new": "$workflow.definition_workflow_01MF6XY4YJ3M66SpkVSDjOzHee8kpplLYc9.local.variable_workflow_01MF6XY4P3XXB3eNObaBnD8JyTenqHDloe1$"
             }
           ]
@@ -416,10 +416,10 @@
         "value": [
           {
             "column_data": {
-              "last_modified": "2021-03-11T02:20:30.01383171Z",
+              "last_modified": "2021-03-11T22:32:18.232791185Z",
               "observable": "10.0.0.1",
               "related": "",
-              "score": 9,
+              "score": 10,
               "type": "ip"
             }
           },
@@ -433,9 +433,25 @@
           },
           {
             "column_data": {
-              "last_modified": "2021-03-10T06:00:10.682964339Z",
+              "last_modified": "2021-03-12T06:00:12.693126485Z",
               "observable": "172.16.46.18",
-              "score": 4,
+              "score": 5,
+              "type": "ip"
+            }
+          },
+          {
+            "column_data": {
+              "last_modified": "2021-03-12T00:51:57.328820539Z",
+              "observable": "pierre@internetsinkhole.com",
+              "score": 10,
+              "type": "user"
+            }
+          },
+          {
+            "column_data": {
+              "last_modified": "2021-03-12T16:51:51.990879601Z",
+              "observable": "10.152.122.127",
+              "score": 3,
               "type": "ip"
             }
           }
@@ -457,20 +473,6 @@
       "description": "Table used to contain observables tracked by Secure Meter XD",
       "columns": [
         {
-          "is_required": true,
-          "maximum": 10,
-          "minimum": 1,
-          "name": "score",
-          "title": "score",
-          "type": "integer"
-        },
-        {
-          "is_required": true,
-          "name": "type",
-          "title": "type",
-          "type": "string"
-        },
-        {
           "name": "last_modified",
           "title": "last_modified",
           "type": "date"
@@ -484,6 +486,20 @@
         {
           "name": "related",
           "title": "related",
+          "type": "string"
+        },
+        {
+          "is_required": true,
+          "maximum": 10,
+          "minimum": 1,
+          "name": "score",
+          "title": "score",
+          "type": "integer"
+        },
+        {
+          "is_required": true,
+          "name": "type",
+          "title": "type",
           "type": "string"
         }
       ],
