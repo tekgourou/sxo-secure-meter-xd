@@ -53,7 +53,7 @@
         "is_atomic": true
       },
       "delete_workflow_instance": false,
-      "description": "Validate the observable type supported by the SMXD workflows\n\nTarget: N/A\n\nAccount Key: N/A\n\nSteps:\n[] For type \"ip\", validate the format of an RFC 1918 address\n[] For type \"email\", validate the email address and the internal domain\n[] For type \"user\", pass.\n\nMore details are available at https://github.com/kcdubois/sxo-secure-meter-xd\n\n\n",
+      "description": "Validate the observable type supported by the SMXD workflows\n\nTarget: N/A\n\nAccount Key: N/A\n\nSteps:\n[] For type \"ip\", validate the format of an RFC 1918 address\n[] For type \"email\", validate the email address and the internal domain\n[] For type \"user\", pass.\n[] For type \"hostname\", pass.\n[] For type \"mac_address\", pass.\n[] For type \"amp_computer_guid\", pass.\n\nMore details are available at https://github.com/kcdubois/sxo-secure-meter-xd\n\n\n",
       "display_name": "SMXD - Validate Observable type",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -342,6 +342,108 @@
             "actions": [
               {
                 "unique_name": "definition_activity_01MW0XC75OV2J0VKcOhjn4aWbqrPsCtlLWu",
+                "name": "Completed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "succeeded",
+                  "continue_on_failure": false,
+                  "display_name": "Completed",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MYJ9XHX6EST0bmuHYfTwXlZzdnpdoTXbf",
+            "name": "Condition Branch",
+            "title": "hostname",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na$",
+                "operator": "eq",
+                "right_operand": "hostname"
+              },
+              "continue_on_failure": false,
+              "display_name": "hostname",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MYJAAR8HZ8Q1LsKFJZm0nkpUAvDIH6GcV",
+                "name": "Completed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "succeeded",
+                  "continue_on_failure": false,
+                  "display_name": "Completed",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MYJE1BKWW4S74WyzH4lmxCCXlUs0dN4OM",
+            "name": "Condition Branch",
+            "title": "mac_address",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na$",
+                "operator": "eq",
+                "right_operand": "mac_address"
+              },
+              "continue_on_failure": false,
+              "display_name": "mac_address",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MYJEACPYWUF6R6DP65JoRqx4IuuP15Fcm",
+                "name": "Completed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "succeeded",
+                  "continue_on_failure": false,
+                  "display_name": "Completed",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01MYJFJ1XCKAO24fl7PnrUut7Z9vUUHXTsi",
+            "name": "Condition Branch",
+            "title": "amp_computer_guid",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na$",
+                "operator": "eq",
+                "right_operand": "amp_computer_guid"
+              },
+              "continue_on_failure": false,
+              "display_name": "amp_computer_guid",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01MYJG09VDYI41I2FNomdHONeevOzYqginw",
                 "name": "Completed",
                 "title": "Completed",
                 "type": "logic.completed",
