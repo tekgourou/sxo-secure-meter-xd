@@ -9,6 +9,19 @@
       {
         "schema_id": "datatype.integer",
         "properties": {
+          "value": 1,
+          "scope": "local",
+          "name": "Risk Score",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01MYQ1GF5A3EY0fZn4movj2TJ3dufUpYYfn",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
           "value": 2,
           "scope": "local",
           "name": "Increment",
@@ -26,7 +39,8 @@
           "scope": "input",
           "name": "observable_type",
           "type": "datatype.string",
-          "is_required": false,
+          "description": "Observables where the type could be (file_path, mac_address, device, hostname, url, user, ipv6, email, sha256, sha1, md5, ip, domain, email_subject, imei, amp_computer_guid, cisco_mid, pki_serial, imsi, amp-device, file_name, swc_device_id)",
+          "is_required": true,
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MX9B53G4EJU4zvLlZj3RhuThTHRbPcmkS",
@@ -47,26 +61,13 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.integer",
-        "properties": {
-          "value": 1,
-          "scope": "local",
-          "name": "Risk Score",
-          "type": "datatype.integer",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01MYQ1GF5A3EY0fZn4movj2TJ3dufUpYYfn",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
           "scope": "input",
           "name": "observable_value",
           "type": "datatype.string",
-          "is_required": false,
+          "is_required": true,
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01MX9B53G4AI70mS7QZJ32vkFtEDu49GZHK",
@@ -648,6 +649,46 @@
           {
             "schema_id": "datatype.string",
             "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "observable_type",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01MX8S2CI9UXH4qy1auxcj96FjKlxSaspFi",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "Email Endpoint",
+              "scope": "local",
+              "name": "SMTP Target Name",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01MX8S2CI9R4S1Nx5wJEUCDxNfqX5wzTIK4",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "TLP",
+              "type": "datatype.string",
+              "description": "Optional",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01MX96JQID3HF06jFtpf5GrnNtBNvpP4vH4",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
               "value": "DGIRUM1C3TUBMDS1T9A1",
               "scope": "local",
               "name": "Duo_GroupID_Malicious",
@@ -657,6 +698,20 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01MXLMTPMZCLC3tPxESWhGISr5E8VDYYVCI",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "Malicious",
+              "scope": "local",
+              "name": "AMP_Malicious_GroupName",
+              "type": "datatype.string",
+              "description": "Add AMP Malicious Group Name is you enable the Cisco Secure Endpoint Response",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01MXMTZKV08KF4WaYpj4bHYi7DmxTSuMBvL",
             "object_type": "variable_workflow"
           },
           {
@@ -676,15 +731,55 @@
           {
             "schema_id": "datatype.string",
             "properties": {
-              "value": "DGB7Q53P3PQI1HF87OXX",
+              "value": "DGA6ZCQWDYSQZUDD9WUN",
               "scope": "local",
-              "name": "Duo_GroupID_Suspicious",
+              "name": "Duo_GroupID_Common",
               "type": "datatype.string",
-              "description": "Group ID can be found using the web gui URL\n\nex: https://admin-dd952xxx.duosecurity.com/groups/DGB7QxxxxxQI1HF87OXX",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01MXLJPVT5KGA2hrphjh2IRKL9Q4M66wvyM",
+            "unique_name": "variable_workflow_01MXPRVJU56U27G0byTHonqQ2T5ez8TbQ3R",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Reason",
+              "type": "datatype.string",
+              "description": "Why Observable Risk Score is raised - NOTES",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01MX8S2CI9XE47AYZeML2wADsohgBIgG2Us",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "Suspicious",
+              "scope": "local",
+              "name": "Azure_AD_GroupName_Suspicious",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01MXOSFCBU8RS0lZytrnnDBB0Xl1Gx96qVw",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Disposition",
+              "type": "datatype.string",
+              "description": "Common - Suspicious - Malicious",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01MX96ECU1GI03cPnZHa2i8bfgFEvUWQWAP",
             "object_type": "variable_workflow"
           },
           {
@@ -717,27 +812,14 @@
           {
             "schema_id": "datatype.string",
             "properties": {
-              "value": "DGA6ZCQWDYSQZUDD9WUN",
-              "scope": "local",
-              "name": "Duo_GroupID_Common",
+              "value": "",
+              "scope": "input",
+              "name": "observable_value",
               "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01MXPRVJU56U27G0byTHonqQ2T5ez8TbQ3R",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "Email Endpoint",
-              "scope": "local",
-              "name": "SMTP Target Name",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01MX8S2CI9R4S1Nx5wJEUCDxNfqX5wzTIK4",
+            "unique_name": "variable_workflow_01MX8S2CI9YI51bJNCOKlCI7WYKtMvwIIzm",
             "object_type": "variable_workflow"
           },
           {
@@ -756,96 +838,15 @@
           {
             "schema_id": "datatype.string",
             "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "Disposition",
-              "type": "datatype.string",
-              "description": "Common - Suspicious - Malicious",
-              "is_required": true,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01MX96ECU1GI03cPnZHa2i8bfgFEvUWQWAP",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "observable_type",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01MX8S2CI9UXH4qy1auxcj96FjKlxSaspFi",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "Suspicious",
+              "value": "DGB7Q53P3PQI1HF87OXX",
               "scope": "local",
-              "name": "Azure_AD_GroupName_Suspicious",
+              "name": "Duo_GroupID_Suspicious",
               "type": "datatype.string",
+              "description": "Group ID can be found using the web gui URL\n\nex: https://admin-dd952xxx.duosecurity.com/groups/DGB7QxxxxxQI1HF87OXX",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01MXOSFCBU8RS0lZytrnnDBB0Xl1Gx96qVw",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "TLP",
-              "type": "datatype.string",
-              "description": "Optional",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01MX96JQID3HF06jFtpf5GrnNtBNvpP4vH4",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "observable_value",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01MX8S2CI9YI51bJNCOKlCI7WYKtMvwIIzm",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "Reason",
-              "type": "datatype.string",
-              "description": "Why Observable Risk Score is raised - NOTES",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01MX8S2CI9XE47AYZeML2wADsohgBIgG2Us",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "Malicious",
-              "scope": "local",
-              "name": "AMP_Malicious_GroupName",
-              "type": "datatype.string",
-              "description": "Add AMP Malicious Group Name is you enable the Cisco Secure Endpoint Response",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01MXMTZKV08KF4WaYpj4bHYi7DmxTSuMBvL",
+            "unique_name": "variable_workflow_01MXLJPVT5KGA2hrphjh2IRKL9Q4M66wvyM",
             "object_type": "variable_workflow"
           }
         ],
@@ -5373,23 +5374,23 @@
     }
   ],
   "atomic_workflows": [
-    "definition_workflow_01MK4C1YUQT585JavogKI3vOdpXCT7x4RGr",
-    "definition_workflow_01JW55LI4S0FY7LmLrsEarUYEGxsrgBIJT1",
-    "definition_workflow_01FLAR2IT5COJ1HFKMKazQkBlsJ72n028x9",
-    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
-    "definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi",
-    "definition_workflow_01FZM2QCWMEV35NL3VeciPMvYIwheA7diQv",
-    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
     "definition_workflow_01FLAVEFJ8QLQ7UEi6gFNp1yotu1K18VEZS",
     "definition_workflow_01JCLQ9QMVN4W3IC93cXg0oFdETENeeG9Jq",
+    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
     "definition_workflow_01GMLE4XFLQ0G3eK6bEbT1QAjbq5L3gyttr",
-    "definition_workflow_01HQMN83DJMIK6FVscJcsKFyF9CpK82NA5l",
-    "definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo",
-    "definition_workflow_01MWYH0Z48GXB00sKAG1EmSzBMr0nRx3NUh",
-    "definition_workflow_01HQN7N57GLKN780LTDUabTblE3OpMPQVfx",
+    "definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi",
+    "definition_workflow_01MK4C1YUQT585JavogKI3vOdpXCT7x4RGr",
+    "definition_workflow_01JW55LI4S0FY7LmLrsEarUYEGxsrgBIJT1",
     "definition_workflow_01EO48TO48SL35JnXGSvBIqptIfbsjt65eR",
-    "definition_workflow_01FZJJP5I5SDH0wtEdhNtBmG20mUM9tzjgd",
+    "definition_workflow_01FLAR2IT5COJ1HFKMKazQkBlsJ72n028x9",
     "definition_workflow_01MF6DUN0KS5I2T3msGIiyRIfpLZ47dH4M8",
-    "definition_workflow_01MF4Y7RMTLIU3w8vVHQNwpN55u360ttAeL"
+    "definition_workflow_01FZM2QCWMEV35NL3VeciPMvYIwheA7diQv",
+    "definition_workflow_01FZJJP5I5SDH0wtEdhNtBmG20mUM9tzjgd",
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
+    "definition_workflow_01HQN7N57GLKN780LTDUabTblE3OpMPQVfx",
+    "definition_workflow_01MWYH0Z48GXB00sKAG1EmSzBMr0nRx3NUh",
+    "definition_workflow_01MF4Y7RMTLIU3w8vVHQNwpN55u360ttAeL",
+    "definition_workflow_01MX7FMRY1KYX1UJ36YIlNYAdebFFF8uXNo",
+    "definition_workflow_01HQMN83DJMIK6FVscJcsKFyF9CpK82NA5l"
   ]
 }
