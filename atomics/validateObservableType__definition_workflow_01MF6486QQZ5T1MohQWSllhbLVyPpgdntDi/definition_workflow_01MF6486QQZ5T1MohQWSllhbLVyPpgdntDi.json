@@ -11,13 +11,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "email_domain",
+          "name": "observable_value",
           "type": "datatype.string",
-          "description": "If your observable type is an email address, please enter the domain portion of it to validate against your owned domains.",
-          "is_required": false,
+          "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MW30PILPB7G1ylYd7uaVZCiLqSxxuqUwn",
+        "unique_name": "variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u",
         "object_type": "variable_workflow"
       },
       {
@@ -38,12 +37,13 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "observable_value",
+          "name": "email_domain",
           "type": "datatype.string",
-          "is_required": true,
+          "description": "If your observable type is an email address, please enter the domain portion of it to validate against your owned domains.",
+          "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u",
+        "unique_name": "variable_workflow_01MW30PILPB7G1ylYd7uaVZCiLqSxxuqUwn",
         "object_type": "variable_workflow"
       }
     ],
@@ -109,7 +109,7 @@
                 "properties": {
                   "continue_on_failure": false,
                   "display_name": "Validate Private IP",
-                  "input_regex": "\"(^10\\.)|(^172\\.1[6-9]\\.)|(^172\\.2[0-9]\\.)|(^172\\.3[0-1]\\.)|(^192\\.168\\.)|(^127\\.0\\.0\\.1)\"",
+                  "input_regex": "(^192\\.168\\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])\\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])$)|(^172\\.([1][6-9]|[2][0-9]|[3][0-1])\\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])\\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])$)|(^10\\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])\\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])\\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])$)",
                   "input_string": "$workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u$",
                   "skip_execution": false
                 },
@@ -138,7 +138,7 @@
                       "condition": {
                         "left_operand": "$activity.definition_activity_01MF68RW8V6XJ6p4lyJroivBURSCMLLQItm.output.has_match$",
                         "operator": "eq",
-                        "right_operand": false
+                        "right_operand": true
                       },
                       "continue_on_failure": false,
                       "display_name": "Passed",
@@ -173,7 +173,7 @@
                       "condition": {
                         "left_operand": "$activity.definition_activity_01MF68RW8V6XJ6p4lyJroivBURSCMLLQItm.output.has_match$",
                         "operator": "eq",
-                        "right_operand": true
+                        "right_operand": false
                       },
                       "continue_on_failure": false,
                       "display_name": "FAILED",
@@ -459,6 +459,21 @@
             ]
           }
         ]
+      },
+      {
+        "unique_name": "definition_activity_01NIZ7FLBWF3S5SqAOgyGeUiJDwlLMbLgHV",
+        "name": "Completed",
+        "title": "Completed",
+        "type": "logic.completed",
+        "base_type": "activity",
+        "properties": {
+          "completion_type": "failed-completed",
+          "continue_on_failure": false,
+          "display_name": "Completed",
+          "result_message": "not supported observable type",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
       }
     ],
     "categories": [
