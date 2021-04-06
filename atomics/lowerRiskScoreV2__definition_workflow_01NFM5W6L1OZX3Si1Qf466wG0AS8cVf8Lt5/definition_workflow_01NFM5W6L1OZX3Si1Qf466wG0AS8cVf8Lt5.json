@@ -1,0 +1,393 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5",
+    "name": "SMXD -  Lower Risk Score v2",
+    "title": "SMXD -  Lower Risk Score v2",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "new_disposition_name",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NFM5W6DE0O762TIDzoDowSZpOcOhtNrRD",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "new_severity",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NFM5W6DDWEI3uncL5SdvPu8X0lAcL4sfQ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 1,
+          "scope": "input",
+          "name": "decrement",
+          "type": "datatype.integer",
+          "description": "from 1 to 5",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NFM5W6DE35G5xCmusPsyK1u8nKClJx32P",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "input",
+          "name": "old_risk_score",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NFM5W6DE1YZ7UlMxMHxxAHyAAHPnRudEv",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "output",
+          "name": "new_risk_score",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NFM5W6DE49H2ujTDjwB3uOejGvmG495mI",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Secure MeterXD",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "display_name": "SMXD -  Lower Risk Score v2",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": true,
+        "target_group": {
+          "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+          "run_on_all_targets": false,
+          "selected_target_types": [
+            "web-service.endpoint"
+          ],
+          "use_criteria": {
+            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+            "conditions": [
+              {
+                "operator": "eq",
+                "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                "right_operand": "Private_CTIA_Target"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01NFM5XJLDBJY6i06xzwzR6rka25Op7YhHG",
+        "name": "Set Variables",
+        "title": "Set New Risk Score",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set New Risk Score",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DE49H2ujTDjwB3uOejGvmG495mI$",
+              "variable_value_new": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.input.variable_workflow_01NFM5W6DE1YZ7UlMxMHxxAHyAAHPnRudEv$-$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.input.variable_workflow_01NFM5W6DE35G5xCmusPsyK1u8nKClJx32P$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NFM5XYQRUSX1cUe47wfo9NG6uPP1y6mV2",
+        "name": "Condition Block",
+        "title": "Set new judgement based on new score",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set new judgement based on new score",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01NFM5YDJOJP26krzKca5sML63gOiuO8bmq",
+            "name": "Condition Branch",
+            "title": "Score 1 - SMXD | Common Low",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DE49H2ujTDjwB3uOejGvmG495mI$",
+                "operator": "eq",
+                "right_operand": 1
+              },
+              "continue_on_failure": false,
+              "display_name": "Score 1 - SMXD | Common Low",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NFM5YFPH8FY2GAW4lnAEBrAl0kaI15dUM",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DE0O762TIDzoDowSZpOcOhtNrRD$",
+                      "variable_value_new": "Common"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DDWEI3uncL5SdvPu8X0lAcL4sfQ$",
+                      "variable_value_new": "Low"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01NFM5YUM48VO2els9XAQ0MtVspV1bsc8U7",
+            "name": "Condition Branch",
+            "title": "Score 2 - SMXD | Common Meduim",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DE49H2ujTDjwB3uOejGvmG495mI$",
+                "operator": "eq",
+                "right_operand": 2
+              },
+              "continue_on_failure": false,
+              "display_name": "Score 2 - SMXD | Common Meduim",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NFM5YWO9UNU6koh6A9H37InSpri76Ambo",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DE0O762TIDzoDowSZpOcOhtNrRD$",
+                      "variable_value_new": "Common"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DDWEI3uncL5SdvPu8X0lAcL4sfQ$",
+                      "variable_value_new": "Medium"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01NFM5ZC98GEQ2magbkDK6KxkyySbZlPqzg",
+            "name": "Condition Branch",
+            "title": "Score 3 - SMXD | Suspicious Medium",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DE49H2ujTDjwB3uOejGvmG495mI$",
+                "operator": "eq",
+                "right_operand": 3
+              },
+              "continue_on_failure": false,
+              "display_name": "Score 3 - SMXD | Suspicious Medium",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NFM5ZEF9T7A40qs4pTjoFdPHYrBRMfDgj",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DE0O762TIDzoDowSZpOcOhtNrRD$",
+                      "variable_value_new": "Suspicious"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DDWEI3uncL5SdvPu8X0lAcL4sfQ$",
+                      "variable_value_new": "Medium"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01NFM5ZTPRFN61M7Uf5tucmYV5oBuS4ldqs",
+            "name": "Condition Branch",
+            "title": "Score 4 - SMXD | Suspicious High",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DE49H2ujTDjwB3uOejGvmG495mI$",
+                "operator": "eq",
+                "right_operand": 4
+              },
+              "continue_on_failure": false,
+              "display_name": "Score 4 - SMXD | Suspicious High",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NFM5ZVVVSTL6sZBweObTvlwYJ14DpdQcW",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DE0O762TIDzoDowSZpOcOhtNrRD$",
+                      "variable_value_new": "Suspicious"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DDWEI3uncL5SdvPu8X0lAcL4sfQ$",
+                      "variable_value_new": "High"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01NFM60B75ZC43CXanbboegJopzqoVHWUAo",
+            "name": "Condition Branch",
+            "title": "Score 5 - SMXD | Malicious High",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DE49H2ujTDjwB3uOejGvmG495mI$",
+                "operator": "gte",
+                "right_operand": 5
+              },
+              "continue_on_failure": false,
+              "display_name": "Score 5 - SMXD | Malicious High",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NFM60DM40EP6o96vtZPe42DqXEAmIAGXN",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DE0O762TIDzoDowSZpOcOhtNrRD$",
+                      "variable_value_new": "Malicious"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DDWEI3uncL5SdvPu8X0lAcL4sfQ$",
+                      "variable_value_new": "High"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "target_groups": {
+    "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH": {
+      "unique_name": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+      "name": "Default TargetGroup",
+      "title": "Default TargetGroup",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "web-service.endpoint",
+          "view_target_type": "web-service.endpoint",
+          "include_all_targets": true
+        },
+        {
+          "data_target_type": "email.smtp_endpoint",
+          "view_target_type": "email.smtp_endpoint",
+          "include_all_targets": true
+        },
+        {
+          "data_target_type": "terminal.endpoint",
+          "view_target_type": "terminal.endpoint",
+          "include_all_targets": true
+        }
+      ],
+      "object_type": "target_group"
+    }
+  }
+}
