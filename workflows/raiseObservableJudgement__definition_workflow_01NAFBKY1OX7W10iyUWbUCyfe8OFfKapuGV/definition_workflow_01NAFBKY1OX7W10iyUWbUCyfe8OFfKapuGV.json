@@ -1,0 +1,1455 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV",
+    "name": "SMXD -  Raise Observable judgement",
+    "title": "SMXD -  Raise Observable judgement",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 7,
+          "scope": "input",
+          "name": "Expiration_in_days",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "old_disposition_name",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01ND0WWG0T73X32beQ0vZhbbYAIUOIQv1lZ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "output",
+          "name": "old_risk_score",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NFMZH3CGG945Y6Bd248owXyj1sZvRiLUx",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "internetsinkhole.com",
+          "scope": "local",
+          "name": "email_domain",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NAFF42GKA4A0AlYreC5eEbLzrdunVO3Fa",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "new_disposition_name",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NAFEDFHQ3UL1SppC04qLc2c4PAgz8lWir",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 1,
+          "scope": "input",
+          "name": "Increment",
+          "type": "datatype.integer",
+          "description": "from 1 to 5",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "old_severity",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01ND60M774TW93XvITFVzkiuUIyK3FFZhL7",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Raison",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NAFDG8ZHDE34iBVhyoO1Lx8mynbdXCmzh",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "new_severity",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01ND60TSA7V5V760mgpbZgT1qG1Z3vCwqTh",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "output",
+          "name": "new_risk_score",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NFMZ9J947SD6rZ2LsKHCqmiLB9WsgQTVO",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "This workflow takes a CRUD atomic actions of SMXD to raise the risk score of an observable and issue an individual judgement\nas well as response actions depending on the observable type and judgement disposition.\n\nTarget Group: Default TargetGroup\n\nTargets Used: CTR_For_Access_Token, Private_CTIA_Target\n\n\nSteps:\n[] Validate that the observable type is supported by SMXD\n[] Search for the observable\n[]\u003e If found, raise the score of the observable\n[]\u003e If not found, create the observable in SMXD with a score of 1\n[] Start to process the judgement promotion\n[] Generate an access token for SXTR\n[] Convert risk score into a judgement\n[]\u003e If the judgement changed, run the response actions\n\nMore details are available at https://github.com/kcdubois/sxo-secure-meter-xd",
+      "display_name": "SMXD -  Raise Observable judgement",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": true,
+        "target_group": {
+          "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+          "run_on_all_targets": false,
+          "selected_target_types": [
+            "web-service.endpoint"
+          ],
+          "use_criteria": {
+            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+            "conditions": [
+              {
+                "operator": "eq",
+                "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                "right_operand": "Private_CTIA_Target"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01NAFCFSPNSO26R5S8v3oO7TlzrmNpo5rkJ",
+        "name": "SMXD - Validate Observable type",
+        "title": "SMXD - Validate Observable type",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "SMXD - Validate Observable type",
+          "input": {
+            "variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.input.variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst$",
+            "variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.input.variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA$",
+            "variable_workflow_01MW30PILPB7G1ylYd7uaVZCiLqSxxuqUwn": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.local.variable_workflow_01NAFF42GKA4A0AlYreC5eEbLzrdunVO3Fa$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "no_target": true
+          },
+          "workflow_id": "definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NAFQBQ3CGXW4RucnNq9Feuyp1EKXl2bCw",
+        "name": "Condition Block",
+        "title": "Observable type supported ?",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Observable type supported ?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01NAFQC3J1RFW1OkaeufvXUMSogBH6HvdXt",
+            "name": "Condition Branch",
+            "title": "no",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01NAFCFSPNSO26R5S8v3oO7TlzrmNpo5rkJ.output.succeeded$",
+                "operator": "eq",
+                "right_operand": false
+              },
+              "continue_on_failure": false,
+              "display_name": "no",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NAFR2J2RRWX4jUDXS2Vcrd0Y9yzLqnzYZ",
+                "name": "Completed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "failed-completed",
+                  "continue_on_failure": false,
+                  "display_name": "Completed",
+                  "result_message": "Observable type unsupported",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01NAFS0U2PR1Q2JKQZ5eCdywW4f7rIRP2yy",
+        "name": "Threat Response v2 - Generate Access Token",
+        "title": "Threat Response v2 - Generate Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Threat Response v2 - Generate Access Token",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target_group_criteria": true,
+            "target_group": {
+              "run_on_all_targets": false,
+              "use_criteria": {
+                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                "conditions": [
+                  {
+                    "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                    "operator": "eq",
+                    "right_operand": "CTR_For_Access_Token"
+                  }
+                ]
+              }
+            }
+          },
+          "workflow_id": "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NJ1AT8IT2DO6rn45TOqEUnQTpKppnFOgM",
+        "name": "Parallel Block",
+        "title": "Parallel Block",
+        "type": "logic.parallel",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Parallel Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01NJ1ATZJ0YWN4bTqY3ylmgEY8HktHBD7IZ",
+            "name": "Parallel Branch",
+            "title": "indicator ?",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "indicator ?",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NJ2F5K4W8C82wQjhOLPXgOPPNirDu42Cw",
+                "name": "Execute Python Script",
+                "title": "Calculate timestamp",
+                "type": "python3.script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Calculate timestamp",
+                  "script": "import sys\nfrom datetime import datetime\nimport time\n\nlinux_time = int(time.time())\n\nt =  int(linux_time)\ntimeISO = (datetime.fromtimestamp(t).isoformat())+'.000Z'",
+                  "script_arguments": [
+                    ""
+                  ],
+                  "script_queries": [
+                    {
+                      "script_query": "timeISO",
+                      "script_query_name": "timeISO",
+                      "script_query_type": "date"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NJ20FRXKJ7F6B04vUFKLwDkfm2klKwBzh",
+                "name": "Parallel Block",
+                "title": "Parallel Block",
+                "type": "logic.parallel",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Parallel Block",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01NJ20GIT8TZM1jEWmQiNHYMsweaU3tHRYP",
+                    "name": "Parallel Branch",
+                    "title": "Risk Score 1",
+                    "type": "logic.parallel_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Risk Score 1",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NJ1YUP15M0M1xoAxFgLiXgcGn0Ezgs2uS",
+                        "name": "HTTP Request",
+                        "title": "Threat Response - Get Indicator - Risk Score 1",
+                        "type": "web-service.http_request",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "allow_auto_redirect": true,
+                          "content_type": "application/json",
+                          "continue_on_error_status_code": false,
+                          "continue_on_failure": false,
+                          "custom_headers": [
+                            {
+                              "name": "Authorization",
+                              "value": "Bearer $activity.definition_activity_01NAFS0U2PR1Q2JKQZ5eCdywW4f7rIRP2yy.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                            }
+                          ],
+                          "display_name": "Threat Response - Get Indicator - Risk Score 1",
+                          "method": "GET",
+                          "relative_url": "/ctia/indicator/search?fields=title\u0026query=\"Secure MeterXD - Risk Score 1\"",
+                          "runtime_user": {
+                            "override_target_runtime_user": false,
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "override_workflow_target_group_criteria": true,
+                            "target_group": {
+                              "use_criteria": {
+                                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                "conditions": [
+                                  {
+                                    "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                    "operator": "eq",
+                                    "right_operand": "Private_CTIA_Target"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01NJ23P9PIYML5KObTof1iJ2X8AKSDEg1k3",
+                        "name": "Condition Block",
+                        "title": "indicator ?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "indicator ?",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_01NJ23POT5J4W0rqySuP55f05NhYL6mWCVo",
+                            "name": "Condition Branch",
+                            "title": "no",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_01NJ1YUP15M0M1xoAxFgLiXgcGn0Ezgs2uS.output.response_body$",
+                                "operator": "eq",
+                                "right_operand": "[]"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "no",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_01NJ28AN69BNA50zihABfdxKg4vT0u7xNjZ",
+                                "name": "HTTP Request",
+                                "title": "Threat Response - Create Indicator - Risk Score 1",
+                                "type": "web-service.http_request",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "allow_auto_redirect": true,
+                                  "body": "{\n    \"description\": \"Secure MeterXD - Risk Score 1 - Common Low\",\n    \"valid_time\": {\n        \"start_time\": \"$activity.definition_activity_01NJ2F5K4W8C82wQjhOLPXgOPPNirDu42Cw.output.script_queries.timeISO$\",\n        \"end_time\": \"2525-01-01T00:00:00.000Z\"\n    },\n    \"producer\": \"Secure MeterXD\",\n    \"schema_version\": \"1.1.3\",\n    \"type\": \"indicator\",\n    \"short_description\": \"Secure MeterXD - Risk Score 1 - Common Low\",\n    \"title\": \"Secure MeterXD - Risk Score 1\",\n    \"severity\": \"Low\",\n    \"tlp\": \"red\",\n    \"groups\": [\n        \"40c00449-0d6b-441a-855b-f069af1aa699\"\n    ],\n    \"timestamp\": \"$activity.definition_activity_01NJ2F5K4W8C82wQjhOLPXgOPPNirDu42Cw.output.script_queries.timeISO$\",\n    \"confidence\": \"High\",\n    \"owner\": \"a3a8b78d-16e8-4fa5-809e-95a09057d638\"\n}",
+                                  "content_type": "application/json",
+                                  "continue_on_error_status_code": false,
+                                  "continue_on_failure": false,
+                                  "custom_headers": [
+                                    {
+                                      "name": "Authorization",
+                                      "value": "Bearer $activity.definition_activity_01NAFS0U2PR1Q2JKQZ5eCdywW4f7rIRP2yy.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                                    }
+                                  ],
+                                  "display_name": "Threat Response - Create Indicator - Risk Score 1",
+                                  "method": "POST",
+                                  "relative_url": "/ctia/indicator/",
+                                  "runtime_user": {
+                                    "override_target_runtime_user": false,
+                                    "target_default": true
+                                  },
+                                  "skip_execution": false,
+                                  "target": {
+                                    "override_workflow_target_group_criteria": true,
+                                    "target_group": {
+                                      "use_criteria": {
+                                        "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                        "conditions": [
+                                          {
+                                            "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                            "operator": "eq",
+                                            "right_operand": "Private_CTIA_Target"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01NJ2GIPZST4E71yLZ6846tbK4IAOqrAOSC",
+                    "name": "Parallel Branch",
+                    "title": "Risk Score 2",
+                    "type": "logic.parallel_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Risk Score 2",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NJ2GIR0H38J2qiuzKGtCKsr9zPRUdfGYw",
+                        "name": "HTTP Request",
+                        "title": "Threat Response - Get Indicator - Risk Score 2",
+                        "type": "web-service.http_request",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "allow_auto_redirect": true,
+                          "content_type": "application/json",
+                          "continue_on_error_status_code": false,
+                          "continue_on_failure": false,
+                          "custom_headers": [
+                            {
+                              "name": "Authorization",
+                              "value": "Bearer $activity.definition_activity_01NAFS0U2PR1Q2JKQZ5eCdywW4f7rIRP2yy.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                            }
+                          ],
+                          "display_name": "Threat Response - Get Indicator - Risk Score 2",
+                          "method": "GET",
+                          "relative_url": "/ctia/indicator/search?fields=title\u0026query=\"Secure MeterXD - Risk Score 2\"",
+                          "runtime_user": {
+                            "override_target_runtime_user": false,
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "override_workflow_target_group_criteria": true,
+                            "target_group": {
+                              "use_criteria": {
+                                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                "conditions": [
+                                  {
+                                    "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                    "operator": "eq",
+                                    "right_operand": "Private_CTIA_Target"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01NJ2GJ48VXWD5AYTMNyYFJcOhEQKj9cz6C",
+                        "name": "Condition Block",
+                        "title": "indicator ?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "indicator ?",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_01NJ2GJHQZAV12zSsSQBkAgMWJpqUnoAfDV",
+                            "name": "Condition Branch",
+                            "title": "no",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_01NJ2GIR0H38J2qiuzKGtCKsr9zPRUdfGYw.output.response_body$",
+                                "operator": "eq",
+                                "right_operand": "[]"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "no",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_01NJ2GJIFHKGL2yafxeD4t9nOtzYCrfeyBW",
+                                "name": "HTTP Request",
+                                "title": "Threat Response - Create Indicator - Risk Score 2",
+                                "type": "web-service.http_request",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "allow_auto_redirect": true,
+                                  "body": "{\n    \"description\": \"Secure MeterXD - Risk Score 2 - Common Medium\",\n    \"valid_time\": {\n        \"start_time\": \"$activity.definition_activity_01NJ2F5K4W8C82wQjhOLPXgOPPNirDu42Cw.output.script_queries.timeISO$\",\n        \"end_time\": \"2525-01-01T00:00:00.000Z\"\n    },\n    \"producer\": \"Secure MeterXD\",\n    \"schema_version\": \"1.1.3\",\n    \"type\": \"indicator\",\n    \"short_description\": \"Secure MeterXD - Risk Score 2 - Common Medium\",\n    \"title\": \"Secure MeterXD - Risk Score 2\",\n    \"severity\": \"Low\",\n    \"tlp\": \"red\",\n    \"groups\": [\n        \"40c00449-0d6b-441a-855b-f069af1aa699\"\n    ],\n    \"timestamp\": \"$activity.definition_activity_01NJ2F5K4W8C82wQjhOLPXgOPPNirDu42Cw.output.script_queries.timeISO$\",\n    \"confidence\": \"High\",\n    \"owner\": \"a3a8b78d-16e8-4fa5-809e-95a09057d638\"\n}",
+                                  "content_type": "application/json",
+                                  "continue_on_error_status_code": false,
+                                  "continue_on_failure": false,
+                                  "custom_headers": [
+                                    {
+                                      "name": "Authorization",
+                                      "value": "Bearer $activity.definition_activity_01NAFS0U2PR1Q2JKQZ5eCdywW4f7rIRP2yy.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                                    }
+                                  ],
+                                  "display_name": "Threat Response - Create Indicator - Risk Score 2",
+                                  "method": "POST",
+                                  "relative_url": "/ctia/indicator/",
+                                  "runtime_user": {
+                                    "override_target_runtime_user": false,
+                                    "target_default": true
+                                  },
+                                  "skip_execution": false,
+                                  "target": {
+                                    "override_workflow_target_group_criteria": true,
+                                    "target_group": {
+                                      "use_criteria": {
+                                        "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                        "conditions": [
+                                          {
+                                            "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                            "operator": "eq",
+                                            "right_operand": "Private_CTIA_Target"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01NJ2I8CQ4J1W6JkWKWYFb0lKmGokwJYuZy",
+                    "name": "Parallel Branch",
+                    "title": "Risk Score 3",
+                    "type": "logic.parallel_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Risk Score 3",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NJ2I8DJM0XJ6iUV6C2XM78DkcQ82qzEkr",
+                        "name": "HTTP Request",
+                        "title": "Threat Response - Get Indicator - Risk Score 3",
+                        "type": "web-service.http_request",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "allow_auto_redirect": true,
+                          "content_type": "application/json",
+                          "continue_on_error_status_code": false,
+                          "continue_on_failure": false,
+                          "custom_headers": [
+                            {
+                              "name": "Authorization",
+                              "value": "Bearer $activity.definition_activity_01NAFS0U2PR1Q2JKQZ5eCdywW4f7rIRP2yy.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                            }
+                          ],
+                          "display_name": "Threat Response - Get Indicator - Risk Score 3",
+                          "method": "GET",
+                          "relative_url": "/ctia/indicator/search?fields=title\u0026query=\"Secure MeterXD - Risk Score 3\"",
+                          "runtime_user": {
+                            "override_target_runtime_user": false,
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "override_workflow_target_group_criteria": true,
+                            "target_group": {
+                              "use_criteria": {
+                                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                "conditions": [
+                                  {
+                                    "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                    "operator": "eq",
+                                    "right_operand": "Private_CTIA_Target"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01NJ2I8QT1SRE56laCYEYCbUPeaamueBb97",
+                        "name": "Condition Block",
+                        "title": "indicator ?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "indicator ?",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_01NJ2I94RE4BP4T2ccjaE9Zev0W1XFZKfAi",
+                            "name": "Condition Branch",
+                            "title": "no",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_01NJ2I8DJM0XJ6iUV6C2XM78DkcQ82qzEkr.output.response_body$",
+                                "operator": "eq",
+                                "right_operand": "[]"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "no",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_01NJ2I95E6FLS5WrM9OtusoIh0gZ47hDARc",
+                                "name": "HTTP Request",
+                                "title": "Threat Response - Create Indicator - Risk Score 3",
+                                "type": "web-service.http_request",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "allow_auto_redirect": true,
+                                  "body": "{\n    \"description\": \"Secure MeterXD - Risk Score 3 - Suspicious Medium\",\n    \"valid_time\": {\n        \"start_time\": \"$activity.definition_activity_01NJ2F5K4W8C82wQjhOLPXgOPPNirDu42Cw.output.script_queries.timeISO$\",\n        \"end_time\": \"2525-01-01T00:00:00.000Z\"\n    },\n    \"producer\": \"Secure MeterXD\",\n    \"schema_version\": \"1.1.3\",\n    \"type\": \"indicator\",\n    \"short_description\": \"Secure MeterXD - Risk Score 3 - Suspicious Medium\",\n    \"title\": \"Secure MeterXD - Risk Score 3\",\n    \"severity\": \"Low\",\n    \"tlp\": \"red\",\n    \"groups\": [\n        \"40c00449-0d6b-441a-855b-f069af1aa699\"\n    ],\n    \"timestamp\": \"$activity.definition_activity_01NJ2F5K4W8C82wQjhOLPXgOPPNirDu42Cw.output.script_queries.timeISO$\",\n    \"confidence\": \"High\",\n    \"owner\": \"a3a8b78d-16e8-4fa5-809e-95a09057d638\"\n}",
+                                  "content_type": "application/json",
+                                  "continue_on_error_status_code": false,
+                                  "continue_on_failure": false,
+                                  "custom_headers": [
+                                    {
+                                      "name": "Authorization",
+                                      "value": "Bearer $activity.definition_activity_01NAFS0U2PR1Q2JKQZ5eCdywW4f7rIRP2yy.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                                    }
+                                  ],
+                                  "display_name": "Threat Response - Create Indicator - Risk Score 3",
+                                  "method": "POST",
+                                  "relative_url": "/ctia/indicator/",
+                                  "runtime_user": {
+                                    "override_target_runtime_user": false,
+                                    "target_default": true
+                                  },
+                                  "skip_execution": false,
+                                  "target": {
+                                    "override_workflow_target_group_criteria": true,
+                                    "target_group": {
+                                      "use_criteria": {
+                                        "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                        "conditions": [
+                                          {
+                                            "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                            "operator": "eq",
+                                            "right_operand": "Private_CTIA_Target"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01NJ2JECYJOAG10KwhbNb6q12nhsJzXzEHW",
+                    "name": "Parallel Branch",
+                    "title": "Risk Score 4",
+                    "type": "logic.parallel_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Risk Score 4",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NJ2JEE4Y4KG00z75W4zEZHcopLUnaJxJa",
+                        "name": "HTTP Request",
+                        "title": "Threat Response - Get Indicator - Risk Score 4",
+                        "type": "web-service.http_request",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "allow_auto_redirect": true,
+                          "content_type": "application/json",
+                          "continue_on_error_status_code": false,
+                          "continue_on_failure": false,
+                          "custom_headers": [
+                            {
+                              "name": "Authorization",
+                              "value": "Bearer $activity.definition_activity_01NAFS0U2PR1Q2JKQZ5eCdywW4f7rIRP2yy.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                            }
+                          ],
+                          "display_name": "Threat Response - Get Indicator - Risk Score 4",
+                          "method": "GET",
+                          "relative_url": "/ctia/indicator/search?fields=title\u0026query=\"Secure MeterXD - Risk Score  4\"",
+                          "runtime_user": {
+                            "override_target_runtime_user": false,
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "override_workflow_target_group_criteria": true,
+                            "target_group": {
+                              "use_criteria": {
+                                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                "conditions": [
+                                  {
+                                    "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                    "operator": "eq",
+                                    "right_operand": "Private_CTIA_Target"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01NJ2JES0X4KS3XQ5JMoS6lJoUdxqtTZeJD",
+                        "name": "Condition Block",
+                        "title": "indicator ?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "indicator ?",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_01NJ2JF5NDB1I5NLNaAc1G2cdKNoRVGj9uE",
+                            "name": "Condition Branch",
+                            "title": "no",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_01NJ2JEE4Y4KG00z75W4zEZHcopLUnaJxJa.output.response_body$",
+                                "operator": "eq",
+                                "right_operand": "[]"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "no",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_01NJ2JF6BJHMM1AVCZVaTmd0X677MVlTruH",
+                                "name": "HTTP Request",
+                                "title": "Threat Response - Create Indicator - Risk Score 4",
+                                "type": "web-service.http_request",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "allow_auto_redirect": true,
+                                  "body": "{\n    \"description\": \"Secure MeterXD - Risk Score 4 - Suspicious High\",\n    \"valid_time\": {\n        \"start_time\": \"$activity.definition_activity_01NJ2F5K4W8C82wQjhOLPXgOPPNirDu42Cw.output.script_queries.timeISO$\",\n        \"end_time\": \"2525-01-01T00:00:00.000Z\"\n    },\n    \"producer\": \"Secure MeterXD\",\n    \"schema_version\": \"1.1.3\",\n    \"type\": \"indicator\",\n    \"short_description\": \"Secure MeterXD - Risk Score 4 - Suspicious High\",\n    \"title\": \"Secure MeterXD - Risk Score 4\",\n    \"severity\": \"Low\",\n    \"tlp\": \"red\",\n    \"groups\": [\n        \"40c00449-0d6b-441a-855b-f069af1aa699\"\n    ],\n    \"timestamp\": \"$activity.definition_activity_01NJ2F5K4W8C82wQjhOLPXgOPPNirDu42Cw.output.script_queries.timeISO$\",\n    \"confidence\": \"High\",\n    \"owner\": \"a3a8b78d-16e8-4fa5-809e-95a09057d638\"\n}",
+                                  "content_type": "application/json",
+                                  "continue_on_error_status_code": false,
+                                  "continue_on_failure": false,
+                                  "custom_headers": [
+                                    {
+                                      "name": "Authorization",
+                                      "value": "Bearer $activity.definition_activity_01NAFS0U2PR1Q2JKQZ5eCdywW4f7rIRP2yy.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                                    }
+                                  ],
+                                  "display_name": "Threat Response - Create Indicator - Risk Score 4",
+                                  "method": "POST",
+                                  "relative_url": "/ctia/indicator/",
+                                  "runtime_user": {
+                                    "override_target_runtime_user": false,
+                                    "target_default": true
+                                  },
+                                  "skip_execution": false,
+                                  "target": {
+                                    "override_workflow_target_group_criteria": true,
+                                    "target_group": {
+                                      "use_criteria": {
+                                        "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                        "conditions": [
+                                          {
+                                            "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                            "operator": "eq",
+                                            "right_operand": "Private_CTIA_Target"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01NJ2K0ZQB5UU1sGMWACcSkFoqZjeRBFJp7",
+                    "name": "Parallel Branch",
+                    "title": "Risk Score 5",
+                    "type": "logic.parallel_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Risk Score 5",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NJ2K10NZOTN0uMQUq4A4eL3X2y4dGcGF7",
+                        "name": "HTTP Request",
+                        "title": "Threat Response - Get Indicator - Risk Score 5",
+                        "type": "web-service.http_request",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "allow_auto_redirect": true,
+                          "content_type": "application/json",
+                          "continue_on_error_status_code": false,
+                          "continue_on_failure": false,
+                          "custom_headers": [
+                            {
+                              "name": "Authorization",
+                              "value": "Bearer $activity.definition_activity_01NAFS0U2PR1Q2JKQZ5eCdywW4f7rIRP2yy.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                            }
+                          ],
+                          "display_name": "Threat Response - Get Indicator - Risk Score 5",
+                          "method": "GET",
+                          "relative_url": "/ctia/indicator/search?fields=title\u0026query=\"Secure MeterXD - Risk Score 5\"",
+                          "runtime_user": {
+                            "override_target_runtime_user": false,
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "override_workflow_target_group_criteria": true,
+                            "target_group": {
+                              "use_criteria": {
+                                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                "conditions": [
+                                  {
+                                    "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                    "operator": "eq",
+                                    "right_operand": "Private_CTIA_Target"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01NJ2K1EBA7L61xYzg3UFuCBNf9NvDn2cwU",
+                        "name": "Condition Block",
+                        "title": "indicator ?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "indicator ?",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_01NJ2K1RYOESO3kIySZ3VXHNbP3DkMPl9iD",
+                            "name": "Condition Branch",
+                            "title": "no",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_01NJ2K10NZOTN0uMQUq4A4eL3X2y4dGcGF7.output.response_body$",
+                                "operator": "eq",
+                                "right_operand": "[]"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "no",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_01NJ2K1SOEDSJ6APxHonIgIjgHXQckwNzv9",
+                                "name": "HTTP Request",
+                                "title": "Threat Response - Create Indicator - Risk Score 5",
+                                "type": "web-service.http_request",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "allow_auto_redirect": true,
+                                  "body": "{\n    \"description\": \"Secure MeterXD - Risk Score 5\",\n    \"valid_time\": {\n        \"start_time\": \"$activity.definition_activity_01NJ2F5K4W8C82wQjhOLPXgOPPNirDu42Cw.output.script_queries.timeISO$\",\n        \"end_time\": \"2525-01-01T00:00:00.000Z\"\n    },\n    \"producer\": \"Secure MeterXD\",\n    \"schema_version\": \"1.1.3\",\n    \"type\": \"indicator\",\n    \"short_description\": \"Secure MeterXD - Risk Score 5 - Malicious High\",\n    \"title\": \"Secure MeterXD - Risk Score 5\",\n    \"severity\": \"Low\",\n    \"tlp\": \"red\",\n    \"groups\": [\n        \"40c00449-0d6b-441a-855b-f069af1aa699\"\n    ],\n    \"timestamp\": \"$activity.definition_activity_01NJ2F5K4W8C82wQjhOLPXgOPPNirDu42Cw.output.script_queries.timeISO$\",\n    \"confidence\": \"High\",\n    \"owner\": \"a3a8b78d-16e8-4fa5-809e-95a09057d638\"\n}",
+                                  "content_type": "application/json",
+                                  "continue_on_error_status_code": false,
+                                  "continue_on_failure": false,
+                                  "custom_headers": [
+                                    {
+                                      "name": "Authorization",
+                                      "value": "Bearer $activity.definition_activity_01NAFS0U2PR1Q2JKQZ5eCdywW4f7rIRP2yy.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                                    }
+                                  ],
+                                  "display_name": "Threat Response - Create Indicator - Risk Score 5",
+                                  "method": "POST",
+                                  "relative_url": "/ctia/indicator/",
+                                  "runtime_user": {
+                                    "override_target_runtime_user": false,
+                                    "target_default": true
+                                  },
+                                  "skip_execution": false,
+                                  "target": {
+                                    "override_workflow_target_group_criteria": true,
+                                    "target_group": {
+                                      "use_criteria": {
+                                        "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                        "conditions": [
+                                          {
+                                            "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                            "operator": "eq",
+                                            "right_operand": "Private_CTIA_Target"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01NJ1AU04GX6N5rWw5jIGaTEkExwsUqUcnO",
+            "name": "Parallel Branch",
+            "title": "Judgement ?",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Judgement ?",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NDTNK6IWJ3R1Ik2pev1nPbOJUglzLD31P",
+                "name": "SMXD - Get Judgement and Score",
+                "title": "SMXD - Get Judgement and Score",
+                "type": "workflow.atomic_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "SMXD - Get Judgement and Score",
+                  "input": {
+                    "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.input.variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst$",
+                    "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.input.variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA$",
+                    "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01NAFS0U2PR1Q2JKQZ5eCdywW4f7rIRP2yy.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                  },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "use_workflow_target_group": true
+                  },
+                  "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NDT8BJDN0MC5RmYXjbZIrmieD7bC4GBod",
+                "name": "Condition Block",
+                "title": "Need to delete old judgement ?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Need to delete old judgement ?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01NDT8CACKB5R5chyHYHsUaTO3HqsOHep6F",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01NDTNK6IWJ3R1Ik2pev1nPbOJUglzLD31P.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                        "operator": "gte",
+                        "right_operand": 1
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NAJ7QOFEAJ34Thzanr8NPGpi2FvITJScJ",
+                        "name": "HTTP Request",
+                        "title": "Threat Response - delete Judgement",
+                        "type": "web-service.http_request",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "allow_auto_redirect": true,
+                          "content_type": "application/json",
+                          "continue_on_error_status_code": false,
+                          "continue_on_failure": false,
+                          "custom_headers": [
+                            {
+                              "name": "Authorization",
+                              "value": "Bearer $activity.definition_activity_01NAFS0U2PR1Q2JKQZ5eCdywW4f7rIRP2yy.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                            }
+                          ],
+                          "display_name": "Threat Response - delete Judgement",
+                          "method": "DELETE",
+                          "relative_url": "/ctia/judgement/$activity.definition_activity_01NDTNK6IWJ3R1Ik2pev1nPbOJUglzLD31P.output.variable_workflow_01NDSY643XIE53Wy0MWnaWPIJYZNqlz8ybV$",
+                          "runtime_user": {
+                            "override_target_runtime_user": false,
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "override_workflow_target_group_criteria": true,
+                            "target_group": {
+                              "use_criteria": {
+                                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                                "conditions": [
+                                  {
+                                    "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                                    "operator": "eq",
+                                    "right_operand": "Private_CTIA_Target"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NFLNB3SYZ922bif1l90w1fiuwRyfvUhvU",
+                "name": "SMXD -  Raise Risk Score v2",
+                "title": "SMXD -  Raise Risk Score v2",
+                "type": "workflow.atomic_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "SMXD -  Raise Risk Score v2",
+                  "input": {
+                    "variable_workflow_01NFL8M72PKBN00hxcg4Yf2KLFOJ7DKN7Wt": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.input.variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh$",
+                    "variable_workflow_01NFLEOE4LR8T3yNrIvuy6ZTMPPoYWyAN84": "$activity.definition_activity_01NDTNK6IWJ3R1Ik2pev1nPbOJUglzLD31P.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$"
+                  },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "execute_on_this_target_group": true,
+                    "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH"
+                  },
+                  "workflow_id": "definition_workflow_01NFL8M79BG7643M2XbNjgAHBW2muRr4tty"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01ND69H6UGK9B5SlFXOWJ6dpiobijRlSzGz",
+                "name": "Set Variables",
+                "title": "Set Variables Raison",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables Raison",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.output.variable_workflow_01NAFDG8ZHDE34iBVhyoO1Lx8mynbdXCmzh$",
+                      "variable_value_new": "SMXD | $activity.definition_activity_01NDTNK6IWJ3R1Ik2pev1nPbOJUglzLD31P.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$ $activity.definition_activity_01NDTNK6IWJ3R1Ik2pev1nPbOJUglzLD31P.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$ -\u003e $activity.definition_activity_01NFLNB3SYZ922bif1l90w1fiuwRyfvUhvU.output.variable_workflow_01NFL8M72PJ7W7ZvQZHRePwVJvVpO59vtne$ $activity.definition_activity_01NFLNB3SYZ922bif1l90w1fiuwRyfvUhvU.output.variable_workflow_01NFL8M72PGP00slTPAkRjPHmlN2PyXaCn2$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NAGYMCZKFEJ6rGch13CexS0mZ7tmnEBce",
+                "name": "Execute Python Script",
+                "title": "Calculate expiration  time",
+                "type": "python3.script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Calculate expiration  time",
+                  "script": "import sys\nfrom datetime import datetime\nimport time\n\ndelta = 86400 * $workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.input.variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F$\nlinux_time = int(time.time()) + delta\n\nt =  int(linux_time)\ntimeISO = (datetime.fromtimestamp(t).isoformat())+'.000Z'",
+                  "script_arguments": [
+                    ""
+                  ],
+                  "script_queries": [
+                    {
+                      "script_query": "timeISO",
+                      "script_query_name": "timeISO",
+                      "script_query_type": "date"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NAH0RZLI7TR4is6FAGC6oDINWecpJlYbD",
+                "name": "Format Date",
+                "title": "Format Date",
+                "type": "core.format_date",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Format Date",
+                  "format_string": "2006-01-02T15:04:05Z",
+                  "original_date": "$activity.definition_activity_01NAGYMCZKFEJ6rGch13CexS0mZ7tmnEBce.output.script_queries.timeISO$",
+                  "skip_execution": false,
+                  "use_custom_format": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01NJ3FEUCMT2L0lM5lrQh6zPqy9sJjqv20B",
+        "name": "SMXD - Create Judgement",
+        "title": "SMXD - Create Judgement",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "SMXD - Create Judgement",
+          "input": {
+            "variable_workflow_01NJ342TWV22X1xt0UmOpLBgEcrDHvamXhY": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.input.variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst$",
+            "variable_workflow_01NJ34867QLXN792ebGhPxPqvocbnbcYE2b": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.input.variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA$",
+            "variable_workflow_01NJ34CRWTG1R4bAQqfaN5ZDqL93sba1zEf": "$activity.definition_activity_01NAH0RZLI7TR4is6FAGC6oDINWecpJlYbD.output.result$",
+            "variable_workflow_01NJ34NQ9FGRZ4w2xTGbLMjtCTBIveLIkFx": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.output.variable_workflow_01NAFDG8ZHDE34iBVhyoO1Lx8mynbdXCmzh$",
+            "variable_workflow_01NJ34UAXY4WI6h0GSaqgzSnf6KqZtUt09C": "$activity.definition_activity_01NFLNB3SYZ922bif1l90w1fiuwRyfvUhvU.output.variable_workflow_01NFL8M72PJ7W7ZvQZHRePwVJvVpO59vtne$",
+            "variable_workflow_01NJ352LHAHQ82ts87w24qYWa9oJ3t0AAka": "$activity.definition_activity_01NFLNB3SYZ922bif1l90w1fiuwRyfvUhvU.output.variable_workflow_01NFL8M72PGP00slTPAkRjPHmlN2PyXaCn2$",
+            "variable_workflow_01NJ35BQITAGE7dE4YPFb1qIaRnaBL5tZBu": "$activity.definition_activity_01NFLNB3SYZ922bif1l90w1fiuwRyfvUhvU.output.variable_workflow_01NFL8M72P9TF6mHxtDKwncCilJqeDTOHCd$",
+            "variable_workflow_01NJ3JC96FXBA4pJeNYE5sE7pzpp3RfBqb0": "$activity.definition_activity_01NAFS0U2PR1Q2JKQZ5eCdywW4f7rIRP2yy.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target_group_criteria": true,
+            "target_group": {
+              "run_on_all_targets": false,
+              "use_criteria": {
+                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                "conditions": [
+                  {
+                    "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                    "operator": "eq",
+                    "right_operand": "Private_CTIA_Target"
+                  }
+                ]
+              }
+            }
+          },
+          "workflow_id": "definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NFMYBDVZR7324H1GYDmnQJIT6nTByMHXG",
+        "name": "Set Variables",
+        "title": "Set Variables output",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables output",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.output.variable_workflow_01NAFEDFHQ3UL1SppC04qLc2c4PAgz8lWir$",
+              "variable_value_new": "$activity.definition_activity_01NFLNB3SYZ922bif1l90w1fiuwRyfvUhvU.output.variable_workflow_01NFL8M72PJ7W7ZvQZHRePwVJvVpO59vtne$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.output.variable_workflow_01ND60TSA7V5V760mgpbZgT1qG1Z3vCwqTh$",
+              "variable_value_new": "$activity.definition_activity_01NFLNB3SYZ922bif1l90w1fiuwRyfvUhvU.output.variable_workflow_01NFL8M72PGP00slTPAkRjPHmlN2PyXaCn2$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.output.variable_workflow_01NFMZ9J947SD6rZ2LsKHCqmiLB9WsgQTVO$",
+              "variable_value_new": "$activity.definition_activity_01NFLNB3SYZ922bif1l90w1fiuwRyfvUhvU.output.variable_workflow_01NFL8M72P9TF6mHxtDKwncCilJqeDTOHCd$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.output.variable_workflow_01ND0WWG0T73X32beQ0vZhbbYAIUOIQv1lZ$",
+              "variable_value_new": "$activity.definition_activity_01NDTNK6IWJ3R1Ik2pev1nPbOJUglzLD31P.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.output.variable_workflow_01ND60M774TW93XvITFVzkiuUIyK3FFZhL7$",
+              "variable_value_new": "$activity.definition_activity_01NDTNK6IWJ3R1Ik2pev1nPbOJUglzLD31P.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.output.variable_workflow_01NFMZH3CGG945Y6Bd248owXyj1sZvRiLUx$",
+              "variable_value_new": "$activity.definition_activity_01NDTNK6IWJ3R1Ik2pev1nPbOJUglzLD31P.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01ND16L98OD6Z6wWbfFlBdaIGQht3y49a8F",
+        "name": "Condition Block",
+        "title": "Do we need a response action ?",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Do we need a response action ?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01ND16LMWFBYU3DRCNyHta9P7O64FlaiXZy",
+            "name": "Condition Branch",
+            "title": "Yes",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.output.variable_workflow_01ND0WWG0T73X32beQ0vZhbbYAIUOIQv1lZ$",
+                "operator": "ne",
+                "right_operand": "$workflow.definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV.output.variable_workflow_01NAFEDFHQ3UL1SppC04qLc2c4PAgz8lWir$"
+              },
+              "continue_on_failure": false,
+              "display_name": "Yes",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r",
+      "category_01FM7CGPZZCMY0KcvgiGjVH5UaB4y4aDJ7m"
+    ]
+  },
+  "categories": {
+    "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r": {
+      "unique_name": "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r",
+      "name": "SecureX",
+      "title": "SecureX",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01FM7CGPZZCMY0KcvgiGjVH5UaB4y4aDJ7m": {
+      "unique_name": "category_01FM7CGPZZCMY0KcvgiGjVH5UaB4y4aDJ7m",
+      "name": "response",
+      "title": "response",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "target_groups": {
+    "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH": {
+      "unique_name": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+      "name": "Default TargetGroup",
+      "title": "Default TargetGroup",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "web-service.endpoint",
+          "view_target_type": "web-service.endpoint",
+          "include_all_targets": true
+        },
+        {
+          "data_target_type": "email.smtp_endpoint",
+          "view_target_type": "email.smtp_endpoint",
+          "include_all_targets": true
+        },
+        {
+          "data_target_type": "terminal.endpoint",
+          "view_target_type": "terminal.endpoint",
+          "include_all_targets": true
+        }
+      ],
+      "object_type": "target_group"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi",
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
+    "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof",
+    "definition_workflow_01NFL8M79BG7643M2XbNjgAHBW2muRr4tty",
+    "definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm"
+  ]
+}
