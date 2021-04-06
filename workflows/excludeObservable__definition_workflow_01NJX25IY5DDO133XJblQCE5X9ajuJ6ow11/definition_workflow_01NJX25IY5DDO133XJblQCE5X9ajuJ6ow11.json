@@ -1,0 +1,572 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11",
+    "name": "SMXD -  Exclude Observable",
+    "title": "SMXD -  Exclude Observable",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "new_severity",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQHINT5xibTO1I4lG7cqITBQRLrh",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 6,
+          "scope": "input",
+          "name": "decrement",
+          "type": "datatype.integer",
+          "description": "Set to 6 to set to clean disposition",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQJ3EU2I272KsNc5XBrGPflOjWzU",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "old_severity",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQHJW958zV60FYF4ZdH2hMeECmBY",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "old_disposition_name",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQHM974GtPTd96cWUqk8w40A0nSo",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "new_disposition_name",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQIWFK6eiL3dCIw3LRP89xritOKe",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Raison",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQIXPG7W7KWgpib6GKCG101WKJj8",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "old_risk_score",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQJ2AC64ws6TWujvk7VMT3teA5aX",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 365,
+          "scope": "input",
+          "name": "Expiration_in_days",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQHHCV4LIaq4vBxsIVFHV0Z3EIrL",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "internetsinkhole.com",
+          "scope": "local",
+          "name": "email_domain",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQHNGB0q5akgP9ph28qZdmX5iyHC",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQHKZ13lcoo1R7DinLyzGUT0iK1U",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "new_risk_score",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQHEMH796MEphVOxamhcAvUtqHU1",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "SMXD -  Exclude Observable",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": true,
+        "target_group": {
+          "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+          "run_on_all_targets": false,
+          "selected_target_types": [
+            "web-service.endpoint"
+          ],
+          "use_criteria": {
+            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+            "conditions": [
+              {
+                "operator": "eq",
+                "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                "right_operand": "Private_CTIA_Target"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01NJX2FH49LH762AibXFzhwi8vOdylzWPKT",
+        "name": "SMXD - Validate Observable type",
+        "title": "SMXD - Validate Observable type",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "SMXD - Validate Observable type",
+          "input": {
+            "variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.input.variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq$",
+            "variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.input.variable_workflow_01NJX25IQHKZ13lcoo1R7DinLyzGUT0iK1U$",
+            "variable_workflow_01MW30PILPB7G1ylYd7uaVZCiLqSxxuqUwn": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.local.variable_workflow_01NJX25IQHNGB0q5akgP9ph28qZdmX5iyHC$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "no_target": true
+          },
+          "workflow_id": "definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NJX2I3VTCVE0Peod1GD8N21JmPuyPA1EX",
+        "name": "Condition Block",
+        "title": "Observable type supported ?",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Observable type supported ?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01NJX2JA05CFY6aWlySovSRfcGEgDvtKXFB",
+            "name": "Condition Branch",
+            "title": "no",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01NJX2FH49LH762AibXFzhwi8vOdylzWPKT.output.succeeded$",
+                "operator": "eq",
+                "right_operand": false
+              },
+              "continue_on_failure": false,
+              "display_name": "no",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NJX2KECE93D5HKtOr8JgFjAGcZWx8e66J",
+                "name": "Completed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "failed-completed",
+                  "continue_on_failure": false,
+                  "display_name": "Completed",
+                  "result_message": "Observable type unsupported",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01NJX2N0H081A7BTQ35Yy6GpG95iQkNPVHi",
+        "name": "Threat Response v2 - Generate Access Token",
+        "title": "Threat Response v2 - Generate Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Threat Response v2 - Generate Access Token",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target_group_criteria": true,
+            "target_group": {
+              "run_on_all_targets": false,
+              "use_criteria": {
+                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                "conditions": [
+                  {
+                    "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                    "operator": "eq",
+                    "right_operand": "CTR_For_Access_Token"
+                  }
+                ]
+              }
+            }
+          },
+          "workflow_id": "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NJX2SM9J9F95T0ec6mMyTx7uFaJfyNAL4",
+        "name": "SMXD - Get Judgement and Score",
+        "title": "SMXD - Get Judgement and Score",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "SMXD - Get Judgement and Score",
+          "input": {
+            "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.input.variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq$",
+            "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.input.variable_workflow_01NJX25IQHKZ13lcoo1R7DinLyzGUT0iK1U$",
+            "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01NJX2N0H081A7BTQ35Yy6GpG95iQkNPVHi.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "use_workflow_target_group": true
+          },
+          "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NJX2U6OU4S25cXUHQD0OPdouKzCfxnYkq",
+        "name": "Condition Block",
+        "title": "Need to delete old judgement ?",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Need to delete old judgement ?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01NJX2W1HO7Z92WZecyJ4YneCGmLNT1OBQc",
+            "name": "Condition Branch",
+            "title": "Risk Score not 0",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01NJX2SM9J9F95T0ec6mMyTx7uFaJfyNAL4.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                "operator": "ne",
+                "right_operand": 0
+              },
+              "continue_on_failure": false,
+              "display_name": "Risk Score not 0",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NJX2WUWRGNQ3au0ZGcuhObf4kvrZUQsIE",
+                "name": "HTTP Request",
+                "title": "Threat Response - delete Judgement",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": false,
+                  "custom_headers": [
+                    {
+                      "name": "Authorization",
+                      "value": "Bearer $activity.definition_activity_01NJX2N0H081A7BTQ35Yy6GpG95iQkNPVHi.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                    }
+                  ],
+                  "display_name": "Threat Response - delete Judgement",
+                  "method": "DELETE",
+                  "relative_url": "/ctia/judgement/$activity.definition_activity_01NJX2SM9J9F95T0ec6mMyTx7uFaJfyNAL4.output.variable_workflow_01NDSY643XIE53Wy0MWnaWPIJYZNqlz8ybV$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target_group_criteria": true,
+                    "target_group": {
+                      "use_criteria": {
+                        "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                        "conditions": [
+                          {
+                            "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                            "operator": "eq",
+                            "right_operand": "Private_CTIA_Target"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01NJX2YRYVM001tNCn5789Y7vTcayrysaan",
+        "name": "SMXD -  Lower Risk Score v2",
+        "title": "SMXD -  Lower Risk Score v2",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "SMXD -  Lower Risk Score v2",
+          "input": {
+            "variable_workflow_01NFM5W6DE1YZ7UlMxMHxxAHyAAHPnRudEv": "$activity.definition_activity_01NJX2SM9J9F95T0ec6mMyTx7uFaJfyNAL4.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+            "variable_workflow_01NFM5W6DE35G5xCmusPsyK1u8nKClJx32P": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.input.variable_workflow_01NJX25IQJ3EU2I272KsNc5XBrGPflOjWzU$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "execute_on_this_target_group": true,
+            "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH"
+          },
+          "workflow_id": "definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NJX3AYFQYMU5imf4vYT0JSWM5rdrNZfEA",
+        "name": "Set Variables",
+        "title": "Set Variables output",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables output",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.output.variable_workflow_01NJX25IQIWFK6eiL3dCIw3LRP89xritOKe$",
+              "variable_value_new": "$activity.definition_activity_01NJX2YRYVM001tNCn5789Y7vTcayrysaan.output.variable_workflow_01NFM5W6DE0O762TIDzoDowSZpOcOhtNrRD$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.output.variable_workflow_01NJX25IQHINT5xibTO1I4lG7cqITBQRLrh$",
+              "variable_value_new": "$activity.definition_activity_01NJX2YRYVM001tNCn5789Y7vTcayrysaan.output.variable_workflow_01NFM5W6DDWEI3uncL5SdvPu8X0lAcL4sfQ$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.output.variable_workflow_01NJX25IQHEMH796MEphVOxamhcAvUtqHU1$",
+              "variable_value_new": "$activity.definition_activity_01NJX2YRYVM001tNCn5789Y7vTcayrysaan.output.variable_workflow_01NFM5W6DE49H2ujTDjwB3uOejGvmG495mI$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.output.variable_workflow_01NJX25IQHM974GtPTd96cWUqk8w40A0nSo$",
+              "variable_value_new": "$activity.definition_activity_01NJX2SM9J9F95T0ec6mMyTx7uFaJfyNAL4.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.output.variable_workflow_01NJX25IQHJW958zV60FYF4ZdH2hMeECmBY$",
+              "variable_value_new": "$activity.definition_activity_01NJX2SM9J9F95T0ec6mMyTx7uFaJfyNAL4.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.output.variable_workflow_01NJX25IQJ2AC64ws6TWujvk7VMT3teA5aX$",
+              "variable_value_new": "$activity.definition_activity_01NJX2SM9J9F95T0ec6mMyTx7uFaJfyNAL4.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.output.variable_workflow_01NJX25IQIXPG7W7KWgpib6GKCG101WKJj8$",
+              "variable_value_new": "SMXD | $activity.definition_activity_01NJX2SM9J9F95T0ec6mMyTx7uFaJfyNAL4.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$ $activity.definition_activity_01NJX2SM9J9F95T0ec6mMyTx7uFaJfyNAL4.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$-\u003e Exclusion"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NJXOBLKCILG62PBHjJDdSPfj2si3i0DDu",
+        "name": "SMXD - Create Judgement",
+        "title": "SMXD - Create Judgement",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "SMXD - Create Judgement",
+          "input": {
+            "variable_workflow_01NJ342TWV22X1xt0UmOpLBgEcrDHvamXhY": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.input.variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq$",
+            "variable_workflow_01NJ34867QLXN792ebGhPxPqvocbnbcYE2b": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.input.variable_workflow_01NJX25IQHKZ13lcoo1R7DinLyzGUT0iK1U$",
+            "variable_workflow_01NJ34CRWTG1R4bAQqfaN5ZDqL93sba1zEf": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.input.variable_workflow_01NJX25IQHHCV4LIaq4vBxsIVFHV0Z3EIrL$",
+            "variable_workflow_01NJ34NQ9FGRZ4w2xTGbLMjtCTBIveLIkFx": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.output.variable_workflow_01NJX25IQIXPG7W7KWgpib6GKCG101WKJj8$",
+            "variable_workflow_01NJ34UAXY4WI6h0GSaqgzSnf6KqZtUt09C": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.output.variable_workflow_01NJX25IQIWFK6eiL3dCIw3LRP89xritOKe$",
+            "variable_workflow_01NJ352LHAHQ82ts87w24qYWa9oJ3t0AAka": "$workflow.definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11.output.variable_workflow_01NJX25IQHINT5xibTO1I4lG7cqITBQRLrh$",
+            "variable_workflow_01NJ35BQITAGE7dE4YPFb1qIaRnaBL5tZBu": -1,
+            "variable_workflow_01NJ3JC96FXBA4pJeNYE5sE7pzpp3RfBqb0": "$activity.definition_activity_01NJX2N0H081A7BTQ35Yy6GpG95iQkNPVHi.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "use_workflow_target_group": true
+          },
+          "workflow_id": "definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r",
+      "category_01FM7CGPZZCMY0KcvgiGjVH5UaB4y4aDJ7m"
+    ]
+  },
+  "categories": {
+    "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r": {
+      "unique_name": "category_01EI33LMFFL7N5eTQLsOOJIrxdlSOHb7r3r",
+      "name": "SecureX",
+      "title": "SecureX",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01FM7CGPZZCMY0KcvgiGjVH5UaB4y4aDJ7m": {
+      "unique_name": "category_01FM7CGPZZCMY0KcvgiGjVH5UaB4y4aDJ7m",
+      "name": "response",
+      "title": "response",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "target_groups": {
+    "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH": {
+      "unique_name": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+      "name": "Default TargetGroup",
+      "title": "Default TargetGroup",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "web-service.endpoint",
+          "view_target_type": "web-service.endpoint",
+          "include_all_targets": true
+        },
+        {
+          "data_target_type": "email.smtp_endpoint",
+          "view_target_type": "email.smtp_endpoint",
+          "include_all_targets": true
+        },
+        {
+          "data_target_type": "terminal.endpoint",
+          "view_target_type": "terminal.endpoint",
+          "include_all_targets": true
+        }
+      ],
+      "object_type": "target_group"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
+    "definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi",
+    "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof",
+    "definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5",
+    "definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm"
+  ]
+}
