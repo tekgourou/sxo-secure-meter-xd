@@ -7,6 +7,19 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "input",
+          "name": "old_risk_score",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NFM5W6DE1YZ7UlMxMHxxAHyAAHPnRudEv",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
@@ -44,19 +57,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01NFM5W6DE35G5xCmusPsyK1u8nKClJx32P",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.integer",
-        "properties": {
-          "value": 0,
-          "scope": "input",
-          "name": "old_risk_score",
-          "type": "datatype.integer",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NFM5W6DE1YZ7UlMxMHxxAHyAAHPnRudEv",
         "object_type": "variable_workflow"
       },
       {
@@ -143,6 +143,49 @@
           {
             "unique_name": "definition_activity_01NFM5YDJOJP26krzKca5sML63gOiuO8bmq",
             "name": "Condition Branch",
+            "title": "Exclude - SMXD | Clean Low ",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DE49H2ujTDjwB3uOejGvmG495mI$",
+                "operator": "lt",
+                "right_operand": 0
+              },
+              "continue_on_failure": false,
+              "display_name": "Exclude - SMXD | Clean Low ",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NFM5YFPH8FY2GAW4lnAEBrAl0kaI15dUM",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DE0O762TIDzoDowSZpOcOhtNrRD$",
+                      "variable_value_new": "Clean"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5.output.variable_workflow_01NFM5W6DDWEI3uncL5SdvPu8X0lAcL4sfQ$",
+                      "variable_value_new": "Low"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01NJXGCYNDRJD40oZyL1QQAjGnKnq46rrMl",
+            "name": "Condition Branch",
             "title": "Score 1 - SMXD | Common Low",
             "type": "logic.condition_block",
             "base_type": "activity",
@@ -159,7 +202,7 @@
             "object_type": "definition_activity",
             "actions": [
               {
-                "unique_name": "definition_activity_01NFM5YFPH8FY2GAW4lnAEBrAl0kaI15dUM",
+                "unique_name": "definition_activity_01NJXGCZPE1F40jCzkvXjXvBETRknqmYpDT",
                 "name": "Set Variables",
                 "title": "Set Variables",
                 "type": "core.set_multiple_variables",
