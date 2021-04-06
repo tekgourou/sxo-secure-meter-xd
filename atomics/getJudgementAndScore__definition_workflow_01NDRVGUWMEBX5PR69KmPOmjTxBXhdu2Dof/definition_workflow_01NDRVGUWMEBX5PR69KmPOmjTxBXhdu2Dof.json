@@ -1,0 +1,603 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof",
+    "name": "SMXD - Get Judgement and Score",
+    "title": "SMXD - Get Judgement and Score",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "access_token",
+          "type": "datatype.secure_string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "disposition_name",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "output",
+          "name": "risk_score",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "score",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NDRW852SWM94xtX5b4j82ttFaDMYBe3lj",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "severity",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "judgement_id",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NDSY643XIE53Wy0MWnaWPIJYZNqlz8ybV",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Secure MeterXD",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "display_name": "SMXD - Get Judgement and Score",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01NDRYSG70B9X3uBuNQyNJex8S7JwmRllX6",
+        "name": "HTTP Request",
+        "title": "Threat Response - Get Judgement",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer $workflow.definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof.input.variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ$"
+            }
+          ],
+          "display_name": "Threat Response - Get Judgement",
+          "method": "GET",
+          "relative_url": "/ctia/judgement/search?limit=1\u0026source=Secure MeterXD\u0026query=observable.value:\"$workflow.definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof.input.variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T$\" AND observable.type:$workflow.definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof.input.variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NDS0ROKSU4A4wabuBe0mwwJHPvV3metsL",
+        "name": "Condition Block",
+        "title": "Judgement found ?",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Judgement found ?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01NDS0SHDLOSO5Kgd2dn8f1G2AQ0t0FJza8",
+            "name": "Condition Branch",
+            "title": "No",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01NDRYSG70B9X3uBuNQyNJex8S7JwmRllX6.output.response_body$",
+                "operator": "eq",
+                "right_operand": "[]"
+              },
+              "continue_on_failure": false,
+              "display_name": "No",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NDS3U6P990Q3yH9j648gZjGq1EHeqcIdS",
+                "name": "Set Variables",
+                "title": "Set SMXD Score",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set SMXD Score",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                      "variable_value_new": "0"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NFLYAOTWRH04xcDdFbA98q6puTf7E56JJ",
+                "name": "Set Variables",
+                "title": "Set Output Variable",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Output Variable",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                      "variable_value_new": ""
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$",
+                      "variable_value_new": "Undefined"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NDS3RVN7TR826wIW8tyr5s9L5phAxRAhq",
+                "name": "Completed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "succeeded",
+                  "continue_on_failure": false,
+                  "display_name": "Completed",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01NDS5STAXHAW65L10BmQFlw5rMHbgxuxxi",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query for Judgement informations",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "JSONPath Query for Judgement informations",
+          "input_json": "$activity.definition_activity_01NDRYSG70B9X3uBuNQyNJex8S7JwmRllX6.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.[0].source",
+              "jsonpath_query_name": "source",
+              "jsonpath_query_type": "string"
+            },
+            {
+              "jsonpath_query": "$.[0].disposition_name",
+              "jsonpath_query_name": "disposition_name",
+              "jsonpath_query_type": "string"
+            },
+            {
+              "jsonpath_query": "$.[0].disposition",
+              "jsonpath_query_name": "disposition",
+              "jsonpath_query_type": "string"
+            },
+            {
+              "jsonpath_query": "$.[0].observable",
+              "jsonpath_query_name": "observable",
+              "jsonpath_query_type": "string"
+            },
+            {
+              "jsonpath_query": "$.[0].severity",
+              "jsonpath_query_name": "severity",
+              "jsonpath_query_type": "string"
+            },
+            {
+              "jsonpath_query": "$.[0].id",
+              "jsonpath_query_name": "id",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NDS7UTENGQI4VCJQx5YceqAIVHy2SaJcK",
+        "name": "Match Regex",
+        "title": "Match Regex - Get Judgement ID",
+        "type": "core.matchregex",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Match Regex - Get Judgement ID",
+          "input_regex": "[^/]+$",
+          "input_string": "$activity.definition_activity_01NDS5STAXHAW65L10BmQFlw5rMHbgxuxxi.output.jsonpath_queries.id$",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NDSA4PP80JU0epUbCLxWhjWEEO85Wbwbz",
+        "name": "Condition Block",
+        "title": "SMXD Score ?",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "SMXD Score ?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01NDSA53T3J5E0ryo5Sv2nqxYrte5NpAcGh",
+            "name": "Condition Branch",
+            "title": "Score 1 - SMXD | Common Low",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": {
+                  "left_operand": "$activity.definition_activity_01NDS5STAXHAW65L10BmQFlw5rMHbgxuxxi.output.jsonpath_queries.disposition_name$",
+                  "operator": "eq",
+                  "right_operand": "Common"
+                },
+                "operator": "and",
+                "right_operand": {
+                  "left_operand": "$activity.definition_activity_01NDS5STAXHAW65L10BmQFlw5rMHbgxuxxi.output.jsonpath_queries.severity$",
+                  "operator": "eq",
+                  "right_operand": "Low"
+                }
+              },
+              "continue_on_failure": false,
+              "display_name": "Score 1 - SMXD | Common Low",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NDSC8179XWX7YQTIbKRVNsyh3XAwXbVpH",
+                "name": "Set Variables",
+                "title": "Set SMXD Score",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set SMXD Score",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                      "variable_value_new": "1"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01NDSCJQQR24N4HbtsmxPn78dEdBRFSnFEL",
+            "name": "Condition Branch",
+            "title": "Score 2 - SMXD | Common Medium",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": {
+                  "left_operand": "$activity.definition_activity_01NDS5STAXHAW65L10BmQFlw5rMHbgxuxxi.output.jsonpath_queries.disposition_name$",
+                  "operator": "eq",
+                  "right_operand": "Common"
+                },
+                "operator": "and",
+                "right_operand": {
+                  "left_operand": "$activity.definition_activity_01NDS5STAXHAW65L10BmQFlw5rMHbgxuxxi.output.jsonpath_queries.severity$",
+                  "operator": "eq",
+                  "right_operand": "Medium"
+                }
+              },
+              "continue_on_failure": false,
+              "display_name": "Score 2 - SMXD | Common Medium",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NDSCJRQYG5C3SaJWG9eEsfBChGmdflUuh",
+                "name": "Set Variables",
+                "title": "Set SMXD Score",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set SMXD Score",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                      "variable_value_new": "2"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01NDSCWD0YBGG1czSNSkulGpo7qe39okKn2",
+            "name": "Condition Branch",
+            "title": "Score 3 - SMXD | Suspicious Medium",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": {
+                  "left_operand": "$activity.definition_activity_01NDS5STAXHAW65L10BmQFlw5rMHbgxuxxi.output.jsonpath_queries.disposition_name$",
+                  "operator": "eq",
+                  "right_operand": "Suspicious"
+                },
+                "operator": "and",
+                "right_operand": {
+                  "left_operand": "$activity.definition_activity_01NDS5STAXHAW65L10BmQFlw5rMHbgxuxxi.output.jsonpath_queries.severity$",
+                  "operator": "eq",
+                  "right_operand": "Medium"
+                }
+              },
+              "continue_on_failure": false,
+              "display_name": "Score 3 - SMXD | Suspicious Medium",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NDSCWE1TFH31QVm5WcL3bXFwRSxbEXNUg",
+                "name": "Set Variables",
+                "title": "Set SMXD Score",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set SMXD Score",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                      "variable_value_new": "3"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01NDSD4LA3FDJ4IXMMjbzxtTyeRfh9A8Jxj",
+            "name": "Condition Branch",
+            "title": "Score 4 - SMXD | Suspicious High",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": {
+                  "left_operand": "$activity.definition_activity_01NDS5STAXHAW65L10BmQFlw5rMHbgxuxxi.output.jsonpath_queries.disposition_name$",
+                  "operator": "eq",
+                  "right_operand": "Suspicious"
+                },
+                "operator": "and",
+                "right_operand": {
+                  "left_operand": "$activity.definition_activity_01NDS5STAXHAW65L10BmQFlw5rMHbgxuxxi.output.jsonpath_queries.severity$",
+                  "operator": "eq",
+                  "right_operand": "High"
+                }
+              },
+              "continue_on_failure": false,
+              "display_name": "Score 4 - SMXD | Suspicious High",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NDSD4M8W98V2XqnVcVNsmMJyKsD08890Z",
+                "name": "Set Variables",
+                "title": "Set SMXD Score",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set SMXD Score",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                      "variable_value_new": "4"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01NDSDCU7U6RP1yXjkweIcFunTVshs4rQut",
+            "name": "Condition Branch",
+            "title": "Score 5 - SMXD | Malicious High",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": {
+                  "left_operand": "$activity.definition_activity_01NDS5STAXHAW65L10BmQFlw5rMHbgxuxxi.output.jsonpath_queries.disposition_name$",
+                  "operator": "eq",
+                  "right_operand": "Malicious"
+                },
+                "operator": "and",
+                "right_operand": {
+                  "left_operand": "$activity.definition_activity_01NDS5STAXHAW65L10BmQFlw5rMHbgxuxxi.output.jsonpath_queries.severity$",
+                  "operator": "eq",
+                  "right_operand": "High"
+                }
+              },
+              "continue_on_failure": false,
+              "display_name": "Score 5 - SMXD | Malicious High",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NDSDCV4OGV04sefqfdDubHGOMsYzL1Kf9",
+                "name": "Set Variables",
+                "title": "Set SMXD Score",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set SMXD Score",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                      "variable_value_new": "5"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01NDSYAAHFZU14N0AZYDFAIfsy48VT8SbC7",
+        "name": "Set Variables",
+        "title": "Set Output Variable",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Output Variable",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof.output.variable_workflow_01NDSY643XIE53Wy0MWnaWPIJYZNqlz8ybV$",
+              "variable_value_new": "$activity.definition_activity_01NDS7UTENGQI4VCJQx5YceqAIVHy2SaJcK.output.matching_strings[-1]$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+              "variable_value_new": "$activity.definition_activity_01NDS5STAXHAW65L10BmQFlw5rMHbgxuxxi.output.jsonpath_queries.severity$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$",
+              "variable_value_new": "$activity.definition_activity_01NDS5STAXHAW65L10BmQFlw5rMHbgxuxxi.output.jsonpath_queries.disposition_name$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
