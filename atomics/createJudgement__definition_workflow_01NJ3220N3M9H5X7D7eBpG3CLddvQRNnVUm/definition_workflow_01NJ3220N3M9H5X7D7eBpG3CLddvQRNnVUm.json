@@ -1,0 +1,356 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm",
+    "name": "SMXD - Create Judgement",
+    "title": "SMXD - Create Judgement",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "end_time",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJ34CRWTG1R4bAQqfaN5ZDqL93sba1zEf",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJ34867QLXN792ebGhPxPqvocbnbcYE2b",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJ342TWV22X1xt0UmOpLBgEcrDHvamXhY",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "input",
+          "name": "risk_score",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJ35BQITAGE7dE4YPFb1qIaRnaBL5tZBu",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "access_token",
+          "type": "datatype.secure_string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJ3JC96FXBA4pJeNYE5sE7pzpp3RfBqb0",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "severity",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJ352LHAHQ82ts87w24qYWa9oJ3t0AAka",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "disposition_name",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJ34UAXY4WI6h0GSaqgzSnf6KqZtUt09C",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "reason",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJ34NQ9FGRZ4w2xTGbLMjtCTBIveLIkFx",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Secure MeterXD",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "display_name": "SMXD - Create Judgement",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01NJ3TLB8LD6J2XyHSZwLtTrUIRpPOEIHAB",
+        "name": "Parallel Block",
+        "title": "Parallel Block",
+        "type": "logic.parallel",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Parallel Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01NJ3TM2VY4HU2RIDUE1poJkfRwJ8MNacYa",
+            "name": "Parallel Branch",
+            "title": "judgement",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "judgement",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NJ32IC80FZ93fsJuXeVzVLaA1CtnnJpsE",
+                "name": "HTTP Request",
+                "title": "Threat Response - Create Judgement",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "body": "{\n\"observable\": {\n\"type\": \"$workflow.definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm.input.variable_workflow_01NJ34867QLXN792ebGhPxPqvocbnbcYE2b$\",\n\"value\": \"$workflow.definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm.input.variable_workflow_01NJ342TWV22X1xt0UmOpLBgEcrDHvamXhY$\"\n},\n\"valid_time\": {\n\"end_time\": \"$workflow.definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm.input.variable_workflow_01NJ34CRWTG1R4bAQqfaN5ZDqL93sba1zEf$\"\n},\n\"source\": \"Secure MeterXD\",\n\"reason\": \"$workflow.definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm.input.variable_workflow_01NJ34NQ9FGRZ4w2xTGbLMjtCTBIveLIkFx$\",\n\"tlp\": \"red\",\n\"disposition_name\": \"$workflow.definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm.input.variable_workflow_01NJ34UAXY4WI6h0GSaqgzSnf6KqZtUt09C$\",\n\"severity\": \"$workflow.definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm.input.variable_workflow_01NJ352LHAHQ82ts87w24qYWa9oJ3t0AAka$\",\n\"confidence\": \"High\",\n\"priority\": 100\n}",
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": false,
+                  "custom_headers": [
+                    {
+                      "name": "Authorization",
+                      "value": "Bearer $workflow.definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm.input.variable_workflow_01NJ3JC96FXBA4pJeNYE5sE7pzpp3RfBqb0$"
+                    }
+                  ],
+                  "display_name": "Threat Response - Create Judgement",
+                  "method": "POST",
+                  "relative_url": "/ctia/judgement",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NJ3U5BWOKSQ0SPRJVmxNgaY8DH5kWZ6TF",
+                "name": "JSONPath Query",
+                "title": "JSONPath Query Judgement ID",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "JSONPath Query Judgement ID",
+                  "input_json": "$activity.definition_activity_01NJ32IC80FZ93fsJuXeVzVLaA1CtnnJpsE.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$.id",
+                      "jsonpath_query_name": "id",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01NJ3TM3MWSLE32lKbSRbe1i9mHPPEB5Vxw",
+            "name": "Parallel Branch",
+            "title": "indicator",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "indicator",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NJ3R5D4WP3W7FPbUwKNIcF93JOIuaKBbD",
+                "name": "HTTP Request",
+                "title": "Threat Response - Get Indicators ID",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": false,
+                  "custom_headers": [
+                    {
+                      "name": "Authorization",
+                      "value": "Bearer $workflow.definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm.input.variable_workflow_01NJ3JC96FXBA4pJeNYE5sE7pzpp3RfBqb0$"
+                    }
+                  ],
+                  "display_name": "Threat Response - Get Indicators ID",
+                  "method": "GET",
+                  "relative_url": "/ctia/indicator/search?fields=title\u0026query=\"Secure MeterXD - Risk Score $workflow.definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm.input.variable_workflow_01NJ35BQITAGE7dE4YPFb1qIaRnaBL5tZBu$\"",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NJ3RZJCO46C0iSzo4PAMgLGC2iEs48WNU",
+                "name": "JSONPath Query",
+                "title": "JSONPath Query Indicator ID",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "JSONPath Query Indicator ID",
+                  "input_json": "$activity.definition_activity_01NJ3R5D4WP3W7FPbUwKNIcF93JOIuaKBbD.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$.[0].id",
+                      "jsonpath_query_name": "id",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01NJOPQYY983V6h6Wlcj8xGrVIH1B4G6Z7j",
+        "name": "Execute Python Script",
+        "title": "create timestamp",
+        "type": "python3.script",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "create timestamp",
+          "script": "import sys\nfrom datetime import datetime\nimport time\n\nlinux_time = int(time.time()) \n\nt =  int(linux_time)\ntimeISO = (datetime.fromtimestamp(t).isoformat())+'.000Z'",
+          "script_queries": [
+            {
+              "script_query": "timeISO",
+              "script_query_name": "timestamp",
+              "script_query_type": "date"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NJOMTNT48SJ0TitFRK8yms06UTVR02vrZ",
+        "name": "HTTP Request",
+        "title": "Threat Response - Create Relationship",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "body": "{\n        \"schema_version\": \"1.1.3\",\n        \"target_ref\": \"$activity.definition_activity_01NJ3RZJCO46C0iSzo4PAMgLGC2iEs48WNU.output.jsonpath_queries.id$\",\n        \"type\": \"relationship\",\n        \"source_ref\": \"$activity.definition_activity_01NJ3U5BWOKSQ0SPRJVmxNgaY8DH5kWZ6TF.output.jsonpath_queries.id$\",\n        \"tlp\": \"amber\",\n        \"groups\": [\n            \"40c00449-0d6b-441a-855b-f069af1aa699\"\n        ],\n        \"timestamp\": \"$activity.definition_activity_01NJOPQYY983V6h6Wlcj8xGrVIH1B4G6Z7j.output.script_queries.timestamp$\",\n        \"relationship_type\": \"element-of\"\n    }",
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer $workflow.definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm.input.variable_workflow_01NJ3JC96FXBA4pJeNYE5sE7pzpp3RfBqb0$"
+            }
+          ],
+          "display_name": "Threat Response - Create Relationship",
+          "method": "POST",
+          "relative_url": "/ctia/relationship",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
