@@ -11,12 +11,12 @@
         "properties": {
           "value": "",
           "scope": "output",
-          "name": "new_severity",
+          "name": "new_risk_score",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NJX25IQHINT5xibTO1I4lG7cqITBQRLrh",
+        "unique_name": "variable_workflow_01NJX25IQHEMH796MEphVOxamhcAvUtqHU1",
         "object_type": "variable_workflow"
       },
       {
@@ -24,12 +24,38 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "observable_value",
+          "name": "observable_type",
           "type": "datatype.string",
           "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq",
+        "unique_name": "variable_workflow_01NJX25IQHKZ13lcoo1R7DinLyzGUT0iK1U",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "old_severity",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQHJW958zV60FYF4ZdH2hMeECmBY",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 365,
+          "scope": "input",
+          "name": "Expiration_in_days",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQHHCV4LIaq4vBxsIVFHV0Z3EIrL",
         "object_type": "variable_workflow"
       },
       {
@@ -49,40 +75,14 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "old_severity",
+          "value": "internetsinkhole.com",
+          "scope": "local",
+          "name": "email_domain",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NJX25IQHJW958zV60FYF4ZdH2hMeECmBY",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "old_disposition_name",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NJX25IQHM974GtPTd96cWUqk8w40A0nSo",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "new_disposition_name",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NJX25IQIWFK6eiL3dCIw3LRP89xritOKe",
+        "unique_name": "variable_workflow_01NJX25IQHNGB0q5akgP9ph28qZdmX5iyHC",
         "object_type": "variable_workflow"
       },
       {
@@ -112,42 +112,16 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.integer",
-        "properties": {
-          "value": 365,
-          "scope": "input",
-          "name": "Expiration_in_days",
-          "type": "datatype.integer",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NJX25IQHHCV4LIaq4vBxsIVFHV0Z3EIrL",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "internetsinkhole.com",
-          "scope": "local",
-          "name": "email_domain",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NJX25IQHNGB0q5akgP9ph28qZdmX5iyHC",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "input",
-          "name": "observable_type",
+          "scope": "output",
+          "name": "new_severity",
           "type": "datatype.string",
-          "is_required": true,
+          "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NJX25IQHKZ13lcoo1R7DinLyzGUT0iK1U",
+        "unique_name": "variable_workflow_01NJX25IQHINT5xibTO1I4lG7cqITBQRLrh",
         "object_type": "variable_workflow"
       },
       {
@@ -155,12 +129,38 @@
         "properties": {
           "value": "",
           "scope": "output",
-          "name": "new_risk_score",
+          "name": "old_disposition_name",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NJX25IQHEMH796MEphVOxamhcAvUtqHU1",
+        "unique_name": "variable_workflow_01NJX25IQHM974GtPTd96cWUqk8w40A0nSo",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "new_disposition_name",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQIWFK6eiL3dCIw3LRP89xritOKe",
         "object_type": "variable_workflow"
       }
     ],
@@ -507,6 +507,19 @@
           "workflow_id": "definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm"
         },
         "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NLL971CHTP45xfAH3pW4cX3P1XzNk1fU0",
+        "name": "Group",
+        "title": "Do we need a response action ?",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Do we need a response action ?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
       }
     ],
     "categories": [
@@ -563,10 +576,10 @@
     }
   },
   "atomic_workflows": [
+    "definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm",
+    "definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5",
     "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
     "definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi",
-    "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof",
-    "definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5",
-    "definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm"
+    "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
   ]
 }
