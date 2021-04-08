@@ -9,28 +9,41 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "observable_type",
+          "value": "Malicious",
+          "scope": "local",
+          "name": "Azure_AD_GroupName_Malicious",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NLJU2V049WQ2IGJl6G8MxUhMjUNfuYyC1",
+        "unique_name": "variable_workflow_01NLJU2V040IA5ugB5Jbfz2CZEX7BOBsxQx",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Suspicious",
+          "scope": "local",
+          "name": "Azure_AD_GroupName_Suspicious",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NLJU2V04DA81XYe4Ue224n02wVfoPIdhb",
         "object_type": "variable_workflow"
       },
       {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "local",
-          "name": "Azure_AD_userID",
+          "scope": "input",
+          "name": "Reason",
           "type": "datatype.string",
-          "description": "Local variable. DO NOT MODIFY",
+          "description": "Why Observable Risk Score is raised - NOTES",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NLJU2V04L225pYPUSXKQlG4Fb68lGzYWr",
+        "unique_name": "variable_workflow_01NLJU2V04IUN5eL3RwqHRQnwe7WHvZl3lS",
         "object_type": "variable_workflow"
       },
       {
@@ -50,27 +63,70 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "Malicious",
+          "value": "DGB7Q53P3PQI1HF87OXX",
           "scope": "local",
-          "name": "Azure_AD_GroupName_Malicious",
+          "name": "Duo_GroupID_Suspicious",
           "type": "datatype.string",
+          "description": "Group ID can be found using the web gui URL\n\nex: https://admin-dd952xxx.duosecurity.com/groups/DGB7QxxxxxQI1HF87OXX",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NLJU2V040IA5ugB5Jbfz2CZEX7BOBsxQx",
+        "unique_name": "variable_workflow_01NLJU2V04GO01Cr7Ni0HIC6UGPKCP8U51M",
         "object_type": "variable_workflow"
       },
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "Common",
-          "scope": "local",
-          "name": "Azure_AD_GroupName_Common",
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NLJU2V045160RPX7oHoMHMJ6XjNvEn5PD",
+        "unique_name": "variable_workflow_01NLJU2V049WQ2IGJl6G8MxUhMjUNfuYyC1",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "internetsinkhole.com",
+          "scope": "local",
+          "name": "Azure_AD_domain",
+          "type": "datatype.string",
+          "description": "Enter default Azure AD domain.",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NLJU2V046EY7UfJjyoZKcpUtsqIdin3or",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Suspicious",
+          "scope": "local",
+          "name": "AMP_Suspicious_GroupName",
+          "type": "datatype.string",
+          "description": "Add AMP Suspicious Group Name is you enable the Cisco Secure Endpoint Response",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NLJU2V04FIW2y9Hi2z4VBkbt3LiLCrOgC",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Disposition",
+          "type": "datatype.string",
+          "description": "Common - Suspicious - Malicious",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NLJU2V04JXK7esjhTrzAil7A7zmMGlmle",
         "object_type": "variable_workflow"
       },
       {
@@ -92,67 +148,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "email_domain",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NLJU2V04B1Q1ohPZSlJG3bnWv4Sg7WClT",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "internetsinkhole.com",
-          "scope": "local",
-          "name": "Azure_AD_domain",
-          "type": "datatype.string",
-          "description": "Enter default Azure AD domain.",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NLJU2V046EY7UfJjyoZKcpUtsqIdin3or",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Disposition",
-          "type": "datatype.string",
-          "description": "Common - Suspicious - Malicious",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NLJU2V04JXK7esjhTrzAil7A7zmMGlmle",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
           "name": "observable_value",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01NLJU2V047KE0RW9FtDWP3yEkjD9EruvDM",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Reason",
-          "type": "datatype.string",
-          "description": "Why Observable Risk Score is raised - NOTES",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NLJU2V04IUN5eL3RwqHRQnwe7WHvZl3lS",
         "object_type": "variable_workflow"
       },
       {
@@ -171,15 +172,14 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "Suspicious",
+          "value": "Common",
           "scope": "local",
-          "name": "AMP_Suspicious_GroupName",
+          "name": "Azure_AD_GroupName_Common",
           "type": "datatype.string",
-          "description": "Add AMP Suspicious Group Name is you enable the Cisco Secure Endpoint Response",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NLJU2V04FIW2y9Hi2z4VBkbt3LiLCrOgC",
+        "unique_name": "variable_workflow_01NLJU2V045160RPX7oHoMHMJ6XjNvEn5PD",
         "object_type": "variable_workflow"
       },
       {
@@ -199,28 +199,28 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "DGB7Q53P3PQI1HF87OXX",
-          "scope": "local",
-          "name": "Duo_GroupID_Suspicious",
+          "value": "",
+          "scope": "input",
+          "name": "email_domain",
           "type": "datatype.string",
-          "description": "Group ID can be found using the web gui URL\n\nex: https://admin-dd952xxx.duosecurity.com/groups/DGB7QxxxxxQI1HF87OXX",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NLJU2V04GO01Cr7Ni0HIC6UGPKCP8U51M",
+        "unique_name": "variable_workflow_01NLJU2V04B1Q1ohPZSlJG3bnWv4Sg7WClT",
         "object_type": "variable_workflow"
       },
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "Suspicious",
+          "value": "",
           "scope": "local",
-          "name": "Azure_AD_GroupName_Suspicious",
+          "name": "Azure_AD_userID",
           "type": "datatype.string",
+          "description": "Local variable. DO NOT MODIFY",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NLJU2V04DA81XYe4Ue224n02wVfoPIdhb",
+        "unique_name": "variable_workflow_01NLJU2V04L225pYPUSXKQlG4Fb68lGzYWr",
         "object_type": "variable_workflow"
       }
     ],
@@ -980,7 +980,7 @@
                                           ],
                                           "display_name": "Azure - Remove user from Group",
                                           "method": "DELETE",
-                                          "relative_url": "groups/$activity.definition_activity_01NLKGJQ1ZQGA2CRh9jtzBNsSBZFWTBEtIo.output.jsonpath_queries.id$/members/$activity.definition_activity_01NLKGF03V1OS1eIWz7Hlop9C1338xaNEgR.output.variable_workflow_01HQMVTQ5WQ3Y2pvQ0XEx2INbAFFFViaPfq$/$ref",
+                                          "relative_url": "groups/$activity.definition_activity_01NLKGJQ1ZQGA2CRh9jtzBNsSBZFWTBEtIo.output.jsonpath_queries.id$/members/$workflow.definition_workflow_01NLJU2V80IKH6ehMtZ5JcBDdo77Ea1YX4w.local.variable_workflow_01NLJU2V04L225pYPUSXKQlG4Fb68lGzYWr$/$ref",
                                           "runtime_user": {
                                             "override_target_runtime_user": false,
                                             "target_default": true
@@ -6639,18 +6639,18 @@
     }
   },
   "atomic_workflows": [
-    "definition_workflow_01GMLE4XFLQ0G3eK6bEbT1QAjbq5L3gyttr",
-    "definition_workflow_01MWYH0Z48GXB00sKAG1EmSzBMr0nRx3NUh",
-    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
     "definition_workflow_01JCLQ9QMVN4W3IC93cXg0oFdETENeeG9Jq",
-    "definition_workflow_01HQN7N57GLKN780LTDUabTblE3OpMPQVfx",
-    "definition_workflow_01EO48TO48SL35JnXGSvBIqptIfbsjt65eR",
     "definition_workflow_01FZJJP5I5SDH0wtEdhNtBmG20mUM9tzjgd",
-    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
-    "definition_workflow_01FLAVEFJ8QLQ7UEi6gFNp1yotu1K18VEZS",
+    "definition_workflow_01MWYH0Z48GXB00sKAG1EmSzBMr0nRx3NUh",
     "definition_workflow_01FLAR2IT5COJ1HFKMKazQkBlsJ72n028x9",
-    "definition_workflow_01FZM2QCWMEV35NL3VeciPMvYIwheA7diQv",
+    "definition_workflow_01HQN7N57GLKN780LTDUabTblE3OpMPQVfx",
     "definition_workflow_01FZJX8PI6FXQ3zNmJo4rj1tPsGRj58LQCB",
-    "definition_workflow_01HQMN83DJMIK6FVscJcsKFyF9CpK82NA5l"
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
+    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
+    "definition_workflow_01EO48TO48SL35JnXGSvBIqptIfbsjt65eR",
+    "definition_workflow_01HQMN83DJMIK6FVscJcsKFyF9CpK82NA5l",
+    "definition_workflow_01GMLE4XFLQ0G3eK6bEbT1QAjbq5L3gyttr",
+    "definition_workflow_01FZM2QCWMEV35NL3VeciPMvYIwheA7diQv",
+    "definition_workflow_01FLAVEFJ8QLQ7UEi6gFNp1yotu1K18VEZS"
   ]
 }
