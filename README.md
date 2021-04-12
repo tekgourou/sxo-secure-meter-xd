@@ -24,7 +24,7 @@ Secure Meter XD (written **SMXD**) is an automated private security intelligence
 - Expiration_in_days
 - email_domain
 
-## Required Atomic actions
+## Required atomic actions
 * ```SMXD - Raise Risk Score v2 ```
 * ```SMXD - Lower Risk Score v2 ```
 * ```SMXD - Validate Observable Type ```
@@ -53,12 +53,6 @@ To start using SMXD in your SecureX environment, here are the steps:
 ![image](./docs/img/smxd5.png)
 <br/> 
 
-## Required Atomic actions
-* ```SMXD - Raise Risk Score v2 ```
-* ```SMXD - Lower Risk Score v2 ```
-* ```SMXD - Validate Observable Type ```
-* ```SMXD - Get Judgement and Score ```
-* ```SMXD - Create Judgement ```
-* ```Threat Reponse v2 - Generate Access Token ```
+## Optional actic actions
 
 
