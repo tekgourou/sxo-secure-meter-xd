@@ -107,6 +107,7 @@ The workflow come with pre-config response actions:
 - Email notification and Cisco SecureX casebook
 
 And it include section to add your own response action from a Third-party per example.
+
 ![image](./docs/img/smxd17.png)
 <br/>
 
