@@ -10,13 +10,14 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "input",
-          "name": "observable_type",
+          "scope": "local",
+          "name": "Azure_AD_userID",
           "type": "datatype.string",
+          "description": "Local variable. DO NOT MODIFY",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NLJU2V049WQ2IGJl6G8MxUhMjUNfuYyC1",
+        "unique_name": "variable_workflow_01NLJU2V04L225pYPUSXKQlG4Fb68lGzYWr",
         "object_type": "variable_workflow"
       },
       {
@@ -24,27 +25,12 @@
         "properties": {
           "value": "Malicious",
           "scope": "local",
-          "name": "AMP_Malicious_GroupName",
+          "name": "Azure_AD_GroupName_Malicious",
           "type": "datatype.string",
-          "description": "Add AMP Malicious Group Name is you enable the Cisco Secure Endpoint Response",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NLJU2V048NF33WcR9wmedA6iIEC7NFSo1",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "DGA6ZCQWDYSQZUDD9WUN",
-          "scope": "local",
-          "name": "Duo_GroupID_Common",
-          "type": "datatype.string",
-          "description": "Group ID can be found using the web gui URL\n\nex: https://admin-dd952xxx.duosecurity.com/groups/DGB7QxxxxxQI1HF87OXX",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NLJU2V04EET40rhC4GNulI6RNQwiyxKsS",
+        "unique_name": "variable_workflow_01NLJU2V040IA5ugB5Jbfz2CZEX7BOBsxQx",
         "object_type": "variable_workflow"
       },
       {
@@ -64,68 +50,28 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "Suspicious",
-          "scope": "local",
-          "name": "Azure_AD_GroupName_Suspicious",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NLJU2V04DA81XYe4Ue224n02wVfoPIdhb",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
           "value": "",
           "scope": "input",
-          "name": "Reason",
+          "name": "email_domain",
           "type": "datatype.string",
-          "description": "Why Observable Risk Score is raised - NOTES",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NLJU2V04IUN5eL3RwqHRQnwe7WHvZl3lS",
+        "unique_name": "variable_workflow_01NLJU2V04B1Q1ohPZSlJG3bnWv4Sg7WClT",
         "object_type": "variable_workflow"
       },
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "",
+          "value": "DGIRUM1C3TUBMDS1T9A1",
           "scope": "local",
-          "name": "Azure_AD_userID",
+          "name": "Duo_GroupID_Malicious",
           "type": "datatype.string",
-          "description": "Local variable. DO NOT MODIFY",
+          "description": "Group ID can be found using the web gui URL\n\nex: https://admin-dd952xxx.duosecurity.com/groups/DGB7QxxxxxQI1HF87OXX",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NLJU2V04L225pYPUSXKQlG4Fb68lGzYWr",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "Email Endpoint",
-          "scope": "local",
-          "name": "SMTP Target Name",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NLJU2V04HT72t0iaskSCEfY9LKM6DA2Vk",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "Malicious",
-          "scope": "local",
-          "name": "Azure_AD_GroupName_Malicious",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NLJU2V040IA5ugB5Jbfz2CZEX7BOBsxQx",
+        "unique_name": "variable_workflow_01NLJU2V04C7401mrRIAkr6MKKE1HT2WXN2",
         "object_type": "variable_workflow"
       },
       {
@@ -139,20 +85,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01NLJU2V047KE0RW9FtDWP3yEkjD9EruvDM",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Disposition",
-          "type": "datatype.string",
-          "description": "Common - Suspicious - Malicious",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NLJU2V04JXK7esjhTrzAil7A7zmMGlmle",
         "object_type": "variable_workflow"
       },
       {
@@ -187,27 +119,39 @@
         "properties": {
           "value": "Suspicious",
           "scope": "local",
-          "name": "AMP_Suspicious_GroupName",
+          "name": "Azure_AD_GroupName_Suspicious",
           "type": "datatype.string",
-          "description": "Add AMP Suspicious Group Name is you enable the Cisco Secure Endpoint Response",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NLJU2V04FIW2y9Hi2z4VBkbt3LiLCrOgC",
+        "unique_name": "variable_workflow_01NLJU2V04DA81XYe4Ue224n02wVfoPIdhb",
         "object_type": "variable_workflow"
       },
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "DGIRUM1C3TUBMDS1T9A1",
+          "value": "Email Endpoint",
           "scope": "local",
-          "name": "Duo_GroupID_Malicious",
+          "name": "SMTP Target Name",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NLJU2V04HT72t0iaskSCEfY9LKM6DA2Vk",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "DGA6ZCQWDYSQZUDD9WUN",
+          "scope": "local",
+          "name": "Duo_GroupID_Common",
           "type": "datatype.string",
           "description": "Group ID can be found using the web gui URL\n\nex: https://admin-dd952xxx.duosecurity.com/groups/DGB7QxxxxxQI1HF87OXX",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NLJU2V04C7401mrRIAkr6MKKE1HT2WXN2",
+        "unique_name": "variable_workflow_01NLJU2V04EET40rhC4GNulI6RNQwiyxKsS",
         "object_type": "variable_workflow"
       },
       {
@@ -215,12 +159,68 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "email_domain",
+          "name": "Disposition",
+          "type": "datatype.string",
+          "description": "Common - Suspicious - Malicious",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NLJU2V04JXK7esjhTrzAil7A7zmMGlmle",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Malicious",
+          "scope": "local",
+          "name": "AMP_Malicious_GroupName",
+          "type": "datatype.string",
+          "description": "Add AMP Malicious Group Name is you enable the Cisco Secure Endpoint Response",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NLJU2V048NF33WcR9wmedA6iIEC7NFSo1",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_type",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NLJU2V04B1Q1ohPZSlJG3bnWv4Sg7WClT",
+        "unique_name": "variable_workflow_01NLJU2V049WQ2IGJl6G8MxUhMjUNfuYyC1",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Reason",
+          "type": "datatype.string",
+          "description": "Why Observable Risk Score is raised - NOTES",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NLJU2V04IUN5eL3RwqHRQnwe7WHvZl3lS",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Suspicious",
+          "scope": "local",
+          "name": "AMP_Suspicious_GroupName",
+          "type": "datatype.string",
+          "description": "Add AMP Suspicious Group Name is you enable the Cisco Secure Endpoint Response",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NLJU2V04FIW2y9Hi2z4VBkbt3LiLCrOgC",
         "object_type": "variable_workflow"
       }
     ],
@@ -418,7 +418,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Cisco Secure Access by Duo",
                               "skip_execution": false
                             },
@@ -656,7 +656,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Azure AD user to group",
                               "skip_execution": false
                             },
@@ -1439,7 +1439,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Cisco Secure Access by Duo",
                               "skip_execution": false
                             },
@@ -1677,7 +1677,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Azure AD user to group",
                               "skip_execution": false
                             },
@@ -2385,7 +2385,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Cisco Secure Cloud Analytics",
                               "skip_execution": false
                             },
@@ -2441,7 +2441,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Cisco Secure Endpoint",
                               "skip_execution": false
                             },
@@ -2566,7 +2566,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Optional Response Actions",
                               "skip_execution": false
                             },
@@ -2614,7 +2614,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Cisco Secure Endpoint",
                               "skip_execution": false
                             },
@@ -2787,7 +2787,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Cisco Secure Endpoint",
                               "skip_execution": false
                             },
@@ -3547,7 +3547,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Cisco Secure Access by Duo",
                               "skip_execution": false
                             },
@@ -3785,7 +3785,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Azure AD user to group",
                               "skip_execution": false
                             },
@@ -4552,7 +4552,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Cisco Secure Endpoint",
                               "skip_execution": false
                             },
@@ -4806,7 +4806,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Cisco Secure Endpoint",
                               "skip_execution": false
                             },
@@ -5060,7 +5060,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Cisco Secure Endpoint",
                               "skip_execution": false
                             },
@@ -5285,7 +5285,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Email Notification",
                               "skip_execution": false
                             },
@@ -5557,7 +5557,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Cisco Secure Access by Duo",
                               "skip_execution": false
                             },
@@ -5879,7 +5879,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Azure AD user to group",
                               "skip_execution": false
                             },
@@ -6356,7 +6356,7 @@
                             "type": "logic.parallel_block",
                             "base_type": "activity",
                             "properties": {
-                              "continue_on_failure": false,
+                              "continue_on_failure": true,
                               "display_name": "Azure AD user lockdown",
                               "skip_execution": false
                             },
@@ -6639,18 +6639,18 @@
     }
   },
   "atomic_workflows": [
-    "definition_workflow_01FLAVEFJ8QLQ7UEi6gFNp1yotu1K18VEZS",
-    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
-    "definition_workflow_01FZJX8PI6FXQ3zNmJo4rj1tPsGRj58LQCB",
-    "definition_workflow_01FLAR2IT5COJ1HFKMKazQkBlsJ72n028x9",
-    "definition_workflow_01JCLQ9QMVN4W3IC93cXg0oFdETENeeG9Jq",
-    "definition_workflow_01HQN7N57GLKN780LTDUabTblE3OpMPQVfx",
-    "definition_workflow_01EO48TO48SL35JnXGSvBIqptIfbsjt65eR",
     "definition_workflow_01MWYH0Z48GXB00sKAG1EmSzBMr0nRx3NUh",
     "definition_workflow_01HQMN83DJMIK6FVscJcsKFyF9CpK82NA5l",
-    "definition_workflow_01FZM2QCWMEV35NL3VeciPMvYIwheA7diQv",
-    "definition_workflow_01FZJJP5I5SDH0wtEdhNtBmG20mUM9tzjgd",
+    "definition_workflow_01FLAVEFJ8QLQ7UEi6gFNp1yotu1K18VEZS",
+    "definition_workflow_01FZJX8PI6FXQ3zNmJo4rj1tPsGRj58LQCB",
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
     "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
+    "definition_workflow_01FZJJP5I5SDH0wtEdhNtBmG20mUM9tzjgd",
+    "definition_workflow_01HQN7N57GLKN780LTDUabTblE3OpMPQVfx",
+    "definition_workflow_01FZM2QCWMEV35NL3VeciPMvYIwheA7diQv",
+    "definition_workflow_01FLAR2IT5COJ1HFKMKazQkBlsJ72n028x9",
+    "definition_workflow_01EO48TO48SL35JnXGSvBIqptIfbsjt65eR",
+    "definition_workflow_01JCLQ9QMVN4W3IC93cXg0oFdETENeeG9Jq",
     "definition_workflow_01GMLE4XFLQ0G3eK6bEbT1QAjbq5L3gyttr"
   ]
 }
