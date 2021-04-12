@@ -22,7 +22,13 @@ Secure Meter XD (written **SMXD**) is an automated private security intelligence
 
 * ```SMXD - Response actions based on disposition v2 ```
 
-### Examples of Threat Responses
+#### Examples of Threat Responses
+
+![image](./docs/img/smxd4.png)
+<br/> 
+
+![image](./docs/img/smxd5.png)
+<br/> 
 
 ## Required Atomic actions
 * ```SMXD - Raise Risk Score v2 ```
