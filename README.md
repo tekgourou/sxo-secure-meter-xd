@@ -65,6 +65,11 @@ If your existing workflow output Observables JSON, here who you can integrate SM
 
 ## Optional response workflow
 
+At the end of each SMXD worflows an optional response workflow can be add to response to threat based on the disposition of the internal observable.
+
+![image](./docs/img/smxd11.png)
+<br/> 
+
 * ```SMXD - Response actions based on disposition v2 ```
 
 ![image](./docs/img/smxd3.png)
