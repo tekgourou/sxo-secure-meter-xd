@@ -17,7 +17,7 @@ Secure Meter XD (written **SMXD**) is an automated private security intelligence
 * ```SMXD - Response actions based on disposition ```
 
 
-# Required Atomic actions
+## Required Atomic actions
 * ```SMXD - Raise Risk Score v2 ```
 * ```SMXD - Lower Risk Score v2 ```
 * ```SMXD - Validate Observable Type ```
@@ -25,7 +25,7 @@ Secure Meter XD (written **SMXD**) is an automated private security intelligence
 * ```SMXD - Create Judgement ```
 * ```Threat Reponse v2 - Generate Access Token ```
 
-# Getting Started
+## Getting Started
 To start using SMXD in your SecureX environment, here are the steps:
 * Import all the Atomic actions (https://ciscosecurity.github.io/sxo-05-security-workflows/configuration)
 * Add this Github repository to your list of Git repository in SXO
