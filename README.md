@@ -83,7 +83,12 @@ At the end of each SMXD worflows an optional response workflow can be add to res
 ![image](./docs/img/smxd5.png)
 <br/> 
 
-"SMXD - Response actions based on disposition v2" workflow is a very flexible and come with pre-config response actions:
+"SMXD - Response actions based on disposition v2" workflow is a very flexible and will run even if you do not have a subscription for some of theses Cisco response action
+![image](./docs/img/smxd12.png)
+<br/>
+
+
+And come with pre-config response actions:
 - Cisco Secure Cloud Analytics, add "IP" to IP watchlist
 ![image](./docs/img/smxd13.png)
 <br/>
