@@ -48,6 +48,7 @@ To start using SMXD in your SecureX environment, here are the steps:
 
 #### how to use it
 Secure Meter XD can be use manually with by clicking on "raise", "lower" or "exclude" workflows on the contextuel menu of SecureX.
+
 ![image](./docs/img/smxd8.png)
 <br/> 
 
