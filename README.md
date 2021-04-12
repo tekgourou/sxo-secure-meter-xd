@@ -52,7 +52,7 @@ Secure Meter XD can be use manually by clicking on "raise", "lower" or "exclude"
 ![image](./docs/img/smxd8.png)
 <br/>
 
-Secure Meter XD can be added to any existing workflow where internal observables are collected or identified. 
+Secure Meter XD can also be added to any existing workflow where internal observables are collected or identified. 
 
 ![image](./docs/img/smxd9.png)
 <br/>
