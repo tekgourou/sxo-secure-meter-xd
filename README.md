@@ -1,6 +1,6 @@
 # Secure Meter XD - _SecureX Orchestrator Hackaton_ 
 
-![image](./docs/img/logSMXD_low_res.png)
+![image](./docs/img/logoSMXD_low_res.png)
 <br/> 
 
 Secure Meter XD (written **SMXD**) is an automated private security intelligence store to help automate internal observable judgements to improve alert fidelity and automated response inside of SecureX Orchestrator.
