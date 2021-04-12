@@ -75,6 +75,15 @@ At the end of each SMXD worflows an optional response workflow can be add to res
 ![image](./docs/img/smxd3.png)
 <br/> 
 
+"SMXD - Response actions based on disposition v2" workflow is a very flexible be use with pre-config response actions:
+- Cisco Secure Cloud Analytics, add "IP" to IP watchlist
+![image](./docs/img/smxd13.png)
+<br/>
+
+- Cisco Secure Endpoint, move device to a other group - isolate a device
+![image](./docs/img/smxd14.png)
+<br/>
+
 #### Examples of Threat Responses
 
 ![image](./docs/img/smxd4.png)
