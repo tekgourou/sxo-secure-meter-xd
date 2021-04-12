@@ -123,4 +123,3 @@ Theses atomic actions are available from the Cisco SecureX Orchestration Github 
 * ```Duo Admin - Block User by UserID ```
 * ```Azure Graph - Get Access Token ```
 * ```Azure Graph - Get User ```
-Theses atomic actions are available from the Cisco SecureX Orchestration Github repo at https://github.com/CiscoSecurity/sxo-05-security-workflows/tree/Main/Atomics
