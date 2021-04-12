@@ -100,6 +100,8 @@ At the end of each SMXD worflows an optional response workflow can be add to res
 ![image](./docs/img/smxd16.png)
 <br/>
 
+- Email notification and Cisco SecureX casebook
+
 #### Optional atomic actions
 
 
