@@ -63,7 +63,7 @@ If your existing workflow output Observables JSON, here who you can integrate SM
 <br/>
 
 
-## Optional workflow
+## Optional response workflow
 
 * ```SMXD - Response actions based on disposition v2 ```
 
