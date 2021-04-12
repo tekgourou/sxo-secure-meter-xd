@@ -46,6 +46,11 @@ To start using SMXD in your SecureX environment, here are the steps:
 * Add this Github repository to your list of Git repository in SXO
 * Import all the workflows and atomic actions
 
+#### how to use it
+Secure Meter XD can be use manually with by clicking on "raise", "lower" or "exclude" workflows on the contextuel menu of SecureX.
+![image](./docs/img/smxd8.png)
+<br/> 
+
 ## Optional workflow
 
 * ```SMXD - Response actions based on disposition v2 ```
