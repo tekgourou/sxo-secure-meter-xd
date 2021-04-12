@@ -6,7 +6,7 @@ Secure Meter XD (written **SMXD**) is an automated private security intelligence
 <br/> 
 
 
-# Supported workflows
+## Supported workflows
 
 ![image](./docs/img/smxd2.png)
 <br/> 
