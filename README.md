@@ -57,6 +57,12 @@ Secure Meter XD can also be added to any existing workflow where internal observ
 ![image](./docs/img/smxd9.png)
 <br/>
 
+If your existing workflow output Observables JSON, here who you can integrate SMXD.
+
+![image](./docs/img/smxd10.png)
+<br/>
+
+
 ## Optional workflow
 
 * ```SMXD - Response actions based on disposition v2 ```
