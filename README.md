@@ -110,6 +110,15 @@ And it include section to add your own response action from a Third-party per ex
 ![image](./docs/img/smxd17.png)
 <br/>
 
-#### Optional atomic actions
-
-
+#### Optional atomic actions for SMXD - Response actions based on disposition v2
+* ```SWC - Add to watchlist  ```
+* ```AMP - Get Connector GUID ```
+* ```AMP - Get Group by Name ```
+* ```AMP - Move Computer to Group ```
+* ```Duo Admin - Get User ```
+* ```Duo Admin - Remove User from Group ```
+* ```Duo Admin - Add User to Group ```
+* ```Duo Admin - Block User by UserID ```
+* ```Azure Graph - Get Access Token ```
+* ```Azure Graph - Get User ```
+Theses atomic actions are available from the Cisco SecureX Orchestration Github repo at https://github.com/CiscoSecurity/sxo-05-security-workflows/tree/Main/Atomics
