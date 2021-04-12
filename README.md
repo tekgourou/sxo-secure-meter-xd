@@ -14,7 +14,10 @@ Secure Meter XD (written **SMXD**) is an automated private security intelligence
 * ```SMXD - Raise Observable judgement ```
 * ```SMXD - Lower Observable judgement ```
 * ```SMXD - Exclude Observable```
+
+## Optional workflow
 * ```SMXD - Response actions based on disposition v2 ```
+
 
 
 ## Required Atomic actions
