@@ -83,7 +83,7 @@ At the end of each SMXD worflows an optional response workflow can be add to res
 ![image](./docs/img/smxd5.png)
 <br/> 
 
-"SMXD - Response actions based on disposition v2" workflow is a very flexible be use with pre-config response actions:
+"SMXD - Response actions based on disposition v2" workflow is a very flexible and come with pre-config response actions:
 - Cisco Secure Cloud Analytics, add "IP" to IP watchlist
 ![image](./docs/img/smxd13.png)
 <br/>
@@ -96,6 +96,9 @@ At the end of each SMXD worflows an optional response workflow can be add to res
 ![image](./docs/img/smxd15.png)
 <br/>
 
+- Microsoft Azure AD, add / remove user from group - Block sing in
+![image](./docs/img/smxd16.png)
+<br/>
 
 #### Optional atomic actions
 
