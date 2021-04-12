@@ -9,15 +9,13 @@ Secure Meter XD (written **SMXD**) is an automated private security intelligence
 * ```SMXD - Exclude Observable```
 * ```SMXD - Response actions based on disposition ```
 
-## Supported Atomic actions
-* ```SMXD - Get Observable ```
-* ```SMXD - Create Observable ```
-* ```SMXD - Delete Observable ```
-* ```SMXD - Raise Observable ```
-* ```SMXD - Lower Observable ```
-* ```SMXD - Convert Risk to Judgement ```
+## Required Atomic actions
+* ```SMXD - Raise Risk Score v2 ```
+* ```SMXD - Lower Risk Score v2 ```
 * ```SMXD - Validate Observable Type ```
-
+* ```SMXD - Get Judgement and Score ```
+* ```SMXD - Create Judgement ```
+* ```Threat Reponse v2 - Generate Access Token ```
 
 # Getting Started
 To start using SMXD in your SecureX environment, here are the steps:
