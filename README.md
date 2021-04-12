@@ -53,6 +53,6 @@ To start using SMXD in your SecureX environment, here are the steps:
 ![image](./docs/img/smxd5.png)
 <br/> 
 
-## Optional actic actions
+## Optional atomic actions
 
 
