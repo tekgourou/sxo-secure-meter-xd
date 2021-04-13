@@ -47,7 +47,7 @@ To start using SMXD in your SecureX environment, here are the steps:
 * Import all the workflows and atomic actions
 
 #### how to use it
-Secure Meter XD can be use manually by clicking on "raise", "lower" or "exclude" workflows on the contextuel menu of SecureX.
+Secure Meter XD can be use manually by clicking on "Exclude", "Raise" or "lower" workflows on the contextuel menu of SecureX.
 
 ![image](./docs/img/smxd8.png)
 <br/>
