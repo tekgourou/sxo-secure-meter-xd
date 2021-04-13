@@ -84,6 +84,7 @@ At the end of each SMXD worflows an optional response workflow can be add to res
 <br/> 
 
 "SMXD - Response actions based on disposition v2" workflow is a very flexible and will run even if you do not have a subscription for some of theses Cisco response action.
+
 ![image](./docs/img/smxd12.png)
 <br/>
 
