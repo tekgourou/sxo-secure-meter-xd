@@ -52,7 +52,7 @@ Secure Meter XD can be use manually by clicking on "Exclude", "Raise" or "lower"
 ![image](./docs/img/smxd8.png)
 <br/>
 
-Secure Meter XD can also be added to any existing workflow where internal observables are collected or identified. The "Increment" variable can be modify from 1 to 5 to represent to criticality of the security events for the identified internal observable. The "Expiration_in_Days" set the expiration time frame for CTIA Judgement creation.
+Secure Meter XD can also be added to any existing workflow where internal observables are collected or identified. The "Increment" variable can be modify from 1 to 5 to represent the criticality of the security events for the identified internal observable. The "Expiration_in_Days" set the expiration time frame for CTIA Judgement at the creation.
 
 ![image](./docs/img/smxd9.png)
 <br/>
