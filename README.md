@@ -112,7 +112,7 @@ And it include section to add your own response action from a Third-party per ex
 ![image](./docs/img/smxd17.png)
 <br/>
 
-#### Optional atomic actions for SMXD - Response actions based on disposition v2
+#### Required atomic actions for "SMXD - Response actions based on disposition v2"
 
 Theses atomic actions are available from the Cisco SecureX Orchestration Github repo at https://github.com/CiscoSecurity/sxo-05-security-workflows/tree/Main/Atomics
 
