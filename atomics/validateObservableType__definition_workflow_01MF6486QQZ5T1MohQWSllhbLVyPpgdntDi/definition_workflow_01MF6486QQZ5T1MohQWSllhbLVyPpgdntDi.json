@@ -141,17 +141,17 @@
                   {
                     "unique_name": "definition_activity_01MF69M5FS8GX3pefaoIm7R1Jrv2YOksKrh",
                     "name": "Condition Branch",
-                    "title": "Error",
+                    "title": "Passed",
                     "type": "logic.condition_block",
                     "base_type": "activity",
                     "properties": {
                       "condition": {
-                        "left_operand": "$activity.definition_activity_01NQGY3HQ7UE905FVtKH0LzplA2dSNtEr68.output.succeeded$",
+                        "left_operand": "$activity.definition_activity_01NQGY3HQ7UE905FVtKH0LzplA2dSNtEr68.output.script_queries.Is Private$",
                         "operator": "eq",
-                        "right_operand": false
+                        "right_operand": true
                       },
                       "continue_on_failure": false,
-                      "display_name": "Error",
+                      "display_name": "Passed",
                       "skip_execution": false
                     },
                     "object_type": "definition_activity",
@@ -202,41 +202,6 @@
                           "continue_on_failure": false,
                           "display_name": "Completed",
                           "result_message": "Observable not valid for Private IP address",
-                          "skip_execution": false
-                        },
-                        "object_type": "definition_activity"
-                      }
-                    ]
-                  },
-                  {
-                    "unique_name": "definition_activity_01NQH3NX5550560yWu26msQHogGDqWARFiW",
-                    "name": "Condition Branch",
-                    "title": "Error",
-                    "type": "logic.condition_block",
-                    "base_type": "activity",
-                    "properties": {
-                      "condition": {
-                        "left_operand": "$activity.definition_activity_01NQGY3HQ7UE905FVtKH0LzplA2dSNtEr68.output.succeeded$",
-                        "operator": "eq",
-                        "right_operand": false
-                      },
-                      "continue_on_failure": false,
-                      "display_name": "Error",
-                      "skip_execution": false
-                    },
-                    "object_type": "definition_activity",
-                    "actions": [
-                      {
-                        "unique_name": "definition_activity_01NQH46SNOMUN0GTAkcONFfOwb9mwCNxW72",
-                        "name": "Completed",
-                        "title": "Completed",
-                        "type": "logic.completed",
-                        "base_type": "activity",
-                        "properties": {
-                          "completion_type": "failed-completed",
-                          "continue_on_failure": false,
-                          "display_name": "Completed",
-                          "result_message": "An error occured while parsing the observable value input. This possibly means that a non-IP value was passed with observable_type == ip. ",
                           "skip_execution": false
                         },
                         "object_type": "definition_activity"
@@ -515,7 +480,7 @@
           "completion_type": "failed-completed",
           "continue_on_failure": false,
           "display_name": "Completed",
-          "result_message": "not supported observable type",
+          "result_message": "Unsupported observable type or mismatched value and type",
           "skip_execution": false
         },
         "object_type": "definition_activity"
