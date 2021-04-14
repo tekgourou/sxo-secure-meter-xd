@@ -11,12 +11,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "observable_value",
+          "name": "observable_type",
           "type": "datatype.string",
           "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u",
+        "unique_name": "variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na",
         "object_type": "variable_workflow"
       },
       {
@@ -24,12 +24,12 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "observable_type",
+          "name": "observable_value",
           "type": "datatype.string",
           "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01MF64VSQF8LM2TGiaITery7mw1J5X7s0na",
+        "unique_name": "variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u",
         "object_type": "variable_workflow"
       },
       {
@@ -101,16 +101,26 @@
             "object_type": "definition_activity",
             "actions": [
               {
-                "unique_name": "definition_activity_01MF68RW8V6XJ6p4lyJroivBURSCMLLQItm",
-                "name": "Match Regex",
-                "title": "Validate Private IP",
-                "type": "core.matchregex",
+                "unique_name": "definition_activity_01NQGY3HQ7UE905FVtKH0LzplA2dSNtEr68",
+                "name": "Execute Python Script",
+                "title": "RFC1918 validation",
+                "type": "python3.script",
                 "base_type": "activity",
                 "properties": {
-                  "continue_on_failure": false,
-                  "display_name": "Validate Private IP",
-                  "input_regex": "(^192\\.168\\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])\\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])$)|(^172\\.([1][6-9]|[2][0-9]|[3][0-1])\\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])\\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])$)|(^10\\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])\\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])\\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])$)",
-                  "input_string": "$workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u$",
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "RFC1918 validation",
+                  "script": "import sys\nimport ipaddress as ip\n\nobservable = ip.IPv4Address(sys.argv[1])\n\nis_private = observable.is_private",
+                  "script_arguments": [
+                    "$workflow.definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi.input.variable_workflow_01MF64RZKO8166R30zVLGBBnoycSJSGhr3u$"
+                  ],
+                  "script_queries": [
+                    {
+                      "script_query": "is_private",
+                      "script_query_name": "Is Private",
+                      "script_query_type": "boolean"
+                    }
+                  ],
                   "skip_execution": false
                 },
                 "object_type": "definition_activity"
@@ -131,17 +141,17 @@
                   {
                     "unique_name": "definition_activity_01MF69M5FS8GX3pefaoIm7R1Jrv2YOksKrh",
                     "name": "Condition Branch",
-                    "title": "Passed",
+                    "title": "Error",
                     "type": "logic.condition_block",
                     "base_type": "activity",
                     "properties": {
                       "condition": {
-                        "left_operand": "$activity.definition_activity_01MF68RW8V6XJ6p4lyJroivBURSCMLLQItm.output.has_match$",
+                        "left_operand": "$activity.definition_activity_01NQGY3HQ7UE905FVtKH0LzplA2dSNtEr68.output.succeeded$",
                         "operator": "eq",
-                        "right_operand": true
+                        "right_operand": false
                       },
                       "continue_on_failure": false,
-                      "display_name": "Passed",
+                      "display_name": "Error",
                       "skip_execution": false
                     },
                     "object_type": "definition_activity",
@@ -171,7 +181,7 @@
                     "base_type": "activity",
                     "properties": {
                       "condition": {
-                        "left_operand": "$activity.definition_activity_01MF68RW8V6XJ6p4lyJroivBURSCMLLQItm.output.has_match$",
+                        "left_operand": "$activity.definition_activity_01NQGY3HQ7UE905FVtKH0LzplA2dSNtEr68.output.script_queries.Is Private$",
                         "operator": "eq",
                         "right_operand": false
                       },
@@ -192,6 +202,41 @@
                           "continue_on_failure": false,
                           "display_name": "Completed",
                           "result_message": "Observable not valid for Private IP address",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01NQH3NX5550560yWu26msQHogGDqWARFiW",
+                    "name": "Condition Branch",
+                    "title": "Error",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01NQGY3HQ7UE905FVtKH0LzplA2dSNtEr68.output.succeeded$",
+                        "operator": "eq",
+                        "right_operand": false
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Error",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NQH46SNOMUN0GTAkcONFfOwb9mwCNxW72",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "An error occured while parsing the observable value input. This possibly means that a non-IP value was passed with observable_type == ip. ",
                           "skip_execution": false
                         },
                         "object_type": "definition_activity"
