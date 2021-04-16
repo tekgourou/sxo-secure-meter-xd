@@ -5,6 +5,9 @@
 
 Secure Meter XD (written **SMXD**) is an automated private security intelligence framework to help automate internal observable judgements to improve alert fidelity and automated response inside of SecureX Orchestrator.
 
+![image](./docs/img/smxd18.png)
+<br/> 
+
 Use cases :
 - Give the ability to security analyst to respond manually to a threat based on internal observable disposition. Per example, before disabling a user in Cisco Secure Access by Duo the security analyst want to make sure more than 3 frauds authentication events has been received. (User observable = Suspicious)
 - Let's Cisco SecureX Orchestration respond automatically to a threat based on internal observable disposition. Per example, before put Cisco Secure Enpoint in isolation mode only after 5 security events from any Security events sources like Meraki SM, Cisco Secure Enpoint, ISE, Duo, etc. (hostname observable = Malicious)
