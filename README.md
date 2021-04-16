@@ -96,7 +96,7 @@ At the end of each SMXD worflows an optional response workflow can be add to res
 ![image](./docs/img/smxd12.png)
 <br/>
 
-The workflow come with pre-config response actions:
+The workflow come with pre-configured response actions:
 - Cisco Secure Cloud Analytics, add "IP" to IP watchlist
 ![image](./docs/img/smxd13.png)
 <br/>
