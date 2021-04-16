@@ -9,27 +9,66 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "julie",
+          "value": "64d1d15a-cff0-539d-bfa9-fef0dfd94583",
           "scope": "input",
-          "name": "observable_value",
+          "name": "amp_guid",
           "type": "datatype.string",
           "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NSFU75WRTHD38M7UUTcLmiqjFpoEsje0x",
+        "unique_name": "variable_workflow_01NSGVCH8QAZ804x3OyLtBUNQzT1aB2rn47",
         "object_type": "variable_workflow"
       },
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "user",
+          "value": "paul-laptop",
           "scope": "input",
-          "name": "observable_type",
+          "name": "hostname",
           "type": "datatype.string",
           "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NSFUBFYWEBU2hFeIJcSBxHvWczJQ00GRe",
+        "unique_name": "variable_workflow_01NSGU666XEPP4HDoi6oVOTvqIeyeuOV9mV",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "c8:e0:eb:17:c7:6d",
+          "scope": "input",
+          "name": "mac_address",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NSGUW10A7811qMTdmv7yB4gMemv2DMU3v",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "192.168.45.49",
+          "scope": "input",
+          "name": "ip",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NSGTVUBBUYS73e1UMOJQy7TlZEPxZpdPX",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "julie",
+          "scope": "input",
+          "name": "user",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NSGTNFKJT0B3ddBmiurBH2MBCL9czT2w9",
         "object_type": "variable_workflow"
       }
     ],
@@ -101,474 +140,2213 @@
         "object_type": "definition_activity"
       },
       {
-        "unique_name": "definition_activity_01NSFWS74TO6P6lnPLHFjb9Eys3EeNkhMIc",
-        "name": "Group",
-        "title": "Raise observable +1",
-        "type": "logic.group",
+        "unique_name": "definition_activity_01NSGRRS42POP1pPQcZr7aBLG6uiiY037ZR",
+        "name": "Parallel Block",
+        "title": "Parallel Block",
+        "type": "logic.parallel",
         "base_type": "activity",
         "properties": {
           "continue_on_failure": false,
-          "display_name": "Raise observable +1",
-          "skip_execution": false
-        },
-        "object_type": "definition_activity",
-        "actions": [
-          {
-            "unique_name": "definition_activity_01NSFTYMXLPB67FFNjMUq738s2x35Md7qks",
-            "name": "SMXD -  Raise Observable judgement",
-            "title": "SMXD -  Raise Observable judgement",
-            "type": "workflow.sub_workflow",
-            "base_type": "subworkflow",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "SMXD -  Raise Observable judgement",
-              "input": {
-                "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFU75WRTHD38M7UUTcLmiqjFpoEsje0x$",
-                "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFUBFYWEBU2hFeIJcSBxHvWczJQ00GRe$",
-                "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 1,
-                "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 7
-              },
-              "runtime_user": {
-                "target_default": true
-              },
-              "skip_execution": false,
-              "target": {
-                "use_workflow_target_group": true
-              },
-              "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
-            },
-            "object_type": "definition_activity"
-          }
-        ]
-      },
-      {
-        "unique_name": "definition_activity_01NSFX6JJYZ1W6drx3pgAzoX3ytFOpre4Lk",
-        "name": "Group",
-        "title": "Raise observable +3",
-        "type": "logic.group",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "display_name": "Raise observable +3",
-          "skip_execution": false
-        },
-        "object_type": "definition_activity",
-        "actions": [
-          {
-            "unique_name": "definition_activity_01NSFVBZLN5930V1ZZiIAeAmubgkPN7lQor",
-            "name": "SMXD -  Raise Observable judgement",
-            "title": "SMXD -  Raise Observable judgement",
-            "type": "workflow.sub_workflow",
-            "base_type": "subworkflow",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "SMXD -  Raise Observable judgement",
-              "input": {
-                "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFU75WRTHD38M7UUTcLmiqjFpoEsje0x$",
-                "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFUBFYWEBU2hFeIJcSBxHvWczJQ00GRe$",
-                "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 3,
-                "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 7
-              },
-              "runtime_user": {
-                "target_default": true
-              },
-              "skip_execution": false,
-              "target": {
-                "use_workflow_target_group": true
-              },
-              "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
-            },
-            "object_type": "definition_activity"
-          }
-        ]
-      },
-      {
-        "unique_name": "definition_activity_01NSFXMHKS5T30PUC5s3PZsTceWakwtCg0x",
-        "name": "Group",
-        "title": "Get Score and dispo",
-        "type": "logic.group",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "display_name": "Get Score and dispo",
-          "skip_execution": false
-        },
-        "object_type": "definition_activity",
-        "actions": [
-          {
-            "unique_name": "definition_activity_01NSFW3X5NDUD2Wseop88nqQAoudfQtQzOu",
-            "name": "SMXD - Get Judgement and Score",
-            "title": "SMXD - Get Judgement and Score",
-            "type": "workflow.atomic_workflow",
-            "base_type": "subworkflow",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "SMXD - Get Judgement and Score",
-              "input": {
-                "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFU75WRTHD38M7UUTcLmiqjFpoEsje0x$",
-                "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFUBFYWEBU2hFeIJcSBxHvWczJQ00GRe$",
-                "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
-              },
-              "runtime_user": {
-                "target_default": true
-              },
-              "skip_execution": false,
-              "target": {
-                "use_workflow_target_group": true
-              },
-              "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
-            },
-            "object_type": "definition_activity"
-          }
-        ]
-      },
-      {
-        "unique_name": "definition_activity_01NSFYS6X6FIP5yLVuQglw1xIWlgJSo5IbO",
-        "name": "Condition Block",
-        "title": "Verify risk and dispo",
-        "type": "logic.if_else",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "display_name": "Verify risk and dispo",
+          "display_name": "Parallel Block",
           "skip_execution": false
         },
         "object_type": "definition_activity",
         "blocks": [
           {
-            "unique_name": "definition_activity_01NSFYSLLFVKA1pWouHYIFVSg85UxtnNuce",
-            "name": "Condition Branch",
-            "title": "Not equal 4",
-            "type": "logic.condition_block",
+            "unique_name": "definition_activity_01NSGRSIIDPU54xcbZ2MulEW8XkOpJevDPd",
+            "name": "Parallel Branch",
+            "title": "User ",
+            "type": "logic.parallel_block",
             "base_type": "activity",
             "properties": {
-              "condition": {
-                "left_operand": "$activity.definition_activity_01NSFW3X5NDUD2Wseop88nqQAoudfQtQzOu.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
-                "operator": "ne",
-                "right_operand": 4
-              },
               "continue_on_failure": false,
-              "display_name": "Not equal 4",
+              "display_name": "User ",
               "skip_execution": false
             },
             "object_type": "definition_activity",
             "actions": [
               {
-                "unique_name": "definition_activity_01NSG0VWJEGWC1lICVvuMBS9fr92AYTiP9r",
-                "name": "Completed",
-                "title": "Completed",
-                "type": "logic.completed",
+                "unique_name": "definition_activity_01NSH8ZBFWEON16eAehbyRMvNqPmp7hA1cw",
+                "name": "Sleep",
+                "title": "Sleep",
+                "type": "core.sleep",
                 "base_type": "activity",
                 "properties": {
-                  "completion_type": "failed-completed",
                   "continue_on_failure": false,
-                  "display_name": "Completed",
-                  "result_message": "Risk Score = $activity.definition_activity_01NSFW3X5NDUD2Wseop88nqQAoudfQtQzOu.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSFW3X5NDUD2Wseop88nqQAoudfQtQzOu.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSFW3X5NDUD2Wseop88nqQAoudfQtQzOu.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                  "display_name": "Sleep",
+                  "skip_execution": false,
+                  "sleep_interval": 10
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NSFWS74TO6P6lnPLHFjb9Eys3EeNkhMIc",
+                "name": "Group",
+                "title": "Raise observable +1",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Raise observable +1",
                   "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSFTYMXLPB67FFNjMUq738s2x35Md7qks",
+                    "name": "SMXD -  Raise Observable judgement",
+                    "title": "SMXD -  Raise Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Raise Observable judgement",
+                      "input": {
+                        "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTNFKJT0B3ddBmiurBH2MBCL9czT2w9$",
+                        "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "user",
+                        "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 1,
+                        "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 7
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSFX6JJYZ1W6drx3pgAzoX3ytFOpre4Lk",
+                "name": "Group",
+                "title": "Raise observable +3",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Raise observable +3",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSFVBZLN5930V1ZZiIAeAmubgkPN7lQor",
+                    "name": "SMXD -  Raise Observable judgement",
+                    "title": "SMXD -  Raise Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Raise Observable judgement",
+                      "input": {
+                        "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTNFKJT0B3ddBmiurBH2MBCL9czT2w9$",
+                        "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "user",
+                        "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 3,
+                        "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 7
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSFXMHKS5T30PUC5s3PZsTceWakwtCg0x",
+                "name": "Group",
+                "title": "Get Score and dispo",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get Score and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSFW3X5NDUD2Wseop88nqQAoudfQtQzOu",
+                    "name": "SMXD - Get Judgement and Score",
+                    "title": "SMXD - Get Judgement and Score",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD - Get Judgement and Score",
+                      "input": {
+                        "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTNFKJT0B3ddBmiurBH2MBCL9czT2w9$",
+                        "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "user",
+                        "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSFYS6X6FIP5yLVuQglw1xIWlgJSo5IbO",
+                "name": "Condition Block",
+                "title": "Verify risk and dispo",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Verify risk and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01NSFYSLLFVKA1pWouHYIFVSg85UxtnNuce",
+                    "name": "Condition Branch",
+                    "title": "Not equal 4",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01NSFW3X5NDUD2Wseop88nqQAoudfQtQzOu.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                        "operator": "ne",
+                        "right_operand": 4
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Not equal 4",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NSG0VWJEGWC1lICVvuMBS9fr92AYTiP9r",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Risk Score = $activity.definition_activity_01NSFW3X5NDUD2Wseop88nqQAoudfQtQzOu.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSFW3X5NDUD2Wseop88nqQAoudfQtQzOu.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSFW3X5NDUD2Wseop88nqQAoudfQtQzOu.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSG6HBT9HJM4cX5VtdrOOb30RsK9XfPjN",
+                "name": "Group",
+                "title": "Lower observable -2",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Lower observable -2",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSG53U4XMNM4B6FqUPnuZokDqU0fZVLjg",
+                    "name": "SMXD -  Lower Observable judgement",
+                    "title": "SMXD -  Lower Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Lower Observable judgement",
+                      "input": {
+                        "variable_workflow_01NDTY8Q8LI8Y5Uht3PyB7hIoCMbwk3xgtW": 7,
+                        "variable_workflow_01NDTY8Q8LKX10422D3GcvsdADAJ9otrqgq": "user",
+                        "variable_workflow_01NDTY8Q8LNCS4EtjWE4vRgm7qEN7GwbNj4": 2,
+                        "variable_workflow_01NDTY8Q8LRZR1AE3UHS5dZ1nOVbO3fmr61": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTNFKJT0B3ddBmiurBH2MBCL9czT2w9$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDTY8QG4CGG3jZqERzNTLYem7Ze7wQdB6"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSHJNEELR595FFk6I9Zwg6e1pJHwnQsTP",
+                "name": "Sleep",
+                "title": "Sleep",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep",
+                  "skip_execution": false,
+                  "sleep_interval": 10
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NSG74MRU4WO1ceuEfpVvudfpXe1N26uf2",
+                "name": "Group",
+                "title": "Get Score and dispo",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get Score and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSG75DBYZL40uDvI5VDVBuzJ2SH2pCWl2",
+                    "name": "SMXD - Get Judgement and Score",
+                    "title": "SMXD - Get Judgement and Score",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD - Get Judgement and Score",
+                      "input": {
+                        "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTNFKJT0B3ddBmiurBH2MBCL9czT2w9$",
+                        "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "user",
+                        "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSG30ZDT9O177ID77SSHfiTb7XILvwEk0",
+                "name": "Condition Block",
+                "title": "Verifiy RISK and dispo",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Verifiy RISK and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01NSG31D6FZKF590bLTMgX5sSaTgoQp46K6",
+                    "name": "Condition Branch",
+                    "title": "Not equal 2",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01NSG75DBYZL40uDvI5VDVBuzJ2SH2pCWl2.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                        "operator": "ne",
+                        "right_operand": 2
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Not equal 2",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NSG3VPQQS3Q5rJvRXsOAqkrmCVYqnr8iV",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Risk Score = $activity.definition_activity_01NSG75DBYZL40uDvI5VDVBuzJ2SH2pCWl2.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSG75DBYZL40uDvI5VDVBuzJ2SH2pCWl2.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSG75DBYZL40uDvI5VDVBuzJ2SH2pCWl2.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSG8R346FOC1Uy9hOfxJng1YQjQiXQfia",
+                "name": "Group",
+                "title": "Exclude observable",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Exclude observable",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSG4U4KQ2CY1qcUTU7PsxIiDamXfovhJY",
+                    "name": "SMXD -  Exclude Observable",
+                    "title": "SMXD -  Exclude Observable",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Exclude Observable",
+                      "input": {
+                        "variable_workflow_01NJX25IQHHCV4LIaq4vBxsIVFHV0Z3EIrL": 365,
+                        "variable_workflow_01NJX25IQHKZ13lcoo1R7DinLyzGUT0iK1U": "user",
+                        "variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTNFKJT0B3ddBmiurBH2MBCL9czT2w9$",
+                        "variable_workflow_01NJX25IQJ3EU2I272KsNc5XBrGPflOjWzU": 6
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "execute_on_this_target_group": true,
+                        "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH"
+                      },
+                      "workflow_id": "definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSG98AV3UC80D8J8LObJYg8lRhpMhBzzB",
+                "name": "Group",
+                "title": "Raise observable +1",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Raise observable +1",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSG992DW9N76bpg6cw6uFNsnn2hrjXOGi",
+                    "name": "SMXD -  Raise Observable judgement",
+                    "title": "SMXD -  Raise Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Raise Observable judgement",
+                      "input": {
+                        "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTNFKJT0B3ddBmiurBH2MBCL9czT2w9$",
+                        "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "user",
+                        "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 1,
+                        "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 7
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSGHAO6AZV47i5hpAFHbSLvNCbqJv2c4w",
+                "name": "Group",
+                "title": "Get Score and dispo",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get Score and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSGHBF406KY1khnTsj6a0RfVqUAkljmxJ",
+                    "name": "SMXD - Get Judgement and Score",
+                    "title": "SMXD - Get Judgement and Score",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD - Get Judgement and Score",
+                      "input": {
+                        "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTNFKJT0B3ddBmiurBH2MBCL9czT2w9$",
+                        "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "user",
+                        "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSG8FS5QHRH40ZrGDy9U1VgyTvnexFeMA",
+                "name": "Condition Block",
+                "title": "Verifiy RISK and dispo",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Verifiy RISK and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01NSG8GKBP1F010Uh9y0ZwnGYylVtH67j0X",
+                    "name": "Condition Branch",
+                    "title": "Not equal -1",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01NSGHBF406KY1khnTsj6a0RfVqUAkljmxJ.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                        "operator": "ne",
+                        "right_operand": -1
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Not equal -1",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NSG8GL0113T7hR8loAZycRPul8OrV90Tv",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Risk Score = $activity.definition_activity_01NSGHBF406KY1khnTsj6a0RfVqUAkljmxJ.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSGHBF406KY1khnTsj6a0RfVqUAkljmxJ.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSGHBF406KY1khnTsj6a0RfVqUAkljmxJ.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSH74C14DUO5USlE8mFyF1iAiMDfI9f9p",
+                "name": "HTTP Request",
+                "title": "SMXD Delete Judgement",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": false,
+                  "custom_headers": [
+                    {
+                      "name": "Authorization",
+                      "value": "Bearer $activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                    }
+                  ],
+                  "display_name": "SMXD Delete Judgement",
+                  "method": "DELETE",
+                  "relative_url": "/ctia/judgement/$activity.definition_activity_01NSGHBF406KY1khnTsj6a0RfVqUAkljmxJ.output.variable_workflow_01NDSY643XIE53Wy0MWnaWPIJYZNqlz8ybV$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "use_workflow_target_group": true
+                  }
                 },
                 "object_type": "definition_activity"
               }
             ]
-          }
-        ]
-      },
-      {
-        "unique_name": "definition_activity_01NSG6HBT9HJM4cX5VtdrOOb30RsK9XfPjN",
-        "name": "Group",
-        "title": "Lower observable -2",
-        "type": "logic.group",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "display_name": "Lower observable -2",
-          "skip_execution": false
-        },
-        "object_type": "definition_activity",
-        "actions": [
+          },
           {
-            "unique_name": "definition_activity_01NSG53U4XMNM4B6FqUPnuZokDqU0fZVLjg",
-            "name": "SMXD -  Lower Observable judgement",
-            "title": "SMXD -  Lower Observable judgement",
-            "type": "workflow.sub_workflow",
-            "base_type": "subworkflow",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "SMXD -  Lower Observable judgement",
-              "input": {
-                "variable_workflow_01NDTY8Q8LI8Y5Uht3PyB7hIoCMbwk3xgtW": 7,
-                "variable_workflow_01NDTY8Q8LKX10422D3GcvsdADAJ9otrqgq": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFUBFYWEBU2hFeIJcSBxHvWczJQ00GRe$",
-                "variable_workflow_01NDTY8Q8LNCS4EtjWE4vRgm7qEN7GwbNj4": 2,
-                "variable_workflow_01NDTY8Q8LRZR1AE3UHS5dZ1nOVbO3fmr61": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFU75WRTHD38M7UUTcLmiqjFpoEsje0x$"
-              },
-              "runtime_user": {
-                "target_default": true
-              },
-              "skip_execution": false,
-              "target": {
-                "use_workflow_target_group": true
-              },
-              "workflow_id": "definition_workflow_01NDTY8QG4CGG3jZqERzNTLYem7Ze7wQdB6"
-            },
-            "object_type": "definition_activity"
-          }
-        ]
-      },
-      {
-        "unique_name": "definition_activity_01NSG74MRU4WO1ceuEfpVvudfpXe1N26uf2",
-        "name": "Group",
-        "title": "Get Score and dispo",
-        "type": "logic.group",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "display_name": "Get Score and dispo",
-          "skip_execution": false
-        },
-        "object_type": "definition_activity",
-        "actions": [
-          {
-            "unique_name": "definition_activity_01NSG75DBYZL40uDvI5VDVBuzJ2SH2pCWl2",
-            "name": "SMXD - Get Judgement and Score",
-            "title": "SMXD - Get Judgement and Score",
-            "type": "workflow.atomic_workflow",
-            "base_type": "subworkflow",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "SMXD - Get Judgement and Score",
-              "input": {
-                "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFU75WRTHD38M7UUTcLmiqjFpoEsje0x$",
-                "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFUBFYWEBU2hFeIJcSBxHvWczJQ00GRe$",
-                "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
-              },
-              "runtime_user": {
-                "target_default": true
-              },
-              "skip_execution": false,
-              "target": {
-                "use_workflow_target_group": true
-              },
-              "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
-            },
-            "object_type": "definition_activity"
-          }
-        ]
-      },
-      {
-        "unique_name": "definition_activity_01NSG30ZDT9O177ID77SSHfiTb7XILvwEk0",
-        "name": "Condition Block",
-        "title": "Verifiy RISK and dispo",
-        "type": "logic.if_else",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "display_name": "Verifiy RISK and dispo",
-          "skip_execution": false
-        },
-        "object_type": "definition_activity",
-        "blocks": [
-          {
-            "unique_name": "definition_activity_01NSG31D6FZKF590bLTMgX5sSaTgoQp46K6",
-            "name": "Condition Branch",
-            "title": "Not equal 2",
-            "type": "logic.condition_block",
+            "unique_name": "definition_activity_01NSGXIGL8V953Wo2B8MKhacQIgfybR7yFv",
+            "name": "Parallel Branch",
+            "title": "ip ",
+            "type": "logic.parallel_block",
             "base_type": "activity",
             "properties": {
-              "condition": {
-                "left_operand": "$activity.definition_activity_01NSG75DBYZL40uDvI5VDVBuzJ2SH2pCWl2.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
-                "operator": "ne",
-                "right_operand": 2
-              },
               "continue_on_failure": false,
-              "display_name": "Not equal 2",
+              "display_name": "ip ",
               "skip_execution": false
             },
             "object_type": "definition_activity",
             "actions": [
               {
-                "unique_name": "definition_activity_01NSG3VPQQS3Q5rJvRXsOAqkrmCVYqnr8iV",
-                "name": "Completed",
-                "title": "Completed",
-                "type": "logic.completed",
+                "unique_name": "definition_activity_01NSGXIHP9YXF03Nsc8TWqfhjadQuCuRGDw",
+                "name": "Group",
+                "title": "Raise observable +3",
+                "type": "logic.group",
                 "base_type": "activity",
                 "properties": {
-                  "completion_type": "failed-completed",
                   "continue_on_failure": false,
-                  "display_name": "Completed",
-                  "result_message": "Risk Score = $activity.definition_activity_01NSG75DBYZL40uDvI5VDVBuzJ2SH2pCWl2.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSG75DBYZL40uDvI5VDVBuzJ2SH2pCWl2.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSG75DBYZL40uDvI5VDVBuzJ2SH2pCWl2.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                  "display_name": "Raise observable +3",
                   "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSGXIW5QTD95QmoWCCCXnSQ1uAX9oOkzp",
+                    "name": "SMXD -  Raise Observable judgement",
+                    "title": "SMXD -  Raise Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Raise Observable judgement",
+                      "input": {
+                        "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTVUBBUYS73e1UMOJQy7TlZEPxZpdPX$",
+                        "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "ip",
+                        "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 3,
+                        "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 7
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSH95EVPAF153b4ifKL5BqG2It0grJOWB",
+                "name": "Sleep",
+                "title": "Sleep",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep",
+                  "skip_execution": false,
+                  "sleep_interval": 10
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NSGXJNIY6O03CNPSmjCIZ03eS9XDPJ59Y",
+                "name": "Group",
+                "title": "Raise observable +2",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Raise observable +2",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSGXK3EP1G50ctTGXf3JLTdN9Woc4orvF",
+                    "name": "SMXD -  Raise Observable judgement",
+                    "title": "SMXD -  Raise Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Raise Observable judgement",
+                      "input": {
+                        "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTVUBBUYS73e1UMOJQy7TlZEPxZpdPX$",
+                        "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "ip",
+                        "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 2,
+                        "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 7
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSGXKU5QCG21j2mVTz37fDvMfcKq4GjjJ",
+                "name": "Group",
+                "title": "Get Score and dispo",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get Score and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSGXL8VQEQP34gXqsIOXOjzzd6QVF6q6o",
+                    "name": "SMXD - Get Judgement and Score",
+                    "title": "SMXD - Get Judgement and Score",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD - Get Judgement and Score",
+                      "input": {
+                        "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTVUBBUYS73e1UMOJQy7TlZEPxZpdPX$",
+                        "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "ip",
+                        "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSGXMRQUKKL1GYafV1SyE8X2PqtXR87GU",
+                "name": "Condition Block",
+                "title": "Verify risk and dispo",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Verify risk and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01NSGXN5OPIG22alL5Ef7trhnEdvDJKm3UE",
+                    "name": "Condition Branch",
+                    "title": "Not equal 5",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01NSGXL8VQEQP34gXqsIOXOjzzd6QVF6q6o.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                        "operator": "ne",
+                        "right_operand": 5
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Not equal 5",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NSGXN6HS3PO0bRlgRC32JddjJVdROpzwt",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Risk Score = $activity.definition_activity_01NSGXL8VQEQP34gXqsIOXOjzzd6QVF6q6o.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSGXL8VQEQP34gXqsIOXOjzzd6QVF6q6o.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSGXL8VQEQP34gXqsIOXOjzzd6QVF6q6o.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSHJBD7TK383STB2JvW4BEiskDwAXxSxn",
+                "name": "Sleep",
+                "title": "Sleep",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep",
+                  "skip_execution": false,
+                  "sleep_interval": 10
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NSGXNXEE6OM25vLvq7ujn6BhSj7eZ8dnf",
+                "name": "Group",
+                "title": "Lower observable -2",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Lower observable -2",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSGXOCMG1SH23mjnV4FK9hAGxXzhuVWEa",
+                    "name": "SMXD -  Lower Observable judgement",
+                    "title": "SMXD -  Lower Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Lower Observable judgement",
+                      "input": {
+                        "variable_workflow_01NDTY8Q8LI8Y5Uht3PyB7hIoCMbwk3xgtW": 7,
+                        "variable_workflow_01NDTY8Q8LKX10422D3GcvsdADAJ9otrqgq": "ip",
+                        "variable_workflow_01NDTY8Q8LNCS4EtjWE4vRgm7qEN7GwbNj4": 2,
+                        "variable_workflow_01NDTY8Q8LRZR1AE3UHS5dZ1nOVbO3fmr61": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTVUBBUYS73e1UMOJQy7TlZEPxZpdPX$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDTY8QG4CGG3jZqERzNTLYem7Ze7wQdB6"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSGXP4JGSGT7M7Ko02gDE9OQmKMXTLjMt",
+                "name": "Group",
+                "title": "Get Score and dispo",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get Score and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSGXPJ9XRKK5vAttSDZNivEcJ35IGYL3Q",
+                    "name": "SMXD - Get Judgement and Score",
+                    "title": "SMXD - Get Judgement and Score",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD - Get Judgement and Score",
+                      "input": {
+                        "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTVUBBUYS73e1UMOJQy7TlZEPxZpdPX$",
+                        "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "ip",
+                        "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSGXQA3NA0Z68cAXtGe1uQnyWP47dLcQx",
+                "name": "Condition Block",
+                "title": "Verifiy RISK and dispo",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Verifiy RISK and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01NSGXQNLUAW82U2G6rgxSucllTHPzPkMGA",
+                    "name": "Condition Branch",
+                    "title": "Not equal 3",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01NSGXPJ9XRKK5vAttSDZNivEcJ35IGYL3Q.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                        "operator": "ne",
+                        "right_operand": 3
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Not equal 3",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NSGXQOIXALY2A31a5NE6AzNAvWw32LvvX",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Risk Score = $activity.definition_activity_01NSGXPJ9XRKK5vAttSDZNivEcJ35IGYL3Q.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSGXPJ9XRKK5vAttSDZNivEcJ35IGYL3Q.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSGXPJ9XRKK5vAttSDZNivEcJ35IGYL3Q.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSGXR1ZH3UZ6ESMYaQNzAvRukMelNz4SL",
+                "name": "Group",
+                "title": "Exclude observable",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Exclude observable",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSGXRHAV73G5BetFwZcqZaqHRoiu30FRr",
+                    "name": "SMXD -  Exclude Observable",
+                    "title": "SMXD -  Exclude Observable",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Exclude Observable",
+                      "input": {
+                        "variable_workflow_01NJX25IQHHCV4LIaq4vBxsIVFHV0Z3EIrL": 365,
+                        "variable_workflow_01NJX25IQHKZ13lcoo1R7DinLyzGUT0iK1U": "ip",
+                        "variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTVUBBUYS73e1UMOJQy7TlZEPxZpdPX$",
+                        "variable_workflow_01NJX25IQJ3EU2I272KsNc5XBrGPflOjWzU": 6
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "execute_on_this_target_group": true,
+                        "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH"
+                      },
+                      "workflow_id": "definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSGXS86AENO2LfSV2AkJkezyJlFboLFId",
+                "name": "Group",
+                "title": "Raise observable +2",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Raise observable +2",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSGXSMSLIT80USgloItKfBCtBXpjwYrzm",
+                    "name": "SMXD -  Raise Observable judgement",
+                    "title": "SMXD -  Raise Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Raise Observable judgement",
+                      "input": {
+                        "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTVUBBUYS73e1UMOJQy7TlZEPxZpdPX$",
+                        "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "ip",
+                        "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 2,
+                        "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 7
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSGXTE81WVO2UjuQSlPXylz1b5ED1sCCZ",
+                "name": "Group",
+                "title": "Get Score and dispo",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get Score and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSGXTTECGXT5SrXhQrYoOoHtKcKdVIpHw",
+                    "name": "SMXD - Get Judgement and Score",
+                    "title": "SMXD - Get Judgement and Score",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD - Get Judgement and Score",
+                      "input": {
+                        "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGTVUBBUYS73e1UMOJQy7TlZEPxZpdPX$",
+                        "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "ip",
+                        "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSGXUW144XU4cDGNQzXpe37gltJuYzKOE",
+                "name": "Condition Block",
+                "title": "Verifiy RISK and dispo",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Verifiy RISK and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01NSGXV9I4P5V0973oiZwKmKXKUzSIKBfup",
+                    "name": "Condition Branch",
+                    "title": "Not equal -1",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01NSGXTTECGXT5SrXhQrYoOoHtKcKdVIpHw.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                        "operator": "ne",
+                        "right_operand": -1
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Not equal -1",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NSGXVAHYTHH4M6Q5vWisiewjgHQvCdlY4",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Risk Score = $activity.definition_activity_01NSGXTTECGXT5SrXhQrYoOoHtKcKdVIpHw.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSGXTTECGXT5SrXhQrYoOoHtKcKdVIpHw.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSGXTTECGXT5SrXhQrYoOoHtKcKdVIpHw.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSH84CISWEW0WeTJKI3nruRtUyWCF2WrH",
+                "name": "HTTP Request",
+                "title": "SMXD Delete Judgement",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": false,
+                  "custom_headers": [
+                    {
+                      "name": "Authorization",
+                      "value": "Bearer $activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                    }
+                  ],
+                  "display_name": "SMXD Delete Judgement",
+                  "method": "DELETE",
+                  "relative_url": "/ctia/judgement/$activity.definition_activity_01NSGXTTECGXT5SrXhQrYoOoHtKcKdVIpHw.output.variable_workflow_01NDSY643XIE53Wy0MWnaWPIJYZNqlz8ybV$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "use_workflow_target_group": true
+                  }
                 },
                 "object_type": "definition_activity"
               }
             ]
-          }
-        ]
-      },
-      {
-        "unique_name": "definition_activity_01NSG8R346FOC1Uy9hOfxJng1YQjQiXQfia",
-        "name": "Group",
-        "title": "Exclude observable",
-        "type": "logic.group",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "display_name": "Exclude observable",
-          "skip_execution": false
-        },
-        "object_type": "definition_activity",
-        "actions": [
+          },
           {
-            "unique_name": "definition_activity_01NSG4U4KQ2CY1qcUTU7PsxIiDamXfovhJY",
-            "name": "SMXD -  Exclude Observable",
-            "title": "SMXD -  Exclude Observable",
-            "type": "workflow.sub_workflow",
-            "base_type": "subworkflow",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "SMXD -  Exclude Observable",
-              "input": {
-                "variable_workflow_01NJX25IQHHCV4LIaq4vBxsIVFHV0Z3EIrL": 365,
-                "variable_workflow_01NJX25IQHKZ13lcoo1R7DinLyzGUT0iK1U": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFUBFYWEBU2hFeIJcSBxHvWczJQ00GRe$",
-                "variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFU75WRTHD38M7UUTcLmiqjFpoEsje0x$",
-                "variable_workflow_01NJX25IQJ3EU2I272KsNc5XBrGPflOjWzU": 6
-              },
-              "runtime_user": {
-                "target_default": true
-              },
-              "skip_execution": false,
-              "target": {
-                "execute_on_this_target_group": true,
-                "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH"
-              },
-              "workflow_id": "definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11"
-            },
-            "object_type": "definition_activity"
-          }
-        ]
-      },
-      {
-        "unique_name": "definition_activity_01NSG98AV3UC80D8J8LObJYg8lRhpMhBzzB",
-        "name": "Group",
-        "title": "Raise observable +1",
-        "type": "logic.group",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "display_name": "Raise observable +1",
-          "skip_execution": false
-        },
-        "object_type": "definition_activity",
-        "actions": [
-          {
-            "unique_name": "definition_activity_01NSG992DW9N76bpg6cw6uFNsnn2hrjXOGi",
-            "name": "SMXD -  Raise Observable judgement",
-            "title": "SMXD -  Raise Observable judgement",
-            "type": "workflow.sub_workflow",
-            "base_type": "subworkflow",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "SMXD -  Raise Observable judgement",
-              "input": {
-                "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFU75WRTHD38M7UUTcLmiqjFpoEsje0x$",
-                "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFUBFYWEBU2hFeIJcSBxHvWczJQ00GRe$",
-                "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 1,
-                "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 7
-              },
-              "runtime_user": {
-                "target_default": true
-              },
-              "skip_execution": false,
-              "target": {
-                "use_workflow_target_group": true
-              },
-              "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
-            },
-            "object_type": "definition_activity"
-          }
-        ]
-      },
-      {
-        "unique_name": "definition_activity_01NSGHAO6AZV47i5hpAFHbSLvNCbqJv2c4w",
-        "name": "Group",
-        "title": "Get Score and dispo",
-        "type": "logic.group",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "display_name": "Get Score and dispo",
-          "skip_execution": false
-        },
-        "object_type": "definition_activity",
-        "actions": [
-          {
-            "unique_name": "definition_activity_01NSGHBF406KY1khnTsj6a0RfVqUAkljmxJ",
-            "name": "SMXD - Get Judgement and Score",
-            "title": "SMXD - Get Judgement and Score",
-            "type": "workflow.atomic_workflow",
-            "base_type": "subworkflow",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "SMXD - Get Judgement and Score",
-              "input": {
-                "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFU75WRTHD38M7UUTcLmiqjFpoEsje0x$",
-                "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSFUBFYWEBU2hFeIJcSBxHvWczJQ00GRe$",
-                "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
-              },
-              "runtime_user": {
-                "target_default": true
-              },
-              "skip_execution": false,
-              "target": {
-                "use_workflow_target_group": true
-              },
-              "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
-            },
-            "object_type": "definition_activity"
-          }
-        ]
-      },
-      {
-        "unique_name": "definition_activity_01NSG8FS5QHRH40ZrGDy9U1VgyTvnexFeMA",
-        "name": "Condition Block",
-        "title": "Verifiy RISK and dispo",
-        "type": "logic.if_else",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "display_name": "Verifiy RISK and dispo",
-          "skip_execution": false
-        },
-        "object_type": "definition_activity",
-        "blocks": [
-          {
-            "unique_name": "definition_activity_01NSG8GKBP1F010Uh9y0ZwnGYylVtH67j0X",
-            "name": "Condition Branch",
-            "title": "Not equal -1",
-            "type": "logic.condition_block",
+            "unique_name": "definition_activity_01NSH9EB62HWS7L8Xg62kOG2l2s7Fzq43Az",
+            "name": "Parallel Branch",
+            "title": "hostname",
+            "type": "logic.parallel_block",
             "base_type": "activity",
             "properties": {
-              "condition": {
-                "left_operand": "$activity.definition_activity_01NSGHBF406KY1khnTsj6a0RfVqUAkljmxJ.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
-                "operator": "ne",
-                "right_operand": -1
-              },
               "continue_on_failure": false,
-              "display_name": "Not equal -1",
+              "display_name": "hostname",
               "skip_execution": false
             },
             "object_type": "definition_activity",
             "actions": [
               {
-                "unique_name": "definition_activity_01NSG8GL0113T7hR8loAZycRPul8OrV90Tv",
-                "name": "Completed",
-                "title": "Completed",
-                "type": "logic.completed",
+                "unique_name": "definition_activity_01NSH9EC2ZGQI7XeKeqlAmwIldkNd10boGG",
+                "name": "Group",
+                "title": "Raise observable +2",
+                "type": "logic.group",
                 "base_type": "activity",
                 "properties": {
-                  "completion_type": "failed-completed",
                   "continue_on_failure": false,
-                  "display_name": "Completed",
-                  "result_message": "Risk Score = $activity.definition_activity_01NSGHBF406KY1khnTsj6a0RfVqUAkljmxJ.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSGHBF406KY1khnTsj6a0RfVqUAkljmxJ.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSGHBF406KY1khnTsj6a0RfVqUAkljmxJ.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                  "display_name": "Raise observable +2",
                   "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSH9EPXPNH44Urioh2YugOHcJh7pLBUIk",
+                    "name": "SMXD -  Raise Observable judgement",
+                    "title": "SMXD -  Raise Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Raise Observable judgement",
+                      "input": {
+                        "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGU666XEPP4HDoi6oVOTvqIeyeuOV9mV$",
+                        "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "hostname",
+                        "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 2,
+                        "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 7
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSH9FGPFKOP5Vcpo9WRE8wiK6kbQC00GA",
+                "name": "Group",
+                "title": "Raise observable +1",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Raise observable +1",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSH9FUU2FIM3SSg7Mp4A9lzZsqzVKAlr1",
+                    "name": "SMXD -  Raise Observable judgement",
+                    "title": "SMXD -  Raise Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Raise Observable judgement",
+                      "input": {
+                        "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGU666XEPP4HDoi6oVOTvqIeyeuOV9mV$",
+                        "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "hostname",
+                        "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 1,
+                        "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 7
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSH9GLAGU6B1u7sDUWjaNURMUq6rPkn10",
+                "name": "Sleep",
+                "title": "Sleep",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep",
+                  "skip_execution": false,
+                  "sleep_interval": 10
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NSH9GYKFHCY2C9O04pyKdUqY8dZlGHXkw",
+                "name": "Group",
+                "title": "Get Score and dispo",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get Score and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSH9HCO484O0U5Hq2OCNrJZ6RyCuM5N0d",
+                    "name": "SMXD - Get Judgement and Score",
+                    "title": "SMXD - Get Judgement and Score",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD - Get Judgement and Score",
+                      "input": {
+                        "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGU666XEPP4HDoi6oVOTvqIeyeuOV9mV$",
+                        "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "hostname",
+                        "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSH9I3JNPNI787PILTDKshtv7LSysfZjb",
+                "name": "Condition Block",
+                "title": "Verify risk and dispo",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Verify risk and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01NSH9IGXGFKY5eCdN7GnBghZK6DCzy3UCa",
+                    "name": "Condition Branch",
+                    "title": "Not equal 3",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01NSH9HCO484O0U5Hq2OCNrJZ6RyCuM5N0d.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                        "operator": "ne",
+                        "right_operand": 3
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Not equal 3",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NSH9IHNWRBF2575QMTZhs4JRPosrRQHnQ",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Risk Score = $activity.definition_activity_01NSH9HCO484O0U5Hq2OCNrJZ6RyCuM5N0d.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSH9HCO484O0U5Hq2OCNrJZ6RyCuM5N0d.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSH9HCO484O0U5Hq2OCNrJZ6RyCuM5N0d.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSH9IUWD3JG6M74FHIygRPtytTHDhF63l",
+                "name": "Group",
+                "title": "Lower observable -1",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Lower observable -1",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSH9J8UG51S4Q7i11kIjCLj5yRrFaCGnZ",
+                    "name": "SMXD -  Lower Observable judgement",
+                    "title": "SMXD -  Lower Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Lower Observable judgement",
+                      "input": {
+                        "variable_workflow_01NDTY8Q8LI8Y5Uht3PyB7hIoCMbwk3xgtW": 7,
+                        "variable_workflow_01NDTY8Q8LKX10422D3GcvsdADAJ9otrqgq": "hostname",
+                        "variable_workflow_01NDTY8Q8LNCS4EtjWE4vRgm7qEN7GwbNj4": 1,
+                        "variable_workflow_01NDTY8Q8LRZR1AE3UHS5dZ1nOVbO3fmr61": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGU666XEPP4HDoi6oVOTvqIeyeuOV9mV$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDTY8QG4CGG3jZqERzNTLYem7Ze7wQdB6"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSH9JZBPN5L0uWSUA0oL5VWfLxljo82us",
+                "name": "Group",
+                "title": "Get Score and dispo",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get Score and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSH9KDJ0Y373YOICMzPQ1IF05eQx1i1nh",
+                    "name": "SMXD - Get Judgement and Score",
+                    "title": "SMXD - Get Judgement and Score",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD - Get Judgement and Score",
+                      "input": {
+                        "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGU666XEPP4HDoi6oVOTvqIeyeuOV9mV$",
+                        "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "hostname",
+                        "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSH9L4QQM5N3M2N8x3aAAmvPMfXSzwjhH",
+                "name": "Condition Block",
+                "title": "Verifiy RISK and dispo",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Verifiy RISK and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01NSH9LI51WGG1j0c1t7zeOCnsJFPQWHgBu",
+                    "name": "Condition Branch",
+                    "title": "Not equal 2",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01NSH9KDJ0Y373YOICMzPQ1IF05eQx1i1nh.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                        "operator": "ne",
+                        "right_operand": 2
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Not equal 2",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NSH9LIWD6IE01XCKHYXIcdT6nuVfh0Ils",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Risk Score = $activity.definition_activity_01NSH9KDJ0Y373YOICMzPQ1IF05eQx1i1nh.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSH9KDJ0Y373YOICMzPQ1IF05eQx1i1nh.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSH9KDJ0Y373YOICMzPQ1IF05eQx1i1nh.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSHJUGEUDNM5I1CKk34VtPSiZm9Dg6Enf",
+                "name": "Sleep",
+                "title": "Sleep",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep",
+                  "skip_execution": false,
+                  "sleep_interval": 10
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NSH9LW8M0JC02r5ndrlnCrCoam2DBETDS",
+                "name": "Group",
+                "title": "Exclude observable",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Exclude observable",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSH9MA4YRE34SLUygOQNgAxNsLBb1uEem",
+                    "name": "SMXD -  Exclude Observable",
+                    "title": "SMXD -  Exclude Observable",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Exclude Observable",
+                      "input": {
+                        "variable_workflow_01NJX25IQHHCV4LIaq4vBxsIVFHV0Z3EIrL": 365,
+                        "variable_workflow_01NJX25IQHKZ13lcoo1R7DinLyzGUT0iK1U": "hostname",
+                        "variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGU666XEPP4HDoi6oVOTvqIeyeuOV9mV$",
+                        "variable_workflow_01NJX25IQJ3EU2I272KsNc5XBrGPflOjWzU": 6
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "execute_on_this_target_group": true,
+                        "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH"
+                      },
+                      "workflow_id": "definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSH9N14M07N7G7lc1UCvSH2VvdeVMbhi4",
+                "name": "Group",
+                "title": "Raise observable +3",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Raise observable +3",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSH9NF2U3EA3RZTEceroUaYRf6xQqAHGb",
+                    "name": "SMXD -  Raise Observable judgement",
+                    "title": "SMXD -  Raise Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Raise Observable judgement",
+                      "input": {
+                        "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGU666XEPP4HDoi6oVOTvqIeyeuOV9mV$",
+                        "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "hostname",
+                        "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 3,
+                        "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 7
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSH9O59ST1304CawuDI4ll2DoQxEu079o",
+                "name": "Group",
+                "title": "Get Score and dispo",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get Score and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSH9OJGS6DO5O6W0fF8zbp99bKxh8UdYO",
+                    "name": "SMXD - Get Judgement and Score",
+                    "title": "SMXD - Get Judgement and Score",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD - Get Judgement and Score",
+                      "input": {
+                        "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGU666XEPP4HDoi6oVOTvqIeyeuOV9mV$",
+                        "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "hostname",
+                        "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSH9PABQBPM2MY0pagqDKqtkqhPE6cg43",
+                "name": "Condition Block",
+                "title": "Verifiy RISK and dispo",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Verifiy RISK and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01NSH9PNHL7PR0eaMvUIAJFpF8qTGkqRnnU",
+                    "name": "Condition Branch",
+                    "title": "Not equal -1",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01NSH9OJGS6DO5O6W0fF8zbp99bKxh8UdYO.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                        "operator": "ne",
+                        "right_operand": -1
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Not equal -1",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NSH9POER7XP6pTGzbZfOKZiRU1ndmvHs0",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Risk Score = $activity.definition_activity_01NSH9OJGS6DO5O6W0fF8zbp99bKxh8UdYO.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSH9OJGS6DO5O6W0fF8zbp99bKxh8UdYO.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSH9OJGS6DO5O6W0fF8zbp99bKxh8UdYO.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSH9Q1P91ZT2HkAlI0irgMIiKHyaGbvRT",
+                "name": "HTTP Request",
+                "title": "SMXD Delete Judgement",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": false,
+                  "custom_headers": [
+                    {
+                      "name": "Authorization",
+                      "value": "Bearer $activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                    }
+                  ],
+                  "display_name": "SMXD Delete Judgement",
+                  "method": "DELETE",
+                  "relative_url": "/ctia/judgement/$activity.definition_activity_01NSH9OJGS6DO5O6W0fF8zbp99bKxh8UdYO.output.variable_workflow_01NDSY643XIE53Wy0MWnaWPIJYZNqlz8ybV$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "use_workflow_target_group": true
+                  }
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01NSHLL95ZX3349kLwkNhSJn63YKP8Vy3cZ",
+            "name": "Parallel Branch",
+            "title": "mac_address",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "mac_address",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01NSHLP4N2CJP6pn7A1bNkDwgT80ssM6QDl",
+                "name": "Sleep",
+                "title": "Sleep",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep",
+                  "skip_execution": false,
+                  "sleep_interval": 15
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NSHLLA3L4KU4ujN53UzV2kP2sWxPmFSTL",
+                "name": "Group",
+                "title": "Raise observable +4",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Raise observable +4",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSHLLYZZ8O62wepQa5Hkk3Yt2vk9JTF2v",
+                    "name": "SMXD -  Raise Observable judgement",
+                    "title": "SMXD -  Raise Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Raise Observable judgement",
+                      "input": {
+                        "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGUW10A7811qMTdmv7yB4gMemv2DMU3v$",
+                        "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "mac_address",
+                        "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 4,
+                        "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 14
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSHLN15QQ0N009VNOs0o9x0yHPcfOpbi9",
+                "name": "Group",
+                "title": "Raise observable +1",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Raise observable +1",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSHLNQ7NRKB1UnPCY0PPg6YUyXdW9qYqg",
+                    "name": "SMXD -  Raise Observable judgement",
+                    "title": "SMXD -  Raise Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Raise Observable judgement",
+                      "input": {
+                        "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGUW10A7811qMTdmv7yB4gMemv2DMU3v$",
+                        "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "mac_address",
+                        "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 1,
+                        "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 14
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSHLPHNX9XF0JDVHYLjbmFtJZkZiAVEKY",
+                "name": "Group",
+                "title": "Get Score and dispo",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get Score and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSHLPVA3CA213J48FwAtNMl6xr7iZTiHE",
+                    "name": "SMXD - Get Judgement and Score",
+                    "title": "SMXD - Get Judgement and Score",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD - Get Judgement and Score",
+                      "input": {
+                        "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGUW10A7811qMTdmv7yB4gMemv2DMU3v$",
+                        "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "mac_address",
+                        "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSHLR94BKK929rmQIylTqPN5MGxBcpyIX",
+                "name": "Condition Block",
+                "title": "Verify risk and dispo",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Verify risk and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01NSHLRM6ZYW70qTGh9M2CsodDgTCOhq2vz",
+                    "name": "Condition Branch",
+                    "title": "Not equal 5",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01NSHLPVA3CA213J48FwAtNMl6xr7iZTiHE.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                        "operator": "ne",
+                        "right_operand": 5
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Not equal 5",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NSHLRMWQWLY7UvaDvQlcZ33SeYVQP1oNe",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Risk Score = $activity.definition_activity_01NSHLPVA3CA213J48FwAtNMl6xr7iZTiHE.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSHLPVA3CA213J48FwAtNMl6xr7iZTiHE.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSHLPVA3CA213J48FwAtNMl6xr7iZTiHE.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSHLSAB8UCF0RAzwFMfdkLZBNCeaIE9Vx",
+                "name": "Group",
+                "title": "Lower observable -3",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Lower observable -3",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSHLSNXPV7I3Y8Om66ioBfzoJFnm3gC53",
+                    "name": "SMXD -  Lower Observable judgement",
+                    "title": "SMXD -  Lower Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Lower Observable judgement",
+                      "input": {
+                        "variable_workflow_01NDTY8Q8LI8Y5Uht3PyB7hIoCMbwk3xgtW": 14,
+                        "variable_workflow_01NDTY8Q8LKX10422D3GcvsdADAJ9otrqgq": "mac_address",
+                        "variable_workflow_01NDTY8Q8LNCS4EtjWE4vRgm7qEN7GwbNj4": 3,
+                        "variable_workflow_01NDTY8Q8LRZR1AE3UHS5dZ1nOVbO3fmr61": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGUW10A7811qMTdmv7yB4gMemv2DMU3v$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDTY8QG4CGG3jZqERzNTLYem7Ze7wQdB6"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSHLTOJEA3G63sc7VxtFui9RtGTXHgTrT",
+                "name": "Group",
+                "title": "Get Score and dispo",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get Score and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSHLUF2Y52C3ibafe3N5K4Iy0gRa6prjX",
+                    "name": "SMXD - Get Judgement and Score",
+                    "title": "SMXD - Get Judgement and Score",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD - Get Judgement and Score",
+                      "input": {
+                        "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGUW10A7811qMTdmv7yB4gMemv2DMU3v$",
+                        "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "mac_address",
+                        "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSHLVT09V3K3cFCBCiU9ptEQoOpNnl5pm",
+                "name": "Condition Block",
+                "title": "Verifiy RISK and dispo",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Verifiy RISK and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01NSHLWI5VPHH3RfqyyWvacJoAjADr3Mh6b",
+                    "name": "Condition Branch",
+                    "title": "Not equal 2",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01NSHLUF2Y52C3ibafe3N5K4Iy0gRa6prjX.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                        "operator": "ne",
+                        "right_operand": 2
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Not equal 2",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NSHLWJ26QTL0vJ76X96cv9yWbbvbQd4UK",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Risk Score = $activity.definition_activity_01NSHLUF2Y52C3ibafe3N5K4Iy0gRa6prjX.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSHLUF2Y52C3ibafe3N5K4Iy0gRa6prjX.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSHLUF2Y52C3ibafe3N5K4Iy0gRa6prjX.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSHLX767F4F6Tli3gZNJiS27gpppfNNdQ",
+                "name": "Sleep",
+                "title": "Sleep",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep",
+                  "skip_execution": false,
+                  "sleep_interval": 10
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01NSHLXKM69J16zikeZ5klOHytc2VR3PBhI",
+                "name": "Group",
+                "title": "Exclude observable",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Exclude observable",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSHLY9YGIVB4khMYEi9uyecTUkofzkKJi",
+                    "name": "SMXD -  Exclude Observable",
+                    "title": "SMXD -  Exclude Observable",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Exclude Observable",
+                      "input": {
+                        "variable_workflow_01NJX25IQHHCV4LIaq4vBxsIVFHV0Z3EIrL": 60,
+                        "variable_workflow_01NJX25IQHKZ13lcoo1R7DinLyzGUT0iK1U": "mac_address",
+                        "variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGUW10A7811qMTdmv7yB4gMemv2DMU3v$",
+                        "variable_workflow_01NJX25IQJ3EU2I272KsNc5XBrGPflOjWzU": 6
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "execute_on_this_target_group": true,
+                        "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH"
+                      },
+                      "workflow_id": "definition_workflow_01NJX25IY5DDO133XJblQCE5X9ajuJ6ow11"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSHLZBUI2A342NDNBJ1UKs31mMqETmK6l",
+                "name": "Group",
+                "title": "Raise observable +3",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Raise observable +3",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSHLZPPXDED78erif7zWRfvbUBJZt9yGX",
+                    "name": "SMXD -  Raise Observable judgement",
+                    "title": "SMXD -  Raise Observable judgement",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD -  Raise Observable judgement",
+                      "input": {
+                        "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGUW10A7811qMTdmv7yB4gMemv2DMU3v$",
+                        "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA": "mac_address",
+                        "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh": 3,
+                        "variable_workflow_01NAGZUDIKMDX2lAP4spLt1TmQ8Rd0arm5F": 7
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NAFBKY1OX7W10iyUWbUCyfe8OFfKapuGV"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSHM0SWA6MV6RNeSaBHKGycb2hGORuaoP",
+                "name": "Group",
+                "title": "Get Score and dispo",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Get Score and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01NSHM1INNBQ01HoeOMChTAUaZKTcjaOMAB",
+                    "name": "SMXD - Get Judgement and Score",
+                    "title": "SMXD - Get Judgement and Score",
+                    "type": "workflow.atomic_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "SMXD - Get Judgement and Score",
+                      "input": {
+                        "variable_workflow_01NDRVRA1XS7M3vd6sizqxAv2hiGA9YG09T": "$workflow.definition_workflow_01MYMQR0TLEZ90C9k9FnWF7D5q7qyXFaDME.input.variable_workflow_01NSGUW10A7811qMTdmv7yB4gMemv2DMU3v$",
+                        "variable_workflow_01NDRW10PI5X47D76catsYNlhBH105BQ1iA": "mac_address",
+                        "variable_workflow_01NDSWAR1J4BI1EiHO8DOsELhrBZrVZ1AZZ": "$activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target_group": true
+                      },
+                      "workflow_id": "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSHM2KVXL1S1w7v8JOsX8XvYxw1sMGPfd",
+                "name": "Condition Block",
+                "title": "Verifiy RISK and dispo",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Verifiy RISK and dispo",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01NSHM39DQSXE4OJetKNxxKIJq7kPOhS7dL",
+                    "name": "Condition Branch",
+                    "title": "Not equal -1",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01NSHM1INNBQ01HoeOMChTAUaZKTcjaOMAB.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$",
+                        "operator": "ne",
+                        "right_operand": -1
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Not equal -1",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01NSHM3ABWO3H0JdpJvDw8Ve4uj1nEBwRnn",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Completed",
+                          "result_message": "Risk Score = $activity.definition_activity_01NSHM1INNBQ01HoeOMChTAUaZKTcjaOMAB.output.variable_workflow_01NFLP73Y30GT57di6BIVqcPLt0beQpgSwb$\nDisposition = $activity.definition_activity_01NSHM1INNBQ01HoeOMChTAUaZKTcjaOMAB.output.variable_workflow_01NDT2P0Z8ZGV3k4R0MCqLbdL3QQ7H2KScI$\nSeverity = $activity.definition_activity_01NSHM1INNBQ01HoeOMChTAUaZKTcjaOMAB.output.variable_workflow_01NDT2UNRCP3M0BTptzvmC9jwfXbzWozC9U$",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01NSHM3YB447823i5S9dzlxCd0kMOaYznNY",
+                "name": "HTTP Request",
+                "title": "SMXD Delete Judgement",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": false,
+                  "custom_headers": [
+                    {
+                      "name": "Authorization",
+                      "value": "Bearer $activity.definition_activity_01MYMR1ZKH6CX0UsNPoeKYFAwzGF3HrU1Rx.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+                    }
+                  ],
+                  "display_name": "SMXD Delete Judgement",
+                  "method": "DELETE",
+                  "relative_url": "/ctia/judgement/$activity.definition_activity_01NSHM1INNBQ01HoeOMChTAUaZKTcjaOMAB.output.variable_workflow_01NDSY643XIE53Wy0MWnaWPIJYZNqlz8ybV$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "use_workflow_target_group": true
+                  }
                 },
                 "object_type": "definition_activity"
               }
@@ -653,46 +2431,6 @@
         "base_type": "workflow",
         "variables": [
           {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "observable_value",
-              "type": "datatype.string",
-              "is_required": true,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.integer",
-            "properties": {
-              "value": 1,
-              "scope": "input",
-              "name": "Increment",
-              "type": "datatype.integer",
-              "description": "from 1 to 5",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "internetsinkhole.com",
-              "scope": "local",
-              "name": "email_domain",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01NAFF42GKA4A0AlYreC5eEbLzrdunVO3Fa",
-            "object_type": "variable_workflow"
-          },
-          {
             "schema_id": "datatype.integer",
             "properties": {
               "value": 7,
@@ -710,25 +2448,25 @@
             "properties": {
               "value": "",
               "scope": "input",
-              "name": "observable_type",
+              "name": "observable_value",
               "type": "datatype.string",
               "is_required": true,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA",
+            "unique_name": "variable_workflow_01NAFCUOB7EI60X6JPkUERry4k97NRsaYst",
             "object_type": "variable_workflow"
           },
           {
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
-              "scope": "output",
-              "name": "Raison",
+              "scope": "input",
+              "name": "observable_type",
               "type": "datatype.string",
-              "is_required": false,
+              "is_required": true,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01NAFDG8ZHDE34iBVhyoO1Lx8mynbdXCmzh",
+            "unique_name": "variable_workflow_01NAFCZ59H9C520kOxKMeVCDwY8twb5AdzA",
             "object_type": "variable_workflow"
           },
           {
@@ -742,19 +2480,6 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01NFMZH3CGG945Y6Bd248owXyj1sZvRiLUx",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "new_disposition_name",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01NAFEDFHQ3UL1SppC04qLc2c4PAgz8lWir",
             "object_type": "variable_workflow"
           },
           {
@@ -775,25 +2500,26 @@
             "properties": {
               "value": "",
               "scope": "output",
-              "name": "old_severity",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01ND60M774TW93XvITFVzkiuUIyK3FFZhL7",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
               "name": "old_disposition_name",
               "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01ND0WWG0T73X32beQ0vZhbbYAIUOIQv1lZ",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.integer",
+            "properties": {
+              "value": 1,
+              "scope": "input",
+              "name": "Increment",
+              "type": "datatype.integer",
+              "description": "from 1 to 5",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01NAFE07WAEQX2FRpoRF6eaaRXxzTMSxdGh",
             "object_type": "variable_workflow"
           },
           {
@@ -807,6 +2533,58 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01ND60TSA7V5V760mgpbZgT1qG1Z3vCwqTh",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "internetsinkhole.com",
+              "scope": "local",
+              "name": "email_domain",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01NAFF42GKA4A0AlYreC5eEbLzrdunVO3Fa",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Raison",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01NAFDG8ZHDE34iBVhyoO1Lx8mynbdXCmzh",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "new_disposition_name",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01NAFEDFHQ3UL1SppC04qLc2c4PAgz8lWir",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "old_severity",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01ND60M774TW93XvITFVzkiuUIyK3FFZhL7",
             "object_type": "variable_workflow"
           }
         ],
@@ -1269,27 +3047,15 @@
           {
             "schema_id": "datatype.integer",
             "properties": {
-              "value": 7,
+              "value": 1,
               "scope": "input",
-              "name": "Expiration_in_days",
+              "name": "decrement",
               "type": "datatype.integer",
+              "description": "from 1 to 5",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01NDTY8Q8LI8Y5Uht3PyB7hIoCMbwk3xgtW",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "old_disposition_name",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01NDTY8Q8LT4W2HAplnD5N4FzX2VMoOI80p",
+            "unique_name": "variable_workflow_01NDTY8Q8LNCS4EtjWE4vRgm7qEN7GwbNj4",
             "object_type": "variable_workflow"
           },
           {
@@ -1323,46 +3089,6 @@
             "properties": {
               "value": "",
               "scope": "output",
-              "name": "new_disposition_name",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01NDTY8Q8LOHG0YARdwBEVo2KzubAeCLxHP",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "new_risk_score",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01NFMHOKZY99G5Z75lD9ITE0l4foaazUFJc",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.integer",
-            "properties": {
-              "value": 1,
-              "scope": "input",
-              "name": "decrement",
-              "type": "datatype.integer",
-              "description": "from 1 to 5",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01NDTY8Q8LNCS4EtjWE4vRgm7qEN7GwbNj4",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
               "name": "new_severity",
               "type": "datatype.string",
               "is_required": false,
@@ -1389,12 +3115,12 @@
             "properties": {
               "value": "",
               "scope": "output",
-              "name": "Raison",
+              "name": "old_risk_score",
               "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01NDTY8Q8LM6J7DPhpHoLyvjw4GU9iBJMw7",
+            "unique_name": "variable_workflow_01NFMHJXWBA3S17QwlUC9PFvosTtDUqFrl2",
             "object_type": "variable_workflow"
           },
           {
@@ -1402,12 +3128,25 @@
             "properties": {
               "value": "",
               "scope": "output",
-              "name": "old_risk_score",
+              "name": "new_risk_score",
               "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01NFMHJXWBA3S17QwlUC9PFvosTtDUqFrl2",
+            "unique_name": "variable_workflow_01NFMHOKZY99G5Z75lD9ITE0l4foaazUFJc",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.integer",
+            "properties": {
+              "value": 7,
+              "scope": "input",
+              "name": "Expiration_in_days",
+              "type": "datatype.integer",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01NDTY8Q8LI8Y5Uht3PyB7hIoCMbwk3xgtW",
             "object_type": "variable_workflow"
           },
           {
@@ -1421,6 +3160,45 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01NDTY8Q8LKX10422D3GcvsdADAJ9otrqgq",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "old_disposition_name",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01NDTY8Q8LT4W2HAplnD5N4FzX2VMoOI80p",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Raison",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01NDTY8Q8LM6J7DPhpHoLyvjw4GU9iBJMw7",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "new_disposition_name",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01NDTY8Q8LOHG0YARdwBEVo2KzubAeCLxHP",
             "object_type": "variable_workflow"
           }
         ],
@@ -1916,6 +3694,45 @@
         "base_type": "workflow",
         "variables": [
           {
+            "schema_id": "datatype.integer",
+            "properties": {
+              "value": 365,
+              "scope": "input",
+              "name": "Expiration_in_days",
+              "type": "datatype.integer",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01NJX25IQHHCV4LIaq4vBxsIVFHV0Z3EIrL",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "old_risk_score",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01NJX25IQJ2AC64ws6TWujvk7VMT3teA5aX",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "new_risk_score",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01NJX25IQHEMH796MEphVOxamhcAvUtqHU1",
+            "object_type": "variable_workflow"
+          },
+          {
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
@@ -1933,12 +3750,51 @@
             "properties": {
               "value": "",
               "scope": "output",
+              "name": "new_disposition_name",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01NJX25IQIWFK6eiL3dCIw3LRP89xritOKe",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
               "name": "Raison",
               "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01NJX25IQIXPG7W7KWgpib6GKCG101WKJj8",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "new_severity",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01NJX25IQHINT5xibTO1I4lG7cqITBQRLrh",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "observable_value",
+              "type": "datatype.string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq",
             "object_type": "variable_workflow"
           },
           {
@@ -1968,29 +3824,16 @@
             "object_type": "variable_workflow"
           },
           {
-            "schema_id": "datatype.integer",
-            "properties": {
-              "value": 365,
-              "scope": "input",
-              "name": "Expiration_in_days",
-              "type": "datatype.integer",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01NJX25IQHHCV4LIaq4vBxsIVFHV0Z3EIrL",
-            "object_type": "variable_workflow"
-          },
-          {
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
-              "scope": "input",
-              "name": "observable_value",
+              "scope": "output",
+              "name": "old_disposition_name",
               "type": "datatype.string",
-              "is_required": true,
+              "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq",
+            "unique_name": "variable_workflow_01NJX25IQHM974GtPTd96cWUqk8w40A0nSo",
             "object_type": "variable_workflow"
           },
           {
@@ -2005,71 +3848,6 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01NJX25IQJ3EU2I272KsNc5XBrGPflOjWzU",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "new_risk_score",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01NJX25IQHEMH796MEphVOxamhcAvUtqHU1",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "new_severity",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01NJX25IQHINT5xibTO1I4lG7cqITBQRLrh",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "old_risk_score",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01NJX25IQJ2AC64ws6TWujvk7VMT3teA5aX",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "new_disposition_name",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01NJX25IQIWFK6eiL3dCIw3LRP89xritOKe",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "old_disposition_name",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01NJX25IQHM974GtPTd96cWUqk8w40A0nSo",
             "object_type": "variable_workflow"
           }
         ],
@@ -2440,11 +4218,11 @@
     }
   ],
   "atomic_workflows": [
-    "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof",
-    "definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5",
     "definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm",
-    "definition_workflow_01NFL8M79BG7643M2XbNjgAHBW2muRr4tty",
     "definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi",
-    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss"
+    "definition_workflow_01NFL8M79BG7643M2XbNjgAHBW2muRr4tty",
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
+    "definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5",
+    "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof"
   ]
 }
