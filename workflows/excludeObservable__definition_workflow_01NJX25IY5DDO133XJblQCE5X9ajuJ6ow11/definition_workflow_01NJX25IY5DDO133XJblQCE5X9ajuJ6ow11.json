@@ -11,6 +11,32 @@
         "properties": {
           "value": "",
           "scope": "output",
+          "name": "new_disposition_name",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQIWFK6eiL3dCIw3LRP89xritOKe",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 365,
+          "scope": "input",
+          "name": "Expiration_in_days",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NJX25IQHHCV4LIaq4vBxsIVFHV0Z3EIrL",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
           "name": "Raison",
           "type": "datatype.string",
           "is_required": false,
@@ -22,28 +48,14 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "old_risk_score",
+          "value": "internetsinkhole.com",
+          "scope": "local",
+          "name": "email_domain",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NJX25IQJ2AC64ws6TWujvk7VMT3teA5aX",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.integer",
-        "properties": {
-          "value": 6,
-          "scope": "input",
-          "name": "decrement",
-          "type": "datatype.integer",
-          "description": "Set to 6 to set to clean disposition \n\"Do not modify\"",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NJX25IQJ3EU2I272KsNc5XBrGPflOjWzU",
+        "unique_name": "variable_workflow_01NJX25IQHNGB0q5akgP9ph28qZdmX5iyHC",
         "object_type": "variable_workflow"
       },
       {
@@ -63,13 +75,13 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "output",
-          "name": "new_risk_score",
+          "scope": "input",
+          "name": "observable_value",
           "type": "datatype.string",
-          "is_required": false,
+          "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NJX25IQHEMH796MEphVOxamhcAvUtqHU1",
+        "unique_name": "variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq",
         "object_type": "variable_workflow"
       },
       {
@@ -77,12 +89,12 @@
         "properties": {
           "value": "",
           "scope": "output",
-          "name": "new_disposition_name",
+          "name": "old_risk_score",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NJX25IQIWFK6eiL3dCIw3LRP89xritOKe",
+        "unique_name": "variable_workflow_01NJX25IQJ2AC64ws6TWujvk7VMT3teA5aX",
         "object_type": "variable_workflow"
       },
       {
@@ -114,27 +126,15 @@
       {
         "schema_id": "datatype.integer",
         "properties": {
-          "value": 365,
+          "value": 6,
           "scope": "input",
-          "name": "Expiration_in_days",
+          "name": "decrement",
           "type": "datatype.integer",
+          "description": "Set to 6 to set to clean disposition \n\"Do not modify\"",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NJX25IQHHCV4LIaq4vBxsIVFHV0Z3EIrL",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "internetsinkhole.com",
-          "scope": "local",
-          "name": "email_domain",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NJX25IQHNGB0q5akgP9ph28qZdmX5iyHC",
+        "unique_name": "variable_workflow_01NJX25IQJ3EU2I272KsNc5XBrGPflOjWzU",
         "object_type": "variable_workflow"
       },
       {
@@ -154,13 +154,13 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "input",
-          "name": "observable_value",
+          "scope": "output",
+          "name": "new_risk_score",
           "type": "datatype.string",
-          "is_required": true,
+          "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NJX25IQJ14O4HNGH4CObwEo0HkdSp55kq",
+        "unique_name": "variable_workflow_01NJX25IQHEMH796MEphVOxamhcAvUtqHU1",
         "object_type": "variable_workflow"
       }
     ],
@@ -169,6 +169,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
+      "description": "This workflow takes a CRUD atomic actions of SMXD to exclude an observable and issue an individual judgement\nas well as response actions depending on the observable type and judgement disposition.\n\nTarget Group: Default TargetGroup\n\nTargets Used: CTR_For_Access_Token, Private_CTIA_Target\n\n\nSteps:\n[] Validate that the observable type is supported by SMXD\n[] Search for the observable\n[]\u003e If found, set the score of the observable to exclude (0)\n[]\u003e If not found, create the observable in SMXD with a score of 0\n[] Start to process the judgement promotion\n[] Generate an access token for SXTR\n[] Convert risk score into a judgement\n\nMore details are available at https://github.com/kcdubois/sxo-secure-meter-xd",
       "display_name": "SMXD -  Exclude Observable",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -577,9 +578,9 @@
   },
   "atomic_workflows": [
     "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
-    "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof",
-    "definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5",
     "definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi",
-    "definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm"
+    "definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm",
+    "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof",
+    "definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5"
   ]
 }
