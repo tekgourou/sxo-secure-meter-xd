@@ -5,6 +5,10 @@
 
 Secure Meter XD (written **SMXD**) is an automated private security intelligence framework to help automate internal observable judgements to improve alert fidelity and automated response inside of SecureX Orchestrator.
 
+Use cases :
+- Give the ability to security analyst to respond manually to a threat based on internal observable disposition.
+- Let Cisco SecureX Orchestrater respond automatically to a threat based on internal observable disposition.
+
 ### Supported Observable types
 - ip (with validation for RFC 1918 for private IP)
 - hostname
