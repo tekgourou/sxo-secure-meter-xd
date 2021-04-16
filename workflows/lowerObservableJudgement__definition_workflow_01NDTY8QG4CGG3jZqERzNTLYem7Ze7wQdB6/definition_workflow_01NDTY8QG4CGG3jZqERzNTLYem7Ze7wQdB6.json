@@ -10,13 +10,13 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "input",
-          "name": "observable_value",
+          "scope": "output",
+          "name": "Raison",
           "type": "datatype.string",
-          "is_required": true,
+          "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NDTY8Q8LRZR1AE3UHS5dZ1nOVbO3fmr61",
+        "unique_name": "variable_workflow_01NDTY8Q8LM6J7DPhpHoLyvjw4GU9iBJMw7",
         "object_type": "variable_workflow"
       },
       {
@@ -36,26 +36,26 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "input",
-          "name": "observable_type",
+          "scope": "output",
+          "name": "new_severity",
           "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NDTY8Q8LKX10422D3GcvsdADAJ9otrqgq",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.integer",
-        "properties": {
-          "value": 7,
-          "scope": "input",
-          "name": "Expiration_in_days",
-          "type": "datatype.integer",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NDTY8Q8LI8Y5Uht3PyB7hIoCMbwk3xgtW",
+        "unique_name": "variable_workflow_01NDTY8Q8LPOE7DHaoS5zRir6fDMmXTSQsf",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "old_risk_score",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NFMHJXWBA3S17QwlUC9PFvosTtDUqFrl2",
         "object_type": "variable_workflow"
       },
       {
@@ -69,45 +69,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01NDTY8Q8LOHG0YARdwBEVo2KzubAeCLxHP",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Raison",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NDTY8Q8LM6J7DPhpHoLyvjw4GU9iBJMw7",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "new_risk_score",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NFMHOKZY99G5Z75lD9ITE0l4foaazUFJc",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "new_severity",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NDTY8Q8LPOE7DHaoS5zRir6fDMmXTSQsf",
         "object_type": "variable_workflow"
       },
       {
@@ -127,6 +88,45 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
+          "scope": "input",
+          "name": "observable_type",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NDTY8Q8LKX10422D3GcvsdADAJ9otrqgq",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "new_risk_score",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NFMHOKZY99G5Z75lD9ITE0l4foaazUFJc",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "observable_value",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NDTY8Q8LRZR1AE3UHS5dZ1nOVbO3fmr61",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
           "scope": "output",
           "name": "old_severity",
           "type": "datatype.string",
@@ -137,16 +137,16 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "datatype.integer",
         "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "old_risk_score",
-          "type": "datatype.string",
+          "value": 7,
+          "scope": "input",
+          "name": "Expiration_in_days",
+          "type": "datatype.integer",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NFMHJXWBA3S17QwlUC9PFvosTtDUqFrl2",
+        "unique_name": "variable_workflow_01NDTY8Q8LI8Y5Uht3PyB7hIoCMbwk3xgtW",
         "object_type": "variable_workflow"
       },
       {
@@ -169,6 +169,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
+      "description": "This workflow takes a CRUD atomic actions of SMXD to lower the risk score of an observable and issue an individual judgement\nas well as response actions depending on the observable type and judgement disposition.\n\nTarget Group: Default TargetGroup\n\nTargets Used: CTR_For_Access_Token, Private_CTIA_Target\n\n\nSteps:\n[] Validate that the observable type is supported by SMXD\n[] Search for the observable\n[]\u003e If found, lower the score of the observable\n[] Start to process the judgement promotion\n[] Generate an access token for SXTR\n[] Convert risk score into a judgement\n[]\u003e If the judgement changed, run the response actions\n\nMore details are available at https://github.com/kcdubois/sxo-secure-meter-xd",
       "display_name": "SMXD -  Lower Observable judgement",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -694,10 +695,10 @@
     }
   },
   "atomic_workflows": [
+    "definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5",
     "definition_workflow_01MF6486QQZ5T1MohQWSllhbLVyPpgdntDi",
     "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
     "definition_workflow_01NDRVGUWMEBX5PR69KmPOmjTxBXhdu2Dof",
-    "definition_workflow_01NFM5W6L1OZX3Si1Qf466wG0AS8cVf8Lt5",
     "definition_workflow_01NJ3220N3M9H5X7D7eBpG3CLddvQRNnVUm"
   ]
 }
