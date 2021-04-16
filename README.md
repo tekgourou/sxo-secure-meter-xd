@@ -70,6 +70,8 @@ If your existing workflow output Observables JSON, here who you can integrate SM
 ![image](./docs/img/smxd10.png)
 <br/>
 
+#### Testing SMXD workflows
+*```SMXD - Unit Testing Workflow ``` can be use to test the SMXD framework.
 
 #### Optional response workflow
 
