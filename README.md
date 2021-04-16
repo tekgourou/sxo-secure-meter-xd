@@ -25,7 +25,7 @@ Use cases :
 <br/> 
 
 
-## Supported workflows
+## Required workflows
 
 * ```SMXD - Raise Observable judgement ```
 * ```SMXD - Lower Observable judgement ```
