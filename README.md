@@ -101,7 +101,7 @@ The workflow come with pre-configured response actions:
 ![image](./docs/img/smxd13.png)
 <br/>
 
-- Cisco Secure Endpoint, move device to a other group - isolate a device
+- Cisco Secure Endpoint, move device to another group - isolate a device
 ![image](./docs/img/smxd14.png)
 <br/>
 
