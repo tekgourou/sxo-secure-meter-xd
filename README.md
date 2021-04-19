@@ -139,6 +139,8 @@ Theses atomic actions are available from the Cisco SecureX Orchestration Github 
 * ```Azure Graph - Get Access Token ```
 * ```Azure Graph - Get User ```
 
+## Video
+https://www.youtube.com/watch?v=asXN3m9fV5U
 
 ## Additional information on Cisco SecureX Orchestration
 https://ciscosecurity.github.io/sxo-05-security-workflows/
