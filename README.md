@@ -1,3 +1,5 @@
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/kcdubois/sxo-secure-meter-xd)
+
 # Secure Meter XD - _SecureX Orchestrator Hackaton_ 
 
 ![image](./docs/img/logoSMXD_low_res.png)
