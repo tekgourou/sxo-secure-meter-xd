@@ -13,6 +13,7 @@
           "scope": "input",
           "name": "Recipient",
           "type": "datatype.string",
+          "description": "Modify with your notification email",
           "is_required": true,
           "is_invisible": false
         },
