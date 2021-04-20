@@ -1,0 +1,307 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01NVMZBZ98IPR0iUVmnto4UjHMEjqMPBD4n",
+    "name": "SMXD - Email report",
+    "title": "SMXD - Email report",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Recipient",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NVN334QK5T14xgQAN5KyetYHiIaUDwXEI",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eDocument\u003c/title\u003e\n    \u003cstyle\u003e\n        html {\n            width: 100%;\n            height: 100%;\n            padding: 0px;\n            margin: 0px;\n        }\n        \n        body {\n            width: 100%;\n            height: 100%;\n            margin: 0;\n            display: grid;\n            grid-template-rows: min-content auto min-content;\n            grid-template-areas: \"header\"\n                                 \"main\"\n                                 \"footer\";\n        }\n\n        header, main, footer, div {\n            padding: 8px;\n        }\n\n        header {\n            grid-area: header;\n            background-color: #0d274d;\n            color: white;\n        }\n\n        main {\n            grid-area: main\n        }\n\n        footer {\n            grid-area: footer;\n            background-color: #f2f2f2;\n        }\n\n        .container {\n            margin:0 auto;\n            max-width: 1200px;\n        }\n        \n        th, td {\n            padding: 16px;\n            text-align: left;\n            vertical-align: middle;\n            line-height: 24px;\n        }\n\n        .common {\n            color: #00bceb;\n        }\n\n        .suspicious {\n            color: #fbab18;\n        }\n\n        .malicious {\n            color: #e2231a;\n        }\n\n        small {\n            color: rgba(0,0,0,0.4)\n        }\n    \u003c/style\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cheader style=\"padding: 4px; \"\u003e\n        \u003cdiv class=\"container\"\u003e\n            \u003ch2\u003eCisco Secure Meter XD | Daily report\u003c/h2\u003e\n        \u003c/div\u003e\n    \u003c/header\u003e\n    \u003cmain\u003e\n        \u003cdiv class=\"container\"\u003e\n            \u003ctable style=\"border: 0;\n                          width: 100%;\n                          padding:8px;\n                          text-align: left;\n                          vertical-align: middle;\n                          line-height: 24px;\"\u003e\n                \u003cthead style=\"background-color: #f2f2f2;\"\u003e\n                    \u003cth\u003eDisposition (Severity)\u003c/th\u003e\n                    \u003cth\u003eCount\u003c/th\u003e\n                    \u003cth\u003eLink\u003c/th\u003e\n                \u003c/thead\u003e\n                \u003ctr\u003e\n                    \u003ctd class=\"common\"\u003eCommon (Low)\u003c/td\u003e\n                    \u003ctd\u003e{{ score1 }}\u003c/td\u003e\n                    \u003ctd\u003e\u003ca href=\"URL1\" style=\"text-decoration: none; color:#00bceb\"\u003eView in Threat Response\u003c/a\u003e\u003c/td\u003e\n                \u003c/tr\u003e\n                \u003ctr\u003e\n                    \u003ctd class=\"common\"\u003eCommon (Medium)\u003c/td\u003e\n                    \u003ctd\u003e{{ score2 }}\u003c/td\u003e\n                    \u003ctd\u003e\u003ca href=\"URL2\" style=\"text-decoration: none; color:#00bceb\"\u003eView in Threat Response\u003c/a\u003e\u003c/td\u003e\n                \u003c/tr\u003e\n                \u003ctr\u003e\n                    \u003ctd class=\"suspicious\"\u003eSuspicious (Medium)\u003c/td\u003e\n                    \u003ctd\u003e{{ score3 }}\u003c/td\u003e\n                    \u003ctd\u003e\u003ca href=\"URL3\" style=\"text-decoration: none; color:#00bceb\"\u003eView in Threat Response\u003c/a\u003e\u003c/td\u003e\n                \u003c/tr\u003e\n                \u003ctr\u003e\n                    \u003ctd class=\"suspicious\"\u003eSuspicious (High)\u003c/td\u003e\n                    \u003ctd\u003e{{ score4 }}\u003c/td\u003e\n                    \u003ctd\u003e\u003ca href=\"URL4\" style=\"text-decoration: none; color:#00bceb\"\u003eView in Threat Response\u003c/a\u003e\u003c/td\u003e\n                \u003c/tr\u003e\n                \u003ctr\u003e\n                    \u003ctd class=\"malicious\"\u003eMalicious (High)\u003c/td\u003e\n                    \u003ctd\u003e{{ score5 }}\u003c/td\u003e\n                    \u003ctd\u003e\u003ca href=\"URL5\" style=\"text-decoration: none; color:#00bceb\"\u003eView in Threat Response\u003c/a\u003e\u003c/td\u003e\n                \u003c/tr\u003e\n            \u003c/table\u003e\n        \u003c/div\u003e\n        \n    \u003c/main\u003e\n    \u003cfooter\u003e\n        \u003cdiv class=\"container\" style=\"text-align: center;\"\u003e\n            \u003csmall\u003eCisco Secure Meter XD - part of SecureX Orchestrator\u003c/small\u003e\n        \u003c/div\u003e\n    \u003c/footer\u003e\n\u003c/body\u003e\n\u003c/html\u003e",
+          "scope": "static",
+          "name": "EMAIL_TEMPLATE",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NVN2VKWG7151B5SxMLA9WZqUBwxkZAnDb",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "https://visibility.amp.cisco.com/intelligence/indicators/private/",
+          "scope": "local",
+          "name": "indicator_based_url",
+          "type": "datatype.string",
+          "description": "Modify based on your location",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NVSUDRSYB433MQorxWukb4jU3l40VS0Gp",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "SMXD - Email report",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": true,
+        "target_group": {
+          "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+          "run_on_all_targets": false,
+          "selected_target_types": [
+            "web-service.endpoint",
+            "email.smtp_endpoint"
+          ],
+          "use_criteria": {
+            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+            "conditions": [
+              {
+                "operator": "eq",
+                "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                "right_operand": "Private_CTIA_Target"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01NVOWWIBULBX5klUeh5lWmOV3LupOgqAF5",
+        "name": "Threat Response v2 - Generate Access Token",
+        "title": "Threat Response v2 - Generate Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Threat Response v2 - Generate Access Token",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target_group_criteria": true,
+            "target_group": {
+              "run_on_all_targets": false,
+              "use_criteria": {
+                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                "conditions": [
+                  {
+                    "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                    "operator": "eq",
+                    "right_operand": "CTR_For_Access_Token"
+                  }
+                ]
+              }
+            }
+          },
+          "workflow_id": "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NVP2FFOI29T2YV2RQAGp1eZZ5qvGEDWGw",
+        "name": "SMXD - Get informations from indicators",
+        "title": "SMXD - Get informations from indicators",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "SMXD - Get informations from indicators",
+          "input": {
+            "variable_workflow_01NVP0NGNJCOM7mXkaCbjQSfiCQ5iGxrYaC": "$activity.definition_activity_01NVOWWIBULBX5klUeh5lWmOV3LupOgqAF5.output.variable_workflow_01KWJ2ISHZ9753Hoi7x9S5EPpucAbm53HHF$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "use_workflow_target_group": true
+          },
+          "workflow_id": "definition_workflow_01NJP7KVIM3171Wu2IcG1CjOPxJzq29QAzG"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NVP2V2T8RKV5bmbJzUseznFaTVkAQLt0s",
+        "name": "Replace String",
+        "title": "Set Variables",
+        "type": "core.replacestring",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "input_string": "$workflow.definition_workflow_01NVMZBZ98IPR0iUVmnto4UjHMEjqMPBD4n.static.variable_workflow_01NVN2VKWG7151B5SxMLA9WZqUBwxkZAnDb$",
+          "replace_list": [
+            {
+              "replaced_string": "{{ score1 }}",
+              "replacement_string": "$activity.definition_activity_01NVP2FFOI29T2YV2RQAGp1eZZ5qvGEDWGw.output.variable_workflow_01NJP8J1Z7DAV4MkmNLOKsH9m43coqLGJKA$"
+            },
+            {
+              "replaced_string": "{{ score2 }}",
+              "replacement_string": "$activity.definition_activity_01NVP2FFOI29T2YV2RQAGp1eZZ5qvGEDWGw.output.variable_workflow_01NJP8OTWIME14wBk8rysRsU7G2NpRHoAnY$"
+            },
+            {
+              "replaced_string": "{{ score3 }}",
+              "replacement_string": "$activity.definition_activity_01NVP2FFOI29T2YV2RQAGp1eZZ5qvGEDWGw.output.variable_workflow_01NJP8TP0Y99Z1vHBhpWQTSyEDAdu4mhxNe$"
+            },
+            {
+              "replaced_string": "{{ score4 }}",
+              "replacement_string": "$activity.definition_activity_01NVP2FFOI29T2YV2RQAGp1eZZ5qvGEDWGw.output.variable_workflow_01NJP8Y4SAO3M6a6Zf6tEgTSQIwt39vRS4f$"
+            },
+            {
+              "replaced_string": "{{ score5 }}",
+              "replacement_string": "$activity.definition_activity_01NVP2FFOI29T2YV2RQAGp1eZZ5qvGEDWGw.output.variable_workflow_01NJP93LO8L0108ygH23pwi0EzT0j5MUIjD$"
+            },
+            {
+              "replaced_string": "URL1",
+              "replacement_string": "$workflow.definition_workflow_01NVMZBZ98IPR0iUVmnto4UjHMEjqMPBD4n.local.variable_workflow_01NVSUDRSYB433MQorxWukb4jU3l40VS0Gp$$activity.definition_activity_01NVP2FFOI29T2YV2RQAGp1eZZ5qvGEDWGw.output.variable_workflow_01NVSDCFUCX6G1sTUB34hdvOgtFQVcBFUCa$"
+            },
+            {
+              "replaced_string": "URL2",
+              "replacement_string": "$workflow.definition_workflow_01NVMZBZ98IPR0iUVmnto4UjHMEjqMPBD4n.local.variable_workflow_01NVSUDRSYB433MQorxWukb4jU3l40VS0Gp$$activity.definition_activity_01NVP2FFOI29T2YV2RQAGp1eZZ5qvGEDWGw.output.variable_workflow_01NVSDL9KA9CE1x77r3P9Q7Lv6vGrBBmqlZ$"
+            },
+            {
+              "replaced_string": "URL3",
+              "replacement_string": "$workflow.definition_workflow_01NVMZBZ98IPR0iUVmnto4UjHMEjqMPBD4n.local.variable_workflow_01NVSUDRSYB433MQorxWukb4jU3l40VS0Gp$$activity.definition_activity_01NVP2FFOI29T2YV2RQAGp1eZZ5qvGEDWGw.output.variable_workflow_01NVSDW1DU4T972n4XdtIRRHCpavm8mX1If$"
+            },
+            {
+              "replaced_string": "URL4",
+              "replacement_string": "$workflow.definition_workflow_01NVMZBZ98IPR0iUVmnto4UjHMEjqMPBD4n.local.variable_workflow_01NVSUDRSYB433MQorxWukb4jU3l40VS0Gp$$activity.definition_activity_01NVP2FFOI29T2YV2RQAGp1eZZ5qvGEDWGw.output.variable_workflow_01NVSE12ZOFGH0mX7g9h9wq2ZwLm0WoD3RN$"
+            },
+            {
+              "replaced_string": "URL5",
+              "replacement_string": "$workflow.definition_workflow_01NVMZBZ98IPR0iUVmnto4UjHMEjqMPBD4n.local.variable_workflow_01NVSUDRSYB433MQorxWukb4jU3l40VS0Gp$$activity.definition_activity_01NVP2FFOI29T2YV2RQAGp1eZZ5qvGEDWGw.output.variable_workflow_01NVSE6BGOUZI2m39jdRkWDFzh4aJTrucll$"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01NVMZKSSNUJE12nzLEZ6SE3VeMeG2spgpu",
+        "name": "Send Email",
+        "title": "Send Email",
+        "type": "email.smtp_send_email",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "body": "$activity.definition_activity_01NVP2V2T8RKV5bmbJzUseznFaTVkAQLt0s.output.result_string$",
+          "continue_if_one_address_valid": false,
+          "continue_on_failure": false,
+          "display_name": "Send Email",
+          "html": true,
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "subject": "SMXD - Daily Report",
+          "target": {
+            "override_workflow_target_group_criteria": true,
+            "target_group": {
+              "use_criteria": {
+                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                "conditions": [
+                  {
+                    "left_operand": "$targetgroup.email smtp_endpoint.input.display_name$",
+                    "operator": "eq",
+                    "right_operand": "Email Endpoint"
+                  }
+                ]
+              }
+            }
+          },
+          "to": "$workflow.definition_workflow_01NVMZBZ98IPR0iUVmnto4UjHMEjqMPBD4n.input.variable_workflow_01NVN334QK5T14xgQAN5KyetYHiIaUDwXEI$"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "triggers": {
+    "triggerschedule_01NVTDADKJRBJ3f6XdHFB5U06rgC6VtVKf6": {
+      "workflow_id": "definition_workflow_01NVMZBZ98IPR0iUVmnto4UjHMEjqMPBD4n",
+      "name": "Everyday at 1h00AM",
+      "title": "",
+      "lowercase_name": "schedule.everyday_at_1h00am",
+      "type": "schedule",
+      "base_type": "trigger",
+      "ref_id": "schedule_01JK4AEY31IB93pMWbGCfnwTBum5ryomeaT",
+      "version": "1.0.0",
+      "disabled": false,
+      "unique_name": "triggerschedule_01NVTDADKJRBJ3f6XdHFB5U06rgC6VtVKf6",
+      "object_type": "triggerschedule"
+    }
+  },
+  "schedules": {
+    "schedule_01JK4AEY31IB93pMWbGCfnwTBum5ryomeaT": {
+      "unique_name": "schedule_01JK4AEY31IB93pMWbGCfnwTBum5ryomeaT",
+      "name": "EveryDAYat1h00AM",
+      "type": "basic.schedule",
+      "base_type": "schedule",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "timezone": "US/Eastern",
+        "starttime": "01:00",
+        "interval_hours": 0,
+        "interval_minutes": 0,
+        "number_of_times": 1,
+        "display_name": "EveryDAYat1h00AM",
+        "description": ""
+      },
+      "version": "1.0.0",
+      "object_type": "schedule"
+    }
+  },
+  "target_groups": {
+    "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH": {
+      "unique_name": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+      "name": "Default TargetGroup",
+      "title": "Default TargetGroup",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "web-service.endpoint",
+          "view_target_type": "web-service.endpoint",
+          "include_all_targets": true
+        },
+        {
+          "data_target_type": "email.smtp_endpoint",
+          "view_target_type": "email.smtp_endpoint",
+          "include_all_targets": true
+        },
+        {
+          "data_target_type": "terminal.endpoint",
+          "view_target_type": "terminal.endpoint",
+          "include_all_targets": true
+        }
+      ],
+      "object_type": "target_group"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
+    "definition_workflow_01NJP7KVIM3171Wu2IcG1CjOPxJzq29QAzG"
+  ]
+}
