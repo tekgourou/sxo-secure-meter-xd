@@ -75,7 +75,7 @@ If your existing workflow output Observables JSON, here who you can integrate SM
 #### Testing SMXD workflows
 *```SMXD - Unit Testing Workflow ``` can be use to test the SMXD framework.
 
-#### Optional report workflow 
+#### Optional report workflow
 *```SMXD - Email Report Workflow ``` can be use to generate and send by email a daily report 
 *```SMXD - GET INFORMATIONS FROM INDICATORS Atomic Action``` is required
 
