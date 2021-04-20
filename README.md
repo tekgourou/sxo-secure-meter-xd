@@ -75,7 +75,13 @@ If your existing workflow output Observables JSON, here who you can integrate SM
 #### Testing SMXD workflows
 *```SMXD - Unit Testing Workflow ``` can be use to test the SMXD framework.
 
-#### Optional response workflow
+#### Optional report workflow 
+*```SMXD - Email Report ``` can be use to generate and send by email a daily report 
+
+![image](./docs/img/smxd19.png)
+<br/>
+
+#### Optional response workflow 
 
 At the end of each SMXD worflows an optional response workflow can be add to response to threat based on the disposition of the internal observable.
 
